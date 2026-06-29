@@ -1,4 +1,4 @@
-# Resume Site
+# Personal Website
 
 This codebase is a work in progress.
 
