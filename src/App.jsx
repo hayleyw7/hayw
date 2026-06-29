@@ -1,0 +1,25 @@
+import { useEffect } from 'react'
+import Footer from './components/Footer.jsx'
+import Header from './components/Header.jsx'
+import Impact from './components/Impact.jsx'
+import Introduction from './components/Introduction.jsx'
+import Recognition from './components/Recognition.jsx'
+
+export default function App() {
+  useEffect(() => {
+    const timer = window.setTimeout(() => document.body.classList.remove('is-preload'), 100)
+    return () => window.clearTimeout(timer)
+  }, [])
+
+  return (
+    <>
+      <Header />
+      <main>
+        <Introduction />
+        <Impact />
+        <Recognition />
+      </main>
+      <Footer />
+    </>
+  )
+}

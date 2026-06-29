@@ -1,0 +1,92 @@
+export const skills = ['JavaScript', 'Ruby on Rails', 'React', 'HTML/CSS']
+
+export const impactAreas = [
+  {
+    title: 'Engineering Complex Workflows',
+    description:
+      'Built end-to-end features across e-commerce, education, and a biopharmaceutical lifecycle management platform in a highly regulated domain. Focused on complex workflows, testing, debugging, reliability, and data integrity.',
+  },
+  {
+    title: 'Leading Operations at Scale',
+    description:
+      'Experience in operations and marketing management across multiple functions and locations, including highly regulated laboratory environments, spanning logistics, marketing operations, and business process automation.',
+  },
+  {
+    title: 'Mentorship Through Advocacy',
+    description:
+      'Founder of Neurodiversity In Tech and co-founder of Colorado Badged Network, building professional communities. Instructor and mentor at a nonprofit code school for underrepresented adults. Participates in panels, interviews, and discussions on accessibility and inclusion.',
+  },
+]
+
+export const recognitionGroups = [
+  {
+    title: 'Awards and Honors',
+    items: [
+      {
+        title: 'Volunteer of the Month',
+        description: 'Award for educational work at a coding nonprofit',
+        url: 'https://codethedream.org/meet-hayley-witherell-ctds-volunteer-of-the-month/',
+        label: 'Article',
+      },
+      {
+        title: 'Arrows Making an Impact',
+        description: 'Recognition for impact on marginalized STEM workers',
+        url: 'https://www.toledosua.org/alumnae/news/post/~board/alumnae-news/post/making-an-impact-hayley-witherell',
+        label: 'Article',
+      },
+    ],
+  },
+  {
+    title: 'Panel Participation',
+    items: [
+      {
+        title: 'Code The Dream',
+        description: 'Panel participation as a mentor and instructor on tech industry diversity',
+        url: 'https://www.linkedin.com/feed/update/urn:li:activity:7080232254467149824/',
+        label: 'Post',
+      },
+      {
+        title: 'Turing Showcase',
+        description: 'Recorded interview on founding and growing a tech organization',
+        url: 'https://www.youtube.com/watch?v=EStNdU5JQo4',
+        label: 'Video',
+      },
+    ],
+  },
+  {
+    title: 'Published Interviews',
+    items: [
+      {
+        title: 'Neurodiverse Hackers',
+        description: 'Interview feature highlighting my work building inclusive spaces for tech professionals',
+        url: 'https://neurodiversehackers.com/building-an-inclusive-future-with-neurodiversity-in-tech/',
+        label: 'Article',
+      },
+      {
+        title: 'GEN & Biotech News',
+        description: 'Interview mention in a science publication about analytical chemistry testing',
+        url: 'https://www.genengnews.com/insights/medical-cannabi-poses-unique-testing-challenges/',
+        label: 'Article',
+      },
+      {
+        title: 'Seed to Sound',
+        description: 'Podcast interview about founding and running an industry organization',
+        url: 'https://www.listennotes.com/podcasts/seed-to-sound/episode-2-colorado-badged-R6JEiGH-2SQ/',
+        label: 'Episode',
+      },
+      {
+        title: 'The Rooster',
+        description: 'Magazine article covering the impact of an organization I co-founded',
+        url: 'https://therooster.com/articles/despite-the-rules-one-cannabis-industry-group-still-thrives-on-facebook/',
+        label: 'Article',
+      },
+    ],
+  },
+]
+
+export const socialLinks = [
+  { label: 'Twitter', url: 'https://twitter.com/hayleywitherell', icon: 'fa-twitter', type: 'brands' },
+  { label: 'GitHub', url: 'https://github.com/hayleyw7', icon: 'fa-github', type: 'brands' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/hayleywitherell', icon: 'fa-linkedin', type: 'brands' },
+  { label: 'Email', url: 'mailto:hayleywitherell@gmail.com', icon: 'fa-envelope', type: 'solid' },
+]

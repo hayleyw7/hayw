@@ -1,14 +1,30 @@
-# Personal Website
+# Hayley Witherell — Portfolio
 
-This codebase is a work in progress.
+A responsive React portfolio built with Vite and deployed to GitHub Pages at [hayw.dev](https://hayw.dev).
 
-## Tech and tools
+## Technology
 
-### Template
-- Photon by [aj@lkn.io](aj@lkn.io) at [HTML5 UP](https://www.html5up.net) (CCA 3.0)
-- [Unsplash](https://www.unsplash.com)
+- React
+- Vite
+- JavaScript and CSS
+- GitHub Actions and GitHub Pages
 
-### Libraries
-- [Font Awesome](https://www.fontawesome.io)
-- [jQuery](https://jquery.com)
-- [Responsive Tools](https://www.github.com/ajlkn/responsive-tools)
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Quality checks
+
+```bash
+npm run lint
+npm run build
+```
+
+Pushes to `main` trigger the GitHub Pages deployment workflow in `.github/workflows/deploy.yml`.
+
+## Credits
+
+The original visual design is based on Photon by [HTML5 UP](https://html5up.net), licensed under Creative Commons Attribution 3.0. See `LICENSE.txt`.
