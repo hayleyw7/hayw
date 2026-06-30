@@ -62,6 +62,15 @@ describe('mobile and narrow layout', () => {
         })
       })
 
+      it('centers the profile and technical skills as one About composition', () => {
+        cy.get('#intro')
+          .should('have.css', 'display', 'flex')
+          .and('have.css', 'flex-direction', 'column')
+          .and('have.css', 'justify-content', 'center')
+        cy.get('#intro > #profile').should('exist')
+        cy.get('#intro > #skills').should('exist')
+      })
+
       it('keeps portrait dimensions responsive', () => {
         cy.get('img.avatar').then(($avatar) => {
           const bounds = $avatar[0].getBoundingClientRect()
@@ -97,6 +106,10 @@ describe('mobile and narrow layout', () => {
           .each(($group) => {
             cy.wrap($group).should('have.css', 'margin-top', '12px')
           })
+      })
+
+      it('uses standard mobile bottom spacing for Portfolio', () => {
+        cy.get('#projects').should('have.css', 'padding-bottom', '48px')
       })
 
       it('has no horizontal page overflow', () => cy.assertNoHorizontalOverflow())

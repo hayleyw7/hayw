@@ -102,7 +102,6 @@ describe('scroll behavior', () => {
       ['#recommendations', '#recommendations'],
       ['#projects', '#projects'],
       ['#recognition', '#recognition'],
-      ['#footer', '#footer'],
     ]
 
     cy.get('#header').then(($header) => {

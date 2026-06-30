@@ -225,6 +225,10 @@
 /* XSmall */
 
 @media screen and (max-width: v.$breakpoint-mobile) {
+	#projects {
+		padding-bottom: 3em;
+	}
+
 	#projects p,
 	#recommendations p,
 	#recognition p {

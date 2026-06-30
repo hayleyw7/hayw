@@ -29,13 +29,13 @@ export const projectGroups = [
         title: 'Limerickster',
         description: 'Need to create a limerick? Have AI do it!',
         url: 'https://hayleyw7-limerickster.hf.space/',
-        label: 'Try it',
+        label: 'Write',
       },
       {
         title: 'Rancid Tomatillos',
         description: "Want to watch a film? We'll help you pick!",
         url: 'https://hayleyw7.github.io/rancid-tomatillos/',
-        label: 'Visit',
+        label: 'Browse',
       },
       {
         title: 'Type My Pet',

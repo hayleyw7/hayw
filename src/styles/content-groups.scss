@@ -9,6 +9,12 @@
   text-align: left;
 }
 
+#projects .content-group > .media-title,
+#recognition .content-group > .media-title,
+#recommendations .content-group > .media-title {
+  text-align: left;
+}
+
 #projects .content-group article .actions.special,
 #recognition .content-group article .actions.special {
   justify-content: flex-start;
