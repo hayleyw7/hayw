@@ -81,11 +81,22 @@ describe('mobile and narrow layout', () => {
         cy.get('#about > #skills').should('exist')
       })
 
-      it('keeps portrait dimensions responsive', () => {
+      it('keeps the portrait responsive and circular', () => {
         cy.get('img.avatar').then(($avatar) => {
           const bounds = $avatar[0].getBoundingClientRect()
           expect(bounds.width).to.be.at.most(width)
           expect(bounds.height).to.be.at.most(368)
+          expect(bounds.width).to.be.closeTo(bounds.height, 1)
+          expect(getComputedStyle($avatar[0]).borderRadius).to.equal('50%')
+        })
+      })
+
+      it('lays out impact icons in two balanced rows of three', () => {
+        cy.get('#impact ul.major-icons li').then(($icons) => {
+          const rows = [...$icons].map((icon) => Math.round(icon.getBoundingClientRect().top))
+          expect(new Set(rows.slice(0, 3)).size).to.equal(1)
+          expect(new Set(rows.slice(3)).size).to.equal(1)
+          expect(rows[3]).to.be.greaterThan(rows[0])
         })
       })
 
@@ -105,7 +116,12 @@ describe('mobile and narrow layout', () => {
       it('breaks the intro heading after reliable on mobile', () => {
         cy.get('#profile .main-content h2 .mobile-line-break')
           .should('have.css', 'display', 'block')
+          .and('have.css', 'white-space', 'nowrap')
           .and('contain.text', 'Usable Systems')
+        cy.get('#impact h2 .mobile-line-break')
+          .should('have.css', 'display', 'block')
+          .and('have.css', 'white-space', 'nowrap')
+          .and('contain.text', 'Community Impact')
       })
 
       it('uses compact spacing between recognition groups', () => {

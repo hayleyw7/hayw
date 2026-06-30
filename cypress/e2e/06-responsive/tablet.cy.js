@@ -23,6 +23,35 @@ describe('tablet layout', () => {
       )
     })
     cy.get('.avatar-container').should('have.css', 'justify-content', 'center')
+    cy.get('img.avatar').should(($avatar) => {
+      const bounds = $avatar[0].getBoundingClientRect()
+      expect(bounds.width).to.be.closeTo(bounds.height, 1)
+      expect(getComputedStyle($avatar[0]).borderRadius).to.equal('50%')
+    })
+  })
+
+  it('keeps all six impact icons in one row above the copy', () => {
+    cy.get('.major-icons-container').then(($iconsColumn) => {
+      const icons = $iconsColumn[0].getBoundingClientRect()
+      const copy = $iconsColumn[0].nextElementSibling.getBoundingClientRect()
+      expect(icons.width).to.be.closeTo($iconsColumn[0].parentElement.getBoundingClientRect().width, 2)
+      expect(icons.top).to.be.lessThan(copy.top)
+    })
+    cy.get('#impact ul.major-icons li').then(($icons) => {
+      const rows = [...$icons].map((icon) => Math.round(icon.getBoundingClientRect().top))
+      expect(new Set(rows).size).to.equal(1)
+    })
+  })
+
+  it('keeps the skills outline compact', () => {
+    cy.get('.skill-col').should(($skills) => {
+      const style = getComputedStyle($skills[0])
+      expect(Number.parseFloat(style.paddingTop)).to.be.lessThan(5)
+      expect(Number.parseFloat(style.paddingBottom)).to.be.lessThan(5)
+    })
+    cy.get('.skill').each(($skill) => {
+      expect(Number.parseFloat(getComputedStyle($skill[0]).marginTop)).to.equal(0)
+    })
   })
 
   it('keeps recognition actions and copy visible', () => {
@@ -99,4 +128,34 @@ describe('tablet layout', () => {
   })
 
   it('has no horizontal page overflow', () => cy.assertNoHorizontalOverflow())
+
+  it('switches directly from six links in one row to two rows of three', () => {
+    cy.viewport(737, 800)
+    cy.visitHome()
+    revealSectionNav()
+    cy.get('#section-nav li').then(($items) => {
+      const rows = [...$items].map((item) => item.getBoundingClientRect().top)
+      expect(new Set(rows).size).to.equal(1)
+    })
+
+    cy.viewport(736, 800)
+    cy.get('#section-nav li').then(($items) => {
+      const rows = [...$items].map((item) => item.getBoundingClientRect().top)
+      expect(new Set(rows.slice(0, 3)).size).to.equal(1)
+      expect(new Set(rows.slice(3)).size).to.equal(1)
+      expect(rows[3]).to.be.greaterThan(rows[0])
+    })
+    cy.assertNoHorizontalOverflow()
+  })
+
+  it('keeps the complete footer invitation until the true mobile breakpoint', () => {
+    cy.viewport(481, 800)
+    cy.get('#contact .footer-text span').should('be.visible')
+    cy.assertNoHorizontalOverflow()
+
+    cy.viewport(480, 800)
+    cy.get('#contact .footer-text span').should('not.be.visible')
+    cy.get('#contact .footer-text').should('contain.text', 'Reach out to connect.')
+    cy.assertNoHorizontalOverflow()
+  })
 })

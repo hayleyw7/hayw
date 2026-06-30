@@ -27,10 +27,13 @@ describe('motion preferences', () => {
     }))
     cy.visitHome()
 
-    cy.window().then((win) => {
-      win.scrollTo(0, win.innerHeight)
+    cy.get('#header').then(($header) => {
+      cy.window().then((win) => {
+        win.scrollTo(0, Math.ceil($header.outerHeight()) + 1)
+      })
     })
-    cy.get('#section-nav a[href="#contact"]').click({ scrollBehavior: false })
+    cy.get('#section-nav').should('be.visible')
+      .find('a[href="#contact"]').click({ scrollBehavior: false })
     cy.get('#contact .icons').should('have.class', 'contact-arrival')
     cy.get('#contact .icons li').first().should(($icon) => {
       const { animationDuration } = getComputedStyle($icon[0])

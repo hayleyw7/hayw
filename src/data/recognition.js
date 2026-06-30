@@ -39,7 +39,7 @@ export const recognitionGroups = [
       {
         title: 'Neurodiverse Hackers',
         description: 'Feature on building inclusive tech communities',
-        url: 'https://neurodiversehackers.com/building-an-inclusive-future-with-neurodiversity-in-tech/',
+        url: 'https://web.archive.org/web/20260415043937/https://neurodiversehackers.com/building-an-inclusive-future-with-neurodiversity-in-tech/',
         label: 'Article',
       },
       {

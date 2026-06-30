@@ -8,7 +8,9 @@ export default function SectionNav({ onContactNavigate }) {
   const [activeHref, setActiveHref] = useState('#about')
   const onContactNavigateRef = useRef(onContactNavigate)
 
-  onContactNavigateRef.current = onContactNavigate
+  useEffect(() => {
+    onContactNavigateRef.current = onContactNavigate
+  }, [onContactNavigate])
 
   useEffect(() => {
     const header = document.querySelector('#header')

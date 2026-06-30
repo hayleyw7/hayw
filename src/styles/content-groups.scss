@@ -39,6 +39,14 @@
   color: v.$color-white;
 }
 
+@media screen and (min-width: 851px) and (max-width: v.$breakpoint-tablet) {
+  #portfolio .content-group article,
+  #recommendations .content-group article,
+  #recognition .content-group article {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: v.$breakpoint-mobile) {
   .content-group:not(:first-of-type) {
     margin-top: 0.75em;

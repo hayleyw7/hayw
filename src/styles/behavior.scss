@@ -12,6 +12,11 @@ html {
   margin-top: 1.75rem;
 }
 
+#profile h2 .mobile-line-break,
+#impact h2 .mobile-line-break {
+  white-space: nowrap;
+}
+
 @media screen and (max-width: v.$breakpoint-small) {
   .tagline-detail {
     display: none;

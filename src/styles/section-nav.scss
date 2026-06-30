@@ -56,7 +56,7 @@
   color: v.$color-white;
 }
 
-@media screen and (max-width: v.$breakpoint-mobile) {
+@media screen and (max-width: v.$breakpoint-small) {
   .section-nav ul {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

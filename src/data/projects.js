@@ -28,7 +28,7 @@ export const projectGroups = [
       {
         title: 'Decisionator',
         description: "Can't make a decision? We can help!",
-        url: 'https://github.com/hayleyw7/decisionator',
+        url: 'https://decisionator.surge.sh/',
         label: 'Decide',
       },
       {

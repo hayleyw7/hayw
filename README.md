@@ -26,6 +26,8 @@ The page is a single scrolling portfolio with alternating light and dark section
 
 After scrolling past the hero, a **sticky section nav** appears with links to each major section. Nav items stay aligned to section boundaries (accounting for nav height), update `aria-current="page"` as you scroll, and support direct hash URLs such as `/#portfolio`.
 
+Responsive layouts use explicit boundaries rather than natural wrapping: profile and card columns stack at 850px, the section nav switches from one row of six links to two rows of three at 736px, and impact icons render as either one row of six or two balanced rows of three.
+
 The contact footer plays a short icon animation when you navigate to it from the section nav.
 
 ## Project layout
@@ -84,7 +86,7 @@ npm run test:e2e
 
 `test:e2e` starts the Vite dev server and runs the full Cypress suite. Use `npm run cypress:open` for interactive debugging while the dev server is running.
 
-The Cypress suite has **21 spec files** and **136 tests** covering:
+The Cypress suite has **21 spec files** and **148 tests** covering:
 
 | Area | What it checks |
 |------|----------------|
@@ -93,7 +95,7 @@ The Cypress suite has **21 spec files** and **136 tests** covering:
 | `03-links` | External link labels, `noopener`/`noreferrer`, and safe destinations |
 | `04-accessibility` | axe WCAG A/AA, keyboard tab order, landmarks, semantics, and `aria-current` nav state |
 | `05-interactions` | Embark scroll, sticky section nav, hash routing, scroll alignment, hover states |
-| `06-responsive` | Desktop, tablet, and mobile layouts (320px–1280px), section padding, touch targets |
+| `06-responsive` | Desktop, tablet, and mobile layouts (320px–1280px), exact breakpoint boundaries, line wrapping, icon grids, portrait shape, section spacing, and touch targets |
 | `07-visual` | Section colors and `prefers-reduced-motion` behavior |
 | `08-resilience` | Portrait failure, runtime errors, and direct hash routes |
 

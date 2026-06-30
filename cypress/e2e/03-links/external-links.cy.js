@@ -24,6 +24,18 @@ describe('external links', () => {
     })
   })
 
+  it('uses the deployed Decisionator URL and archived Neurodiverse Hackers article', () => {
+    cy.contains('#portfolio article h4', 'Decisionator').closest('article').find('a.button')
+      .should('have.attr', 'href', 'https://decisionator.surge.sh/')
+
+    cy.contains('#recognition article h4', 'Neurodiverse Hackers').closest('article').find('a.button')
+      .should(
+        'have.attr',
+        'href',
+        'https://web.archive.org/web/20260415043937/https://neurodiversehackers.com/building-an-inclusive-future-with-neurodiversity-in-tech/',
+      )
+  })
+
   it('does not create blank, fragment-only, JavaScript, or insecure HTTP external links', () => {
     cy.get('a').each(($link) => {
       const href = $link.attr('href')

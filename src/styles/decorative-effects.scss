@@ -2,10 +2,12 @@
 
 /* Avatar */
 
-.avatar {
+img.avatar {
+	aspect-ratio: 1;
 	border-radius: 50%;
 	max-height: 30rem;
 	max-width: 30rem;
+	object-fit: cover;
 }
 
 button.button.primary.expand-btn.medium {
@@ -234,7 +236,9 @@ body.is-preload #header .embark-btn::after {
 	.footer-text {
 		margin-top: -25px;
 	}
+}
 
+@media screen and (max-width: v.$breakpoint-mobile) {
 	.footer-text span {
 		display: none;
 	}
