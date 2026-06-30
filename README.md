@@ -4,40 +4,59 @@ A responsive React portfolio built with Vite and deployed to GitHub Pages at [ha
 
 ## Technology
 
-- React
-- Vite
+- React 19 and Vite
 - JavaScript and Sass/SCSS
-- Cypress (end-to-end tests)
+- ESLint
+- Cypress and cypress-axe (end-to-end and accessibility tests)
 - GitHub Actions and GitHub Pages
 
 ## Site structure
 
 The page is a single scrolling portfolio with alternating light and dark sections:
 
-1. **Hero** — gradient header with Embark CTA; sticky section nav appears after scrolling
-2. **About** (`#about`) — bio, portrait, and tech stack
-3. **Professional & Community Impact** (`#impact`)
-4. **Recommendations** (`#recommendations`) — quotes grouped by company
-5. **Project Portfolio** (`#portfolio`) — games and web apps
-6. **Public Recognition** (`#recognition`) — awards, panels, and media
-7. **Footer** — contact and social links
+| Section | Hash | Contents |
+|---------|------|----------|
+| **Hero** | `#header` | Gradient header, cloud animation, Embark CTA |
+| **About** | `#about` | Bio (`#profile`), portrait, and tech stack (`#skills`) |
+| **Impact** | `#impact` | Professional and community impact |
+| **Recommendations** | `#recommendations` | Quotes grouped by company |
+| **Portfolio** | `#portfolio` | Video games and web applications |
+| **Recognition** | `#recognition` | Awards, panels, and media coverage |
+| **Contact** | `#contact` | Invitation text, social links, and email |
+
+After scrolling past the hero, a **sticky section nav** appears with links to each major section. Nav items stay aligned to section boundaries (accounting for nav height), update `aria-current="page"` as you scroll, and support direct hash URLs such as `/#portfolio`.
+
+The contact footer plays a short icon animation when you navigate to it from the section nav.
 
 ## Project layout
 
 ```
 src/
-  components/     React section components
-  data/           Content datasets (skills, impact, recommendations, projects, etc.)
-  styles/         SCSS modules composed through index.scss
+  components/     Section UI (Header, SectionNav, Introduction, Portfolio, etc.)
+  data/           Content datasets — edit these to update site copy and links
+  styles/         SCSS partials composed through index.scss
+  utils/          Scroll helpers and active-section detection for the nav
 public/
   images/         Portrait, favicon, social preview
   assets/         Static overlays and Font Awesome webfonts
 cypress/
-  e2e/            End-to-end specs grouped by concern
+  e2e/            End-to-end specs grouped by concern (21 files)
   fixtures/       contracts.js — shared expectations for content tests
 ```
 
-Content lives in `src/data/` as separate files per dataset. Components import the file they need; `cypress/fixtures/contracts.js` mirrors the public content contracts used by tests.
+### Content files
+
+| File | What it drives |
+|------|----------------|
+| `skills.js` | Tech stack chips in About |
+| `impact.js` | Impact section copy |
+| `recommendations.js` | Recommendation cards |
+| `projects.js` | Portfolio groups and project cards |
+| `recognition.js` | Recognition groups |
+| `socialLinks.js` | Footer social and email links |
+| `sectionNav.js` | Sticky nav labels and scroll targets |
+
+Components import the data file they need. `cypress/fixtures/contracts.js` mirrors the public content contracts used by tests — update both when changing headings, skills, or section IDs.
 
 ## Local development
 
@@ -48,6 +67,13 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173).
 
+To preview the production build locally:
+
+```bash
+npm run build
+npm run preview
+```
+
 ## Quality checks
 
 ```bash
@@ -56,22 +82,24 @@ npm run build
 npm run test:e2e
 ```
 
-The Cypress suite has **21 spec files** and **82 tests** covering:
+`test:e2e` starts the Vite dev server and runs the full Cypress suite. Use `npm run cypress:open` for interactive debugging while the dev server is running.
+
+The Cypress suite has **21 spec files** and **132 tests** covering:
 
 | Area | What it checks |
 |------|----------------|
 | `01-smoke` | Preload timing, portrait loading, top-level render order |
 | `02-content` | Section headings, skills, impact, recommendations, projects, recognition, metadata |
-| `03-links` | External link security (`noopener`/`noreferrer`) and safe destinations |
-| `04-accessibility` | axe WCAG A/AA, keyboard order, landmarks and semantics |
-| `05-interactions` | Embark scroll, section navigation, button hover states |
-| `06-responsive` | Desktop, tablet, and mobile layouts (320px–1280px) |
-| `07-visual` | Section colors and reduced-motion preferences |
-| `08-resilience` | Portrait failure and runtime error handling |
+| `03-links` | External link labels, `noopener`/`noreferrer`, and safe destinations |
+| `04-accessibility` | axe WCAG A/AA, keyboard tab order, landmarks, semantics, and `aria-current` nav state |
+| `05-interactions` | Embark scroll, sticky section nav, hash routing, scroll alignment, hover states |
+| `06-responsive` | Desktop, tablet, and mobile layouts (320px–1280px), section padding, touch targets |
+| `07-visual` | Section colors and `prefers-reduced-motion` behavior |
+| `08-resilience` | Portrait failure, runtime errors, and direct hash routes |
 
-Use `npm run cypress:open` for interactive debugging while the Vite dev server is running.
+## Deployment
 
-Pushes to `main` trigger the GitHub Pages deployment workflow in `.github/workflows/deploy.yml`.
+Pushes to `main` trigger the GitHub Pages workflow in `.github/workflows/deploy.yml` (Node 20, `npm ci`, `npm run build`, deploy `dist/`).
 
 ## Credits
 
