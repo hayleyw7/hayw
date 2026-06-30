@@ -84,14 +84,14 @@ body {
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-	-moz-animation: none !important;
-	-webkit-animation: none !important;
-	-ms-animation: none !important;
-	animation: none !important;
-	-moz-transition: none !important;
-	-webkit-transition: none !important;
-	-ms-transition: none !important;
-	transition: none !important;
+	-moz-animation: none;
+	-webkit-animation: none;
+	-ms-animation: none;
+	animation: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+	-ms-transition: none;
+	transition: none;
 }
 
 body, input, select, textarea {
@@ -113,7 +113,7 @@ a {
 }
 
 a:hover {
-	border-bottom-color: transparent !important;
+	border-bottom-color: transparent;
 	color: v.$color-teal;
 }
 
@@ -133,7 +133,7 @@ p {
 #portfolio p,
 #recognition p,
 #recommendations p {
-	margin: 0 0 1em 0 !important;
+	margin: 0 0 1em 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -217,7 +217,7 @@ blockquote {
 	background: #f5f7f8;
 	/* color: black; */
 	color: #263547;
-	padding: 0.4rem 0.75rem !important;
+	padding: 0.4rem 0.75rem;
 	border-radius: 4px;
 	font-family: v.$font-monospace;
 	font-size: 0.9em;
@@ -225,7 +225,7 @@ blockquote {
 }
 
 .skill {
-	margin: 0 !important;
+	margin: 0;
 	padding: 0;
 }
 

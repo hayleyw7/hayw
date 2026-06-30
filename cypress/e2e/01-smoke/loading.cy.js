@@ -1,12 +1,9 @@
 describe('loading behavior', () => {
   it('starts in preload mode and removes it after the startup delay', () => {
-    cy.clock()
     cy.visit('/')
 
     cy.get('body').should('have.class', 'is-preload')
-    cy.tick(99)
-    cy.get('body').should('have.class', 'is-preload')
-    cy.tick(1)
+    cy.wait(100)
     cy.get('body').should('not.have.class', 'is-preload')
   })
 

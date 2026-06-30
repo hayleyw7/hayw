@@ -37,8 +37,8 @@
 }
 
 img.avatar {
-	max-height: 26rem !important;
-	max-width: 26rem !important;
+	max-height: 26rem;
+	max-width: 26rem;
 	border: 3px solid #f5f7f8;
 	outline-offset: -1px;
 	padding: 0;
@@ -47,17 +47,17 @@ img.avatar {
 
 @media screen and (min-width: 980px) {
 	.avatar-container {
-		display: flex !important;
-		justify-content: flex-end !important;
-		align-items: center !important;
-		margin: 0 auto !important;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin: 0 auto;
 	}
 }
 
 @media screen and (max-width: v.$breakpoint-tablet) {
 	.container {
-		max-width: 100% !important;
-		width: 100% !important;
+		max-width: 100%;
+		width: 100%;
 	}
 
 	.last-intro-para {
@@ -65,21 +65,21 @@ img.avatar {
 	}
 
 	.avatar-container {
-		display: flex !important;
+		display: flex;
 		justify-content: center;
 	}
 
 	.avatar {
-		max-height: 23rem !important;
-		max-width: 23rem !important;
+		max-height: 23rem;
+		max-width: 23rem;
 	}
 
 	.skill-col	{
-		margin-bottom: 0 !important;
+		margin-bottom: 0;
 	}
 	
 	.skill {
-		flex: 1 1 calc(50% - 10px) !important;
+		flex: 1 1 calc(50% - 10px);
 		margin-top: 0.5rem;
 	}
 }
@@ -90,7 +90,7 @@ img.avatar {
 	}
 
 	/* .skill {
-		flex: 1 1 100% !important;
+		flex: 1 1 100%;
 	} */
 
 	.embark-btn {
@@ -1088,7 +1088,7 @@ margin-left: -3em;
 	}
 
 	.footer-text {
-		margin-top: 4px !important;
+		margin-top: 4px;
 	}
 
 	.tagline {
@@ -1341,7 +1341,7 @@ margin-left: -3em;
 	#portfolio h3,
 	#recommendations h3,
 	#recognition h3 {
-		font-size: 120% !important;
+		font-size: 120%;
 	}
 
 	.row {

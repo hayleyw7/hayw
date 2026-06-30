@@ -178,7 +178,7 @@ input[type="radio"] + label {
 		font-variant: normal;
 		text-rendering: auto;
 		line-height: 1;
-		text-transform: none !important;
+		text-transform: none;
 		font-family: v.$font-icon-solid;
 		font-weight: 900;
 	}
@@ -222,22 +222,22 @@ input[type="radio"] + label:before {
 }
 
 ::-webkit-input-placeholder {
-	color: v.$color-muted !important;
+	color: v.$color-muted;
 	opacity: 1.0;
 }
 
 :-moz-placeholder {
-	color: v.$color-muted !important;
+	color: v.$color-muted;
 	opacity: 1.0;
 }
 
 ::-moz-placeholder {
-	color: v.$color-muted !important;
+	color: v.$color-muted;
 	opacity: 1.0;
 }
 
 :-ms-input-placeholder {
-	color: v.$color-muted !important;
+	color: v.$color-muted;
 	opacity: 1.0;
 }
 
@@ -278,7 +278,7 @@ input[type="radio"] + label:before {
 	font-variant: normal;
 	text-rendering: auto;
 	line-height: 1;
-	text-transform: none !important;
+	text-transform: none;
 	font-family: v.$font-icon-solid;
 	font-weight: 400;
 }
@@ -292,7 +292,7 @@ input[type="radio"] + label:before {
 }
 
 .icon.solid:before {
-	font-weight: 900 !important;
+	font-weight: 900;
 }
 
 .icon.brands:before {
@@ -343,7 +343,7 @@ input[type="radio"] + label:before {
 	font-variant: normal;
 	text-rendering: auto;
 	line-height: 1;
-	text-transform: none !important;
+	text-transform: none;
 	font-family: v.$font-icon-solid;
 	font-weight: 400;
 }

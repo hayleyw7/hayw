@@ -3,13 +3,13 @@
 /* Avatar */
 
 .avatar {
-	border-radius: 50% !important;
-	max-height: 30rem !important;
-	max-width: 30rem !important;
+	border-radius: 50%;
+	max-height: 30rem;
+	max-width: 30rem;
 }
 
 button.button.primary.expand-btn.medium {
-	margin-bottom: 0 !important;
+	margin-bottom: 0;
 }
 
 .hidden {
@@ -53,7 +53,7 @@ p.tagline {
 .icon.solid.major.fa-cloud {
   opacity: 0.8;
   font-size: 1.6em;
-  margin-bottom: 1rem !important;
+  margin-bottom: 1rem;
   animation: float 3s ease-in-out 1.5s infinite;
 }
 
@@ -122,59 +122,61 @@ h1 {
 
 /* Headers animations */
 
-.embark-container {
-  margin-top: 2.5rem !important;
+#header .embark-container {
+  margin-top: 2.5rem;
 }
 
-.embark-btn {
+#header .embark-btn {
   position: relative;
   z-index: 10;
-  color: v.$color-white !important;
-  transition: background v.$duration-slow ease, opacity v.$duration-slow ease, color v.$duration-slow ease !important;
+  color: v.$color-white;
+  transition: background v.$duration-slow ease, opacity v.$duration-slow ease, color v.$duration-slow ease;
   will-change: background, opacity, color;
 }
 
-.embark-btn strong {
-  color: inherit !important;
-  transition: inherit !important;
+#header .embark-btn strong {
+  color: inherit;
+  transition: inherit;
   will-change: color;
 }
 
-.embark-btn:hover {
-  background: v.$color-white !important;
-  opacity: 0.8 !important;
-  color: v.$color-blue-gray !important;
+#header .embark-btn:hover {
+  background: v.$color-white;
+  background-color: v.$color-white;
+  opacity: 0.8;
+  color: v.$color-blue-gray;
 }
 
-.embark-btn:hover strong {
-  color: v.$color-blue-gray !important;
+#header .embark-btn:hover strong {
+  color: v.$color-blue-gray;
 }
 
 .header, .header * {
-  opacity: 0.8 !important;
-  visibility: visible !important;
-  transition: opacity 2s ease !important;
+  opacity: 0.8;
+  visibility: visible;
+  transition: opacity 2s ease;
 }
 
-.embark-btn, .embark-btn::after {
-  opacity: 0.8 !important;
-  transition: opacity v.$duration-slow ease, background v.$duration-slow ease, color v.$duration-slow ease !important;
+#header .embark-btn,
+#header .embark-btn::after {
+  opacity: 0.8;
+  transition: opacity v.$duration-slow ease, background v.$duration-slow ease, color v.$duration-slow ease;
 }
 
 .tagline, h1 {
-  opacity: 0.8 !important;
-  visibility: visible !important;
-  transition: opacity 2s ease !important;
+  opacity: 0.8;
+  visibility: visible;
+  transition: opacity 2s ease;
 }
 
 body.is-preload .header,
 body.is-preload .tagline,
 body.is-preload h1,
-body.is-preload .embark-btn,
-body.is-preload .embark-btn::after {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: none !important;
+body.is-preload #header .embark-btn,
+body.is-preload #header .embark-btn::after {
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
 }
 
 #profile h2,
@@ -205,15 +207,15 @@ body.is-preload .embark-btn::after {
 
 @media screen and (max-width: v.$breakpoint-tablet) {
 	img.avatar {
-		max-height: 20rem !important;
-		max-width: 20rem !important;
+		max-height: 20rem;
+		max-width: 20rem;
 	}
 }
 
 @media screen and (max-width: v.$breakpoint-mobile) {
 	img.avatar {
-		max-height: 15rem !important;
-		max-width: 15rem !important;
+		max-height: 15rem;
+		max-width: 15rem;
 	}
 
 	#header {
