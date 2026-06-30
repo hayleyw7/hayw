@@ -19,14 +19,14 @@ describe('header and introduction content', () => {
   })
 
   it('renders all introduction paragraphs without truncating their core claims', () => {
-    cy.get('#one p').should('have.length', 3)
-    cy.get('#one').should('contain.text', '5+ years')
-    cy.get('#one').should('contain.text', 'production debugging')
-    cy.get('#one').should('contain.text', 'automation and AI tools')
+    cy.get('#profile p').should('have.length', 3)
+    cy.get('#profile').should('contain.text', '5+ years')
+    cy.get('#profile').should('contain.text', 'production debugging')
+    cy.get('#profile').should('contain.text', 'automation and AI tools')
   })
 
   it('renders the exact skill set once and in its intended order', () => {
-    cy.get('#two-b').should('have.attr', 'aria-label', 'Technical skills')
+    cy.get('#skills').should('have.attr', 'aria-label', 'Technical skills')
     cy.get('.skill').should('have.length', skills.length)
     cy.get('.skill').then(($skills) => {
       expect([...$skills].map((element) => element.textContent)).to.deep.equal(skills)

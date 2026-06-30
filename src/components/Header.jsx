@@ -1,7 +1,7 @@
 export default function Header() {
   const scrollToIntroduction = (event) => {
     event.preventDefault()
-    document.querySelector('#one-two-b')?.scrollIntoView({ behavior: 'smooth' })
+    document.querySelector('#intro')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -24,7 +24,7 @@ export default function Header() {
       </p>
       <ul className="actions special embark-container">
         <li>
-          <a href="#one-two-b" className="button embark-btn" onClick={scrollToIntroduction}>
+          <a href="#intro" className="button embark-btn" onClick={scrollToIntroduction}>
             <strong>Embark</strong>
           </a>
         </li>

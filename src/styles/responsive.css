@@ -111,18 +111,19 @@
 
 	/* One Two Three */
 
-	#one,
-	#two {
+	#profile,
+	#impact {
 		text-align: center;
 	}
 
-	#one p,
-	#two h3,
-	#two p {
+	#profile p,
+	#impact h3,
+	#impact p {
 		text-align: left;
 	}
 
-	#three p {
+	#projects p,
+	#recognition p {
 		margin-bottom: 0.75rem;
 	}
 }
@@ -209,11 +210,13 @@
 /* XSmall */
 
 @media screen and (max-width: 480px) {
-	#three p {
+	#projects p,
+	#recognition p {
 		text-align: left;
 	}
 
-	#three h3 {
+	#projects h3,
+	#recognition h3 {
 		font-size: 140%;
 	}
 

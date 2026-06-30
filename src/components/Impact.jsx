@@ -4,7 +4,7 @@ const iconClasses = ['fa-code', 'fa-bolt', 'fa-camera-retro', 'fa-cog', 'fa-desk
 
 export default function Impact() {
   return (
-    <section id="two" className="bg-section main style2">
+    <section id="impact" className="bg-section main style2">
       <div className="container">
         <div className="major-icons-container-parent row gtr-150">
           <div className="major-icons-container col-6 col-12-medium" aria-hidden="true">

@@ -2,8 +2,8 @@ import Skills from './Skills.jsx'
 
 export default function Introduction() {
   return (
-    <section id="one-two-b">
-      <section id="one" className="main style1 main-top">
+    <section id="intro">
+      <section id="profile" className="main style1 main-top">
         <div className="container">
           <div className="row gtr-150 main-content-container-parent">
             <div className="col-6 col-12-medium main-content-container">

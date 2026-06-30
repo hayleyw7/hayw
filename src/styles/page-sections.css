@@ -94,11 +94,18 @@
 }
 
 #header,
-#one-two-b,
-#two,
-#three {
+#intro,
+#impact,
+#projects,
+#recognition {
 	min-height: 100vh;
 	align-content: center;
+}
+
+#skills {
+	min-height: auto;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
 }
 
 /* Header */
@@ -468,4 +475,3 @@ body.is-preload #header:after {
 	margin-left: 0;
 	padding: 0;
 }
-

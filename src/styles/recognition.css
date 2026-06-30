@@ -1,4 +1,8 @@
-.recognition-group .button {
+.recognition-group .row.aln-center > article {
+  max-width: 28rem;
+}
+
+#projects .recognition-group .button {
   color: #5f7184 !important;
 }
 

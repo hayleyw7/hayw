@@ -84,6 +84,61 @@ export const recognitionGroups = [
   },
 ]
 
+export const projectGroups = [
+  {
+    title: 'Games',
+    items: [
+      {
+        title: 'Critterwave',
+        description: 'Want to battle? Defeat waves of vicious critters!',
+        url: 'https://bunhouse.itch.io/critterwave',
+        label: 'Play',
+      },
+    ],
+  },
+  {
+    title: 'Apps',
+    items: [
+      {
+        title: 'Affirming Access',
+        description: 'Gotta go? Find Trans-safe restrooms near you ASAP!',
+        url: 'https://affirming-access.surge.sh/',
+        label: 'Find',
+      },
+      {
+        title: 'Decisionator',
+        description: "Can't make a decision? We can help!",
+        url: 'https://github.com/hayleyw7/decisionator',
+        label: 'Decide',
+      },
+      {
+        title: 'Limerickster',
+        description: 'Need to create a limerick? Have AI do it!',
+        url: 'https://hayleyw7-limerickster.hf.space/',
+        label: 'Try it',
+      },
+      {
+        title: 'Rancid Tomatillos',
+        description: "Want to watch a film? We'll help you pick!",
+        url: 'https://hayleyw7.github.io/rancid-tomatillos/',
+        label: 'Visit',
+      },
+      {
+        title: 'Type My Pet',
+        description: "What's your pet's MBTI type? Take this quiz!",
+        url: 'https://typemypet.surge.sh/',
+        label: 'Quiz',
+      },
+      {
+        title: 'Vibin Airline',
+        description: 'Time to print your boarding pass? Generate it!',
+        url: 'https://hayleyw7.github.io/vibin-airline/',
+        label: 'Board',
+      },
+    ],
+  },
+]
+
 export const socialLinks = [
   { label: 'Twitter', url: 'https://twitter.com/hayleywitherell', icon: 'fa-twitter', type: 'brands' },
   { label: 'GitHub', url: 'https://github.com/hayleyw7', icon: 'fa-github', type: 'brands' },

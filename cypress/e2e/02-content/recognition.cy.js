@@ -4,10 +4,10 @@ describe('recognition content', () => {
   beforeEach(() => cy.visitHome())
 
   it('renders all groups and cards without omissions or duplicates', () => {
-    cy.get('.recognition-group').should('have.length', Object.keys(recognition).length)
+    cy.get('#recognition .recognition-group').should('have.length', Object.keys(recognition).length)
 
     Object.entries(recognition).forEach(([group, cards]) => {
-      cy.contains('.recognition-group', group).within(() => {
+      cy.contains('#recognition .recognition-group', group).within(() => {
         cy.get('article').should('have.length', cards.length)
         cy.get('h4').then(($headings) => {
           expect([...$headings].map((heading) => heading.textContent)).to.deep.equal(cards)
@@ -17,7 +17,7 @@ describe('recognition content', () => {
   })
 
   it('pairs every card with descriptive copy and one action', () => {
-    cy.get('.recognition-group article').should('have.length', 8).each(($article) => {
+    cy.get('#recognition .recognition-group article').should('have.length', 8).each(($article) => {
       cy.wrap($article).within(() => {
         cy.get('h4').invoke('text').should('not.be.empty')
         cy.get('p').invoke('text').should('have.length.greaterThan', 20)

@@ -128,7 +128,8 @@ p {
 	margin: 0 0 1.8em 0;
 }
 
-#three p {
+#projects p,
+#recognition p {
 	margin: 0 0 1em 0 !important;
 }
 
@@ -213,11 +214,11 @@ blockquote {
 	background: #f5f7f8;
 	/* color: black; */
 	color: #263547;
-	padding: 0.75rem !important;
+	padding: 0.4rem 0.75rem !important;
 	border-radius: 4px;
 	font-family: "Courier New", monospace;
 	font-size: 0.9em;
-	margin: 0.4em 0.25em 0 0.25em;
+	margin: 0.15em 0.25em 0 0.25em;
 }
 
 .skill {
@@ -250,4 +251,3 @@ pre code {
 .align-right {
 	text-align: right;
 }
-

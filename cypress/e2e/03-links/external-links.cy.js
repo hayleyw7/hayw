@@ -4,7 +4,13 @@ describe('external links', () => {
   beforeEach(() => cy.visitHome())
 
   it('uses secure absolute destinations for every recognition action', () => {
-    cy.get('.recognition-group a').should('have.length', 8).each(($link) => {
+    cy.get('#recognition .recognition-group a').should('have.length', 8).each(($link) => {
+      cy.wrap($link).assertExternalLinkIsSafe()
+    })
+  })
+
+  it('uses secure absolute destinations for every project action', () => {
+    cy.get('#projects .recognition-group a').should('have.length', 7).each(($link) => {
       cy.wrap($link).assertExternalLinkIsSafe()
     })
   })
@@ -23,7 +29,7 @@ describe('external links', () => {
       expect(href, $link.text()).to.be.a('string').and.not.be.empty
       expect(href).not.to.match(/^javascript:/i)
       expect(href).not.to.match(/^http:\/\//i)
-      if (href.startsWith('#')) expect(href).to.equal('#one-two-b')
+      if (href.startsWith('#')) expect(href).to.equal('#intro')
     })
   })
 })

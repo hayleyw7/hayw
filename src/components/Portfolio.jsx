@@ -1,12 +1,12 @@
-import { recognitionGroups } from '../data.js'
+import { projectGroups } from '../data.js'
 import RecognitionCard from './RecognitionCard.jsx'
 
-export default function Recognition() {
+export default function Portfolio() {
   return (
-    <section id="recognition" className="main style2 special">
+    <section id="projects" className="main style1 special">
       <div className="container">
-        <header className="major"><h2>Public Recognition</h2></header>
-        {recognitionGroups.map((group) => (
+        <header className="major"><h2>Side Quests</h2></header>
+        {projectGroups.map((group) => (
           <section className="recognition-group" key={group.title}>
             <h3 className="media-title">{group.title}</h3>
             <div className={`row gtr-150${group.items.length === 1 ? ' aln-center' : ''}`}>

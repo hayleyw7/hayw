@@ -179,21 +179,21 @@ body.is-preload .embark-btn::after {
   transition: none !important;
 }
 
-#one h2,
-#three h2,
+#profile h2,
+#projects h2,
 .tagline {
 	color: #6d7f92;
 }
 
-#two h2 {
+#impact h2 {
 	color: #f5f7f8;
 }
 
-#two h3 {
+#impact h3 {
 	color: color-mix(in srgb, #6d7f92 5%, white 95%);
 }
 
-#three h3 {
+#projects h3 {
 	color: #333c44;
 }
 

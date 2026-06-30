@@ -1,7 +1,8 @@
 export const sections = [
-  { id: 'one-two-b', heading: 'Building Reliable, Usable Systems' },
-  { id: 'two', heading: 'Professional & Community Impact' },
-  { id: 'three', heading: 'Public Recognition' },
+  { id: 'intro', heading: 'Building Reliable, Usable Systems' },
+  { id: 'impact', heading: 'Professional & Community Impact' },
+  { id: 'projects', heading: 'Side Quests' },
+  { id: 'recognition', heading: 'Public Recognition' },
 ]
 
 export const skills = ['JavaScript', 'Ruby on Rails', 'React', 'HTML/CSS']
@@ -21,6 +22,11 @@ export const recognition = {
     'Seed to Sound',
     'The Rooster',
   ],
+}
+
+export const projects = {
+  Games: ['Critterwave'],
+  Apps: ['Affirming Access', 'Decisionator', 'Limerickster', 'Rancid Tomatillos', 'Type My Pet', 'Vibin Airline'],
 }
 
 export const socialLinks = {

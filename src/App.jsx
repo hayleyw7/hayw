@@ -3,6 +3,7 @@ import Footer from './components/Footer.jsx'
 import Header from './components/Header.jsx'
 import Impact from './components/Impact.jsx'
 import Introduction from './components/Introduction.jsx'
+import Portfolio from './components/Portfolio.jsx'
 import Recognition from './components/Recognition.jsx'
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       <main>
         <Introduction />
         <Impact />
+        <Portfolio />
         <Recognition />
       </main>
       <Footer />

@@ -1077,15 +1077,18 @@ margin-left: -3em;
 }
 
 @media screen and (max-width: 736px) {
-	#three h3 {
+	#projects h3,
+	#recognition h3 {
 		font-size: 130% ;
 	}
 
-	#three h4 {
+	#projects h4,
+	#recognition h4 {
 		font-size: 120% ;
 	}
 
-	#three p {
+	#projects p,
+	#recognition p {
 		font-size: 110% ;
 	}
 
@@ -1340,7 +1343,8 @@ margin-left: -3em;
 }
 
 @media screen and (max-width: 480px) {
-	#three h3 {
+	#projects h3,
+	#recognition h3 {
 		font-size: 120% !important;
 	}
 
@@ -1828,4 +1832,3 @@ margin-left: -3em;
 		padding-top: 4em;
 	}
 }
-
