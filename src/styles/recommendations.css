@@ -7,7 +7,11 @@
 }
 
 #recommendations .recommendations-source {
-  margin: 0.75em 0 0 0;
+  margin: 0.35em 0 0.5em 0;
+}
+
+#recommendations .content-group:first-of-type .media-title {
+  margin-top: 0.25em;
 }
 
 #recommendations .content-group .row.gtr-uniform {

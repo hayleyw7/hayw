@@ -39,7 +39,7 @@ describe('hover states', () => {
 
   it('defines a high-contrast hover response for recognition actions', () => {
     cy.window().then((window) => {
-      const rule = findRule(window, '.content-group .button:hover')
+      const rule = findRule(window, '#recognition .content-group .button:hover')
       expect(rule, 'recognition button hover rule').to.exist
       expect(rule.style.backgroundColor).to.equal('rgb(95, 113, 132)')
       expect(rule.style.color).to.equal('white')

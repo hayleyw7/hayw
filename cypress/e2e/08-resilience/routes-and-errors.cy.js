@@ -21,7 +21,7 @@ describe('sad paths and runtime resilience', () => {
   })
 
   it('keeps the application usable if the portrait request fails', () => {
-    cy.intercept('GET', '/images/me16.png', { statusCode: 404 }).as('missingPortrait')
+    cy.intercept('GET', '/images/me.png', { statusCode: 404 }).as('missingPortrait')
     cy.visit('/')
     cy.wait('@missingPortrait')
     cy.contains('h2', 'Building Reliable, Usable Systems').should('be.visible')

@@ -1,6 +1,0 @@
-export { skills } from './skills.js'
-export { recommendationGroups } from './recommendations.js'
-export { impactAreas } from './impact.js'
-export { recognitionGroups } from './recognition.js'
-export { projectGroups } from './projects.js'
-export { socialLinks } from './socialLinks.js'

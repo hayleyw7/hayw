@@ -19,7 +19,7 @@ export default function Introduction() {
             </div>
             <div className="col-6 col-12-medium imp-medium">
               <span className="image fit avatar-container">
-                <img className="avatar" src="/images/me16.png" alt="Hayley Witherell" />
+                <img className="avatar" src="/images/me.png" alt="Hayley Witherell" />
               </span>
             </div>
           </div>

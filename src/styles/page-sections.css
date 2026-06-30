@@ -123,9 +123,9 @@
 	padding: 9em 0 9em 0 !important;
 	background-color: #BFBCDC;
 	color: rgba(255, 255, 255, 0.75);
-	background-attachment: fixed, fixed, fixed;
-	background-image: url("../../assets/css/images/overlay2.png"), url("../../assets/css/images/overlay3.svg"),    
-	linear-gradient(45deg, 
+	background-attachment: fixed, fixed;
+	background-image: url("/assets/css/images/overlay1.svg"),
+	linear-gradient(45deg,
 		#DFE5E6 5%, 
 		#C1DEE2 7%, 
 		#B7D8DE 12%, 
@@ -147,8 +147,8 @@
 		#F7D796 100%
 	);
 
-	background-position: top left, center center, center center;
-	background-size: auto, cover, cover;
+	background-position: center center, center center;
+	background-size: cover, cover;
 	overflow: hidden;
 	position: relative;
 	text-align: center;
@@ -342,9 +342,9 @@ body.is-preload #header:after {
 	padding: 6em 0 6em 0 ;
 	background-color: #4686a0;
 	color: rgba(255, 255, 255, 0.75);
-	background-attachment: fixed,							fixed,							fixed;
-	background-image: url("../../assets/css/images/overlay2.png"), url("../../assets/css/images/overlay4.svg"),
-	linear-gradient(45deg, 
+	background-attachment: fixed, fixed;
+	background-image: url("/assets/css/images/overlay2.svg"),
+	linear-gradient(45deg,
 		#DFE5E6 5%, 
 		#C1DEE2 7%, 
 		#B7D8DE 12%, 
@@ -366,8 +366,8 @@ body.is-preload #header:after {
 		#F7D796 100%
 	);
 
-	background-position: top left,						center center,					center center;
-	background-size: auto,							cover,							cover;
+	background-position: center center, center center;
+	background-size: cover, cover;
 	text-align: center;
 }
 

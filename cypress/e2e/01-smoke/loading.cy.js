@@ -11,7 +11,7 @@ describe('loading behavior', () => {
   })
 
   it('keeps meaningful text available while the portrait is delayed', () => {
-    cy.intercept('GET', '/images/me16.png', (request) => {
+    cy.intercept('GET', '/images/me.png', (request) => {
       request.on('response', (response) => response.setDelay(500))
     }).as('portrait')
 
@@ -26,7 +26,7 @@ describe('loading behavior', () => {
 
     cy.get('img.avatar')
       .should('be.visible')
-      .and('have.attr', 'src', '/images/me16.png')
+      .and('have.attr', 'src', '/images/me.png')
       .should(($image) => {
         expect($image[0].complete, 'image loaded').to.equal(true)
         expect($image[0].naturalWidth).to.be.greaterThan(0)
