@@ -14,7 +14,7 @@ describe('document metadata', () => {
   it('provides complete Open Graph metadata', () => {
     const expected = {
       title: 'Hayley Witherell',
-      description: 'Full-stack software engineer portfolio with impact, recommendations, side projects, and recognition.',
+      description: 'Full-stack software engineer portfolio with impact, recommendations, project portfolio, and recognition.',
       image: 'https://hayw.dev/images/preview4.png',
       url: 'https://hayw.dev',
       type: 'website',
@@ -29,7 +29,7 @@ describe('document metadata', () => {
     const expected = {
       card: 'summary_large_image',
       title: 'Hayley Witherell',
-      description: 'Full-stack software engineer portfolio with impact, recommendations, side projects, and recognition.',
+      description: 'Full-stack software engineer portfolio with impact, recommendations, project portfolio, and recognition.',
       image: 'https://hayw.dev/images/preview4.png',
       url: 'https://hayw.dev',
     }

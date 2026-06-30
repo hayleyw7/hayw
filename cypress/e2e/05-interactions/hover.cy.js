@@ -57,6 +57,16 @@ describe('hover states', () => {
     cy.get('#projects .content-group .button').first().trigger('mouseover').should('be.visible')
   })
 
+  it('defines a high-contrast hover response for recommendation actions', () => {
+    cy.window().then((window) => {
+      const rule = findRule(window, '#recommendations .recommendations-source .button:hover')
+      expect(rule, 'recommendations button hover rule').to.exist
+      expect(rule.style.backgroundColor).to.equal('rgb(95, 113, 132)')
+      expect(rule.style.color).to.equal('white')
+    })
+    cy.get('#recommendations .recommendations-source .button').trigger('mouseover').should('be.visible')
+  })
+
   it('defines a visible footer-link hover color', () => {
     cy.window().then((window) => {
       const rule = findRule(window, '#footer a:hover')

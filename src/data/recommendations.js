@@ -1,3 +1,6 @@
+export const recommendationsUrl =
+  'https://www.linkedin.com/in/hayleywitherell/details/recommendations/'
+
 export const recommendationGroups = [
   {
     title: 'Autotroph',

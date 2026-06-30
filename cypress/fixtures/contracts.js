@@ -52,6 +52,9 @@ export const projects = {
   ],
 }
 
+export const recommendationsUrl =
+  'https://www.linkedin.com/in/hayleywitherell/details/recommendations/'
+
 export const socialLinks = {
   'Twitter profile': 'https://twitter.com/hayleywitherell',
   'GitHub profile': 'https://github.com/hayleyw7',

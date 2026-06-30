@@ -53,7 +53,7 @@ npm run build
 npm run test:e2e
 ```
 
-The Cypress suite has **21 spec files** and **76 tests** covering:
+The Cypress suite has **21 spec files** and **78 tests** covering:
 
 | Area | What it checks |
 |------|----------------|

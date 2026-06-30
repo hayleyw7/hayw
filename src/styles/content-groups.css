@@ -1,0 +1,31 @@
+.content-group .row.aln-center > article {
+  max-width: 28rem;
+}
+
+#recognition .content-group .button,
+#recommendations .content-group .button,
+#recommendations .recommendations-source .button {
+  color: #5f7184 !important;
+}
+
+.content-group .button:hover {
+  background-color: #5f7184;
+  color: white !important;
+}
+
+#recognition .content-group .button:hover,
+#recommendations .content-group .button:hover,
+#recommendations .recommendations-source .button:hover {
+  background-color: #5f7184;
+  color: white !important;
+}
+
+@media screen and (max-width: 480px) {
+  .content-group:not(:first-of-type) {
+    margin-top: 0.75em;
+  }
+
+  .content-group article h4 {
+    text-align: left;
+  }
+}

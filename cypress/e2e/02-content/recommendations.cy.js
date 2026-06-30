@@ -1,4 +1,4 @@
-import { recommendations } from '../../fixtures/contracts.js'
+import { recommendations, recommendationsUrl } from '../../fixtures/contracts.js'
 
 const recommendationCount = Object.values(recommendations).flat().length
 
@@ -26,6 +26,14 @@ describe('recommendations content', () => {
       cy.wrap($quote).should('have.prop', 'tagName', 'P')
     })
     cy.get('#recommendations blockquote').should('not.exist')
-    cy.get('#recommendations a').should('not.exist')
+  })
+
+  it('links to the LinkedIn recommendations page from the section header', () => {
+    cy.get('#recommendations .recommendations-source .button')
+      .should('have.length', 1)
+      .and('have.attr', 'href', recommendationsUrl)
+      .and('have.attr', 'aria-label', 'View recommendations on LinkedIn')
+      .and('contain.text', 'View on LinkedIn')
+      .assertExternalLinkIsSafe()
   })
 })
