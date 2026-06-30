@@ -1,12 +1,13 @@
 describe('document metadata', () => {
+  const previewDescription = 'Full-stack software engineer specializing in Ruby on Rails and JavaScript. Portfolio, recommendations, community leadership, and real-world impact.'
+
   beforeEach(() => cy.visitHome())
 
   it('sets the language, title, description, viewport, and favicon', () => {
     cy.get('html').should('have.attr', 'lang', 'en')
     cy.title().should('eq', 'Hayley Witherell | Software Engineer')
     cy.get('meta[name="description"]')
-      .should('have.attr', 'content')
-      .and('include', 'full-stack software engineer')
+      .should('have.attr', 'content', previewDescription)
     cy.get('meta[name="viewport"]').should('have.attr', 'content', 'width=device-width, initial-scale=1.0')
     cy.get('meta[name="referrer"]').should('have.attr', 'content', 'strict-origin-when-cross-origin')
     cy.get('link[rel="icon"]').should('have.attr', 'href', '/images/favicon.ico')
@@ -15,7 +16,7 @@ describe('document metadata', () => {
   it('provides complete Open Graph metadata', () => {
     const expected = {
       title: 'Hayley Witherell',
-      description: 'Full-stack software engineer portfolio with impact, recommendations, project portfolio, and recognition.',
+      description: previewDescription,
       image: 'https://hayw.dev/images/preview.png',
       url: 'https://hayw.dev',
       type: 'website',
@@ -30,7 +31,7 @@ describe('document metadata', () => {
     const expected = {
       card: 'summary_large_image',
       title: 'Hayley Witherell',
-      description: 'Full-stack software engineer portfolio with impact, recommendations, project portfolio, and recognition.',
+      description: previewDescription,
       image: 'https://hayw.dev/images/preview.png',
       url: 'https://hayw.dev',
     }
