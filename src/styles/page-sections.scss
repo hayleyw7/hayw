@@ -96,12 +96,16 @@
 }
 
 #header,
-#intro,
 #impact,
 #projects,
 #recommendations,
 #recognition {
 	min-height: 100vh;
+	align-content: center;
+}
+
+#intro {
+	min-height: calc(100vh - var(--section-nav-height, 3.25rem));
 	align-content: center;
 }
 

@@ -51,6 +51,17 @@ describe('mobile and narrow layout', () => {
         })
       })
 
+      it('subtracts the navbar height from the About minimum height', () => {
+        revealSectionNav()
+        cy.get('#section-nav').then(($nav) => {
+          cy.get('#intro').should(($intro) => {
+            const expected = height - $nav[0].getBoundingClientRect().height
+            const actual = Number.parseFloat(getComputedStyle($intro[0]).minHeight)
+            expect(actual).to.be.closeTo(expected, 1)
+          })
+        })
+      })
+
       it('keeps portrait dimensions responsive', () => {
         cy.get('img.avatar').then(($avatar) => {
           const bounds = $avatar[0].getBoundingClientRect()
