@@ -1,7 +1,7 @@
 /* Main */
 
 .main {
-	padding: 6em 0 4em 0 ;
+	padding: 8em 0 8em 0 ;
 }
 
 .main.style1 {
@@ -105,7 +105,15 @@
 #skills {
 	min-height: auto;
 	padding-top: 1.5em;
-	padding-bottom: 1.5em;
+	padding-bottom: 2.5em;
+}
+
+#projects {
+	padding-bottom: 9.5em;
+}
+
+#impact {
+	margin-top: 2.5em;
 }
 
 /* Header */

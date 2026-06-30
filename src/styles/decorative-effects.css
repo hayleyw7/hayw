@@ -185,12 +185,19 @@ body.is-preload .embark-btn::after {
 	color: #6d7f92;
 }
 
-#impact h2 {
-	color: #f5f7f8;
+#impact h2,
+#recognition h2 {
+	color: #9db1c0;
 }
 
-#impact h3 {
-	color: color-mix(in srgb, #6d7f92 5%, white 95%);
+#impact h3,
+#recognition h3 {
+	color: #c5d3de;
+}
+
+#impact h4,
+#recognition h4 {
+	color: #ffffff;
 }
 
 #projects h3 {

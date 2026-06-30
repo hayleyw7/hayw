@@ -86,7 +86,7 @@ export const recognitionGroups = [
 
 export const projectGroups = [
   {
-    title: 'Games',
+    title: 'Video Games',
     items: [
       {
         title: 'Critterwave',
@@ -97,7 +97,7 @@ export const projectGroups = [
     ],
   },
   {
-    title: 'Apps',
+    title: 'Web Applications',
     items: [
       {
         title: 'Affirming Access',

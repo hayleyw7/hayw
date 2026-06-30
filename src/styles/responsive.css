@@ -36,7 +36,7 @@
 	/* Main */
 
 	.main {
-		padding: 4em 0 2em 0 ;
+		padding: 5em 0 5em 0 ;
 	}
 
 	.main.style2 {
@@ -93,7 +93,7 @@
 	/* Main */
 
 	.main {
-		padding: 5em 3em 3em 3em ;
+		padding: 6em 3em 6em 3em ;
 
 	}
 
@@ -125,6 +125,18 @@
 	#projects p,
 	#recognition p {
 		margin-bottom: 0.75rem;
+	}
+
+	#impact {
+		margin-top: 1.5em;
+	}
+
+	#projects {
+		padding-bottom: 7.5em;
+	}
+
+	#skills {
+		padding-bottom: 1.75em;
 	}
 }
 
@@ -187,7 +199,7 @@
 	/* Main */
 
 	.main {
-		padding: 3em 1.5em 1em 1.5em ;
+		padding: 4em 1.5em 4em 1.5em ;
 	}
 
 	/* Header */
@@ -236,7 +248,7 @@
 	/* Main */
 
 	.main {
-		padding: 2em 1.5em 0.1em 1.5em ;
+		padding: 3em 1.5em 3em 1.5em ;
 	}
 
 	/* Header */
@@ -284,7 +296,7 @@
 	/* Main */
 
 	.main {
-		padding: 2em 1em 0.1em 1em ;
+		padding: 3em 1em 3em 1em ;
 	}
 
 	/* Header */

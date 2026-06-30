@@ -51,7 +51,7 @@ describe('mobile and narrow layout', () => {
         cy.get('#recognition .recognition-group:not(:first-of-type)')
           .should('have.length', 2)
           .each(($group) => {
-            cy.wrap($group).should('have.css', 'margin-top', '16px')
+            cy.wrap($group).should('have.css', 'margin-top', '12px')
           })
       })
 
