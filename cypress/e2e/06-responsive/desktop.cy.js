@@ -44,4 +44,39 @@ describe('desktop layout', () => {
       expect(card.left).to.be.closeTo(row.left, 1)
     })
   })
+
+  context('narrow desktop', () => {
+    beforeEach(() => {
+      cy.viewport(1141, 800)
+      cy.visitHome()
+    })
+
+    it('keeps the two-column desktop layout just above the breakpoint', () => {
+      cy.get('.main-content-container').then(($column) => {
+        expect($column[0].getBoundingClientRect().width).to.be.closeTo(
+          $column[0].parentElement.getBoundingClientRect().width / 2,
+          2,
+        )
+      })
+      cy.get('.major-icons-container').then(($column) => {
+        expect($column[0].getBoundingClientRect().width).to.be.closeTo(
+          $column[0].parentElement.getBoundingClientRect().width / 2,
+          2,
+        )
+      })
+    })
+
+    it('keeps the section nav usable without horizontal overflow', () => {
+      cy.get('#section-nav').should('have.attr', 'hidden')
+      cy.window().then((win) => {
+        win.scrollTo(0, win.innerHeight / 2)
+      })
+      cy.get('#section-nav').should('have.attr', 'hidden')
+      cy.get('#header').then(($header) => {
+        cy.window().then((win) => win.scrollTo(0, $header.outerHeight()))
+      })
+      cy.get('#section-nav').should('be.visible')
+      cy.assertNoHorizontalOverflow()
+    })
+  })
 })

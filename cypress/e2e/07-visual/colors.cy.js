@@ -34,4 +34,19 @@ describe('color and typography contracts', () => {
       .and('include', 'linear-gradient')
     cy.get('#header h1').should('have.css', 'color', 'rgb(255, 255, 255)')
   })
+
+  it('still renders with the fallback font stack if the web font stylesheet fails', () => {
+    cy.intercept('GET', 'https://fonts.googleapis.com/**', {
+      statusCode: 503,
+      body: '',
+    })
+
+    cy.visitHome()
+
+    cy.get('body')
+      .should('be.visible')
+      .and('have.css', 'font-family')
+      .and('match', /Source Sans Pro/)
+      .and('match', /sans-serif/)
+  })
 })

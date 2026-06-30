@@ -86,6 +86,41 @@ describe('scroll behavior', () => {
     cy.location('hash').should('eq', '#impact')
   })
 
+  it('restores section scroll when using browser back and forward', () => {
+    cy.window().then((win) => {
+      win.scrollTo(0, win.innerHeight)
+    })
+    cy.get('#section-nav a[href="#impact"]').click({ scrollBehavior: false })
+    cy.location('hash').should('eq', '#impact')
+    cy.get('#impact').should('be.visible')
+
+    cy.go('back')
+    cy.location('hash').should('eq', '')
+    cy.window().its('scrollY').should('eq', 0)
+    cy.get('#header').should('be.visible')
+
+    cy.go('forward')
+    cy.location('hash').should('eq', '#impact')
+    cy.get('#impact').should(($impact) => {
+      const nav = $impact[0].ownerDocument.querySelector('#section-nav')
+      const difference = $impact[0].getBoundingClientRect().top
+        - nav.getBoundingClientRect().bottom
+      expect(Math.abs(difference)).to.be.lessThan(1)
+    })
+  })
+
+  it('keeps direct fragment loads aligned beneath the navbar', () => {
+    cy.visit('/#impact')
+    cy.location('hash').should('eq', '#impact')
+    cy.get('#section-nav').should('be.visible')
+    cy.get('#impact').should(($impact) => {
+      const nav = $impact[0].ownerDocument.querySelector('#section-nav')
+      const difference = $impact[0].getBoundingClientRect().top
+        - nav.getBoundingClientRect().bottom
+      expect(Math.abs(difference)).to.be.lessThan(12)
+    })
+  })
+
   it('navigates to contact and cues the footer icons on arrival', () => {
     cy.window().then((win) => {
       win.scrollTo(0, win.innerHeight)
@@ -118,6 +153,78 @@ describe('scroll behavior', () => {
         const sectionTop = $target[0].getBoundingClientRect().top
         expect(Math.abs(sectionTop - navBottom)).to.be.lessThan(1)
       })
+    })
+  })
+
+  it('recalculates the navbar offset after a viewport resize', () => {
+    cy.get('#header').then(($header) => {
+      cy.window().then((win) => win.scrollTo(0, $header.outerHeight()))
+    })
+    cy.get('#section-nav').should('be.visible')
+
+    cy.get('#section-nav').then(($nav) => {
+      const desktopNavHeight = $nav[0].getBoundingClientRect().height
+
+      cy.viewport(390, 844)
+      cy.get('#section-nav').should('be.visible')
+      cy.get('#section-nav').then(($resizedNav) => {
+        const mobileNavHeight = $resizedNav[0].getBoundingClientRect().height
+        expect(mobileNavHeight).to.not.equal(desktopNavHeight)
+      })
+
+      cy.get('#section-nav a[href="#projects"]').click({ scrollBehavior: false })
+      cy.get('#projects').should(($projects) => {
+        const nav = $projects[0].ownerDocument.querySelector('#section-nav')
+        const difference = $projects[0].getBoundingClientRect().top
+          - nav.getBoundingClientRect().bottom
+        expect(Math.abs(difference)).to.be.lessThan(1)
+      })
+    })
+  })
+
+  it('keeps hash navigation aligned after resizing from a deep scroll position', () => {
+    cy.window().then((win) => {
+      win.scrollTo(0, win.document.documentElement.scrollHeight)
+    })
+    cy.get('#section-nav').should('be.visible')
+
+    cy.viewport(390, 844)
+    cy.get('#section-nav').should('be.visible')
+    cy.get('#section-nav a[href="#intro"]').click({ scrollBehavior: false })
+    cy.get('#intro').should(($intro) => {
+      const nav = $intro[0].ownerDocument.querySelector('#section-nav')
+      const difference = $intro[0].getBoundingClientRect().top
+        - nav.getBoundingClientRect().bottom
+      expect(Math.abs(difference)).to.be.lessThan(1)
+    })
+  })
+
+  it('loads the footer directly with the footer still visible', () => {
+    cy.visit('/#footer')
+    cy.location('hash').should('eq', '#footer')
+    cy.get('#footer').should('be.visible')
+    cy.get('#section-nav').should('be.visible')
+  })
+
+  it('restores the previous section when backing out of Contact after a resize', () => {
+    cy.get('#header').then(($header) => {
+      cy.window().then((win) => win.scrollTo(0, $header.outerHeight()))
+    })
+    cy.get('#section-nav a[href="#projects"]').click({ scrollBehavior: false })
+    cy.location('hash').should('eq', '#projects')
+
+    cy.get('#section-nav a[href="#footer"]').click({ scrollBehavior: false })
+    cy.location('hash').should('eq', '#footer')
+    cy.get('#footer .icons').should('have.class', 'contact-arrival')
+
+    cy.viewport(390, 844)
+    cy.go('back')
+    cy.location('hash').should('eq', '#projects')
+    cy.get('#projects').should(($projects) => {
+      const nav = $projects[0].ownerDocument.querySelector('#section-nav')
+      const difference = $projects[0].getBoundingClientRect().top
+        - nav.getBoundingClientRect().bottom
+      expect(Math.abs(difference)).to.be.lessThan(1)
     })
   })
 })

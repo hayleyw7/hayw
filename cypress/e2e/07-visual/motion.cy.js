@@ -20,6 +20,24 @@ describe('motion preferences', () => {
     })
   })
 
+  it('suppresses the contact arrival animation for reduced motion', () => {
+    cy.then(() => Cypress.automation('remote:debugger:protocol', {
+      command: 'Emulation.setEmulatedMedia',
+      params: { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] },
+    }))
+    cy.visitHome()
+
+    cy.window().then((win) => {
+      win.scrollTo(0, win.innerHeight)
+    })
+    cy.get('#section-nav a[href="#footer"]').click({ scrollBehavior: false })
+    cy.get('#footer .icons').should('have.class', 'contact-arrival')
+    cy.get('#footer .icons li').first().should(($icon) => {
+      const { animationDuration } = getComputedStyle($icon[0])
+      expect(Number.parseFloat(animationDuration)).to.be.at.most(0.00001)
+    })
+  })
+
   afterEach(() => {
     cy.then(() => Cypress.automation('remote:debugger:protocol', {
       command: 'Emulation.setEmulatedMedia',

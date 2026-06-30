@@ -10,6 +10,7 @@ describe('mobile and narrow layout', () => {
   const viewports = [
     ['common phone', 375, 667],
     ['minimum supported', 320, 568],
+    ['short phone', 390, 420],
   ]
 
   viewports.forEach(([name, width, height]) => {
@@ -38,6 +39,15 @@ describe('mobile and narrow layout', () => {
           const bounds = $link[0].getBoundingClientRect()
           expect(bounds.left).to.be.at.least(0)
           expect(bounds.right).to.be.at.most(width)
+        })
+      })
+
+      it('keeps the section navigation fully visible on short viewports', () => {
+        revealSectionNav()
+        cy.get('#section-nav').should(($nav) => {
+          const bounds = $nav[0].getBoundingClientRect()
+          expect(bounds.top).to.be.at.least(0)
+          expect(bounds.bottom).to.be.at.most(height)
         })
       })
 
