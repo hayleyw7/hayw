@@ -8,6 +8,12 @@ export const projectGroups = [
         url: 'https://bunhouse.itch.io/critterwave',
         label: 'Play',
       },
+      {
+        title: 'Flickmoji',
+        description: 'Movie trivia aficionado? Prove it!',
+        label: 'Soon',
+        comingSoon: true,
+      },
     ],
   },
   {

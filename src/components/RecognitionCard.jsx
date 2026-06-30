@@ -7,7 +7,13 @@ export default function RecognitionCard({ item }) {
       <p>{item.description}</p>
       <ul className="actions special">
         <li>
-          <ExternalLink url={item.url} className="button">{item.label}</ExternalLink>
+          {item.comingSoon ? (
+            <button type="button" className="button" disabled>
+              {item.label}
+            </button>
+          ) : (
+            <ExternalLink url={item.url} className="button">{item.label}</ExternalLink>
+          )}
         </li>
       </ul>
     </article>

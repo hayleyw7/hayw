@@ -18,12 +18,19 @@ describe('projects content', () => {
   })
 
   it('pairs every project card with descriptive copy and one action', () => {
-    cy.get('#portfolio .content-group article').should('have.length', 7).each(($article) => {
+    cy.get('#portfolio .content-group article').should('have.length', 8).each(($article) => {
       cy.wrap($article).within(() => {
         cy.get('h4').invoke('text').should('not.be.empty')
         cy.get('p').invoke('text').should('have.length.greaterThan', 10)
-        cy.get('a.button').should('have.length', 1).and('not.have.text', '')
+        cy.get('.actions.special .button').should('have.length', 1).and('not.have.text', '')
       })
+    })
+  })
+
+  it('shows Flickmoji as coming soon with a disabled action', () => {
+    cy.contains('#portfolio article h4', 'Flickmoji').closest('article').within(() => {
+      cy.get('p').should('contain.text', 'Movie trivia aficionado? Prove it!')
+      cy.get('button.button').should('be.disabled').and('have.text', 'Soon')
     })
   })
 })

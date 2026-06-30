@@ -52,7 +52,7 @@ export const recognition = {
 }
 
 export const projects = {
-  'Video Games': ['Critterwave'],
+  'Video Games': ['Critterwave', 'Flickmoji'],
   'Web Applications': [
     'Affirming Access',
     'Decisionator',
