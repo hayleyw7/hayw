@@ -84,7 +84,7 @@ npm run test:e2e
 
 `test:e2e` starts the Vite dev server and runs the full Cypress suite. Use `npm run cypress:open` for interactive debugging while the dev server is running.
 
-The Cypress suite has **21 spec files** and **133 tests** covering:
+The Cypress suite has **21 spec files** and **136 tests** covering:
 
 | Area | What it checks |
 |------|----------------|

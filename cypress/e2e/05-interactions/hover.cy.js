@@ -41,18 +41,23 @@ describe('hover states', () => {
     cy.get('.embark-btn').trigger('mouseover').should('be.visible')
   })
 
-  it('applies branded Embark hover styles instead of generic header link hovers', () => {
-    const HEADER_LINK_HOVER_BG = 'rgba(255, 255, 255, 0.125)'
+  it('keeps Embark hover styles ahead of generic header link and button hovers', () => {
+    cy.window().then((window) => {
+      const embarkRule = findRule(window, '#header .embark-btn:hover')
+      const genericButtonHover = findRule(window, '#header .button:hover')
+      const genericAnchorHover = findRule(window, '#header a:hover')
+      const scopedButtonHover = findRule(window, '#header .button:not(.embark-btn):hover')
+      const scopedAnchorHover = findRule(window, '#header a:not(.embark-btn):hover')
 
-    cy.get('#header .embark-btn')
-      .should('have.css', 'color', WHITE)
-      .trigger('mouseover')
-      .should('have.css', 'background-color', WHITE)
-      .and('have.css', 'color', BLUE_GRAY)
-      .and('have.css', 'opacity', '0.8')
-      .and('not.have.css', 'background-color', HEADER_LINK_HOVER_BG)
-
-    cy.get('#header .embark-btn strong').should('have.css', 'color', BLUE_GRAY)
+      expect(embarkRule, 'Embark hover rule').to.exist
+      expect(scopedButtonHover, 'scoped header button hover rule').to.exist
+      expect(scopedAnchorHover, 'scoped header anchor hover rule').to.exist
+      expect(genericButtonHover, 'generic header button hover rule').to.not.exist
+      expect(genericAnchorHover, 'generic header anchor hover rule').to.not.exist
+      expect(embarkRule.style.background).to.include('255, 255, 255')
+      expect(embarkRule.style.color).to.equal(BLUE_GRAY)
+      expect(embarkRule.style.opacity).to.equal('0.8')
+    })
   })
 
   it('defines a high-contrast hover response for recognition actions', () => {
@@ -101,5 +106,36 @@ describe('hover states', () => {
       expect(rule.style.color).to.equal(WHITE)
     })
     cy.get('#contact .footer-text').trigger('mouseover').should('be.visible')
+  })
+
+  it('defines a visible section nav hover color', () => {
+    cy.window().then((window) => {
+      const rule = findRule(window, '.section-nav a:hover')
+      expect(rule, 'section nav hover rule').to.exist
+      expect(rule.style.color).to.equal(WHITE)
+    })
+
+    cy.get('#header').then(($header) => {
+      cy.window().then((win) => win.scrollTo(0, $header.outerHeight()))
+    })
+    cy.get('#section-nav').should('be.visible')
+    cy.get('#section-nav a[href="#impact"]').trigger('mouseover').should('be.visible')
+  })
+
+  it('defines a footer invitation icon wiggle on hover', () => {
+    cy.window().then((window) => {
+      const rule = findRule(window, '.footer-text:hover + .icons li')
+      expect(rule, 'footer invitation icon hover rule').to.exist
+      expect(rule.style.animation).to.include('contact-icon-wiggle')
+    })
+  })
+
+  it('defines cloud raindrop animation on hover', () => {
+    cy.window().then((window) => {
+      const rule = findRule(window, '.cloud-container:hover .drop1')
+      expect(rule, 'cloud hover rule').to.exist
+      expect(rule.style.animation).to.include('drop')
+    })
+    cy.get('.cloud-container').trigger('mouseover').should('be.visible')
   })
 })
