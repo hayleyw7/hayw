@@ -1,5 +1,5 @@
 export const sectionNavItems = [
-  { label: 'About', href: '#intro', target: '#profile' },
+  { label: 'About', href: '#intro', target: '#intro' },
   { label: 'Impact', href: '#impact', target: '#impact' },
   { label: 'Recommendations', href: '#recommendations', target: '#recommendations' },
   { label: 'Portfolio', href: '#projects', target: '#projects' },

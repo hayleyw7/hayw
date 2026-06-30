@@ -15,6 +15,10 @@ function getScrollTarget(href) {
 }
 
 function getNavInset() {
+  const nav = document.querySelector('#section-nav')
+  const liveHeight = nav?.getBoundingClientRect().height
+  if (liveHeight > 0) return liveHeight
+
   if (cachedNavHeight > 0) return cachedNavHeight
 
   const fromCss = Number.parseFloat(
@@ -35,7 +39,7 @@ export function scrollToSection(
   const target = getScrollTarget(href)
   if (!target) return
 
-  const top = getSectionTop(target) - getNavInset()
+  const top = Math.ceil(getSectionTop(target) - getNavInset())
   window.scrollTo({ top: Math.max(0, top), behavior })
 
   if (updateHistory) {

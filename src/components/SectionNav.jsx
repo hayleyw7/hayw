@@ -12,7 +12,10 @@ export default function SectionNav({ onContactNavigate }) {
 
     const updateVisibility = () => {
       const { bottom } = header.getBoundingClientRect()
-      setVisible(bottom <= 0)
+      const navHeight = nav.getBoundingClientRect().height || Number.parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue('--section-nav-height'),
+      )
+      setVisible(bottom <= Math.ceil(navHeight) + 1)
     }
 
     const updateNavHeight = () => {
@@ -26,12 +29,15 @@ export default function SectionNav({ onContactNavigate }) {
 
     updateVisibility()
     updateNavHeight()
+    const navResizeObserver = new ResizeObserver(updateNavHeight)
+    navResizeObserver.observe(nav)
     window.addEventListener('scroll', updateVisibility, { passive: true })
     window.addEventListener('resize', onResize)
 
     return () => {
       window.removeEventListener('scroll', updateVisibility)
       window.removeEventListener('resize', onResize)
+      navResizeObserver.disconnect()
     }
   }, [])
 

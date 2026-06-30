@@ -329,6 +329,8 @@ body.is-preload #header:after {
 
 #footer {
 	padding: 6em 0 6em 0 ;
+	min-height: calc(100vh - var(--section-nav-height, 3.25rem));
+	align-content: center;
 	background-color: v.$color-brand-blue;
 	color: v.$color-white-75;
 	background-attachment: fixed, fixed;
