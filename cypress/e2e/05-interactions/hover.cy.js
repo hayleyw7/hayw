@@ -75,4 +75,13 @@ describe('hover states', () => {
     })
     cy.get('#contact a').first().trigger('mouseover').should('be.visible')
   })
+
+  it('defines a visible footer invitation hover color', () => {
+    cy.window().then((window) => {
+      const rule = findRule(window, '.footer-text:hover')
+      expect(rule, 'footer invitation hover rule').to.exist
+      expect(rule.style.color).to.equal('rgb(255, 255, 255)')
+    })
+    cy.get('#contact .footer-text').trigger('mouseover').should('be.visible')
+  })
 })
