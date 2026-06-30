@@ -21,14 +21,12 @@ button.button.primary.expand-btn.medium {
 .skill-col {
 	list-style: none;
 	padding: 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: stretch;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .skill {
-	flex: 1;
+	min-width: 0;
 }
 
 .techspace {

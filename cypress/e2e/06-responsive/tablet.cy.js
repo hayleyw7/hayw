@@ -25,18 +25,45 @@ describe('tablet layout', () => {
     cy.get('.avatar-container').should('have.css', 'justify-content', 'center')
     cy.get('img.avatar').should(($avatar) => {
       const bounds = $avatar[0].getBoundingClientRect()
+      const heading = $avatar[0].closest('#profile').querySelector('h2').getBoundingClientRect()
+      const avatarCenter = bounds.left + bounds.width / 2
+      const headingCenter = heading.left + heading.width / 2
+      expect(avatarCenter).to.be.closeTo(headingCenter, 2)
       expect(bounds.width).to.be.closeTo(bounds.height, 1)
       expect(getComputedStyle($avatar[0]).borderRadius).to.equal('50%')
     })
   })
 
-  it('keeps all six impact icons in one row above the copy', () => {
+  it('centers the portrait just below the medium breakpoint', () => {
+    cy.viewport(767, 1024)
+    cy.visitHome()
+    cy.get('img.avatar').should(($avatar) => {
+      const bounds = $avatar[0].getBoundingClientRect()
+      const heading = $avatar[0].closest('#profile').querySelector('h2').getBoundingClientRect()
+      const avatarCenter = bounds.left + bounds.width / 2
+      const headingCenter = heading.left + heading.width / 2
+      expect(avatarCenter).to.be.closeTo(headingCenter, 2)
+    })
+  })
+
+  it('lays out impact icons in two balanced rows of three above the copy', () => {
     cy.get('.major-icons-container').then(($iconsColumn) => {
       const icons = $iconsColumn[0].getBoundingClientRect()
       const copy = $iconsColumn[0].nextElementSibling.getBoundingClientRect()
       expect(icons.width).to.be.closeTo($iconsColumn[0].parentElement.getBoundingClientRect().width, 2)
       expect(icons.top).to.be.lessThan(copy.top)
     })
+    cy.get('#impact ul.major-icons li').then(($icons) => {
+      const rows = [...$icons].map((icon) => Math.round(icon.getBoundingClientRect().top))
+      expect(new Set(rows.slice(0, 3)).size).to.equal(1)
+      expect(new Set(rows.slice(3)).size).to.equal(1)
+      expect(rows[3]).to.be.greaterThan(rows[0])
+    })
+  })
+
+  it('keeps impact icons in one row at the narrow two-column breakpoint', () => {
+    cy.viewport(851, 1024)
+    cy.visitHome()
     cy.get('#impact ul.major-icons li').then(($icons) => {
       const rows = [...$icons].map((icon) => Math.round(icon.getBoundingClientRect().top))
       expect(new Set(rows).size).to.equal(1)
@@ -46,8 +73,8 @@ describe('tablet layout', () => {
   it('keeps the skills outline compact', () => {
     cy.get('.skill-col').should(($skills) => {
       const style = getComputedStyle($skills[0])
-      expect(Number.parseFloat(style.paddingTop)).to.be.lessThan(5)
-      expect(Number.parseFloat(style.paddingBottom)).to.be.lessThan(5)
+      expect(Number.parseFloat(style.paddingTop)).to.be.lessThan(8)
+      expect(Number.parseFloat(style.paddingBottom)).to.be.lessThan(8)
     })
     cy.get('.skill').each(($skill) => {
       expect(Number.parseFloat(getComputedStyle($skill[0]).marginTop)).to.equal(0)

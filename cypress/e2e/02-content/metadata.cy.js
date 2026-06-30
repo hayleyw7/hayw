@@ -1,5 +1,5 @@
 describe('document metadata', () => {
-  const previewDescription = 'Full-stack software engineer specializing in Ruby on Rails and JavaScript. Portfolio, recommendations, community leadership, and real-world impact.'
+  const previewDescription = 'Full-stack software engineer specializing in Ruby on Rails and JavaScript. Featured projects, professional recommendations, community leadership, and recognition.'
 
   beforeEach(() => cy.visitHome())
 
@@ -17,7 +17,7 @@ describe('document metadata', () => {
     const expected = {
       title: 'Hayley Witherell',
       description: previewDescription,
-      image: 'https://hayw.dev/images/preview.png',
+      image: 'https://hayw.dev/images/preview-card-20260630.png',
       url: 'https://hayw.dev',
       type: 'website',
     }
@@ -32,7 +32,7 @@ describe('document metadata', () => {
       card: 'summary_large_image',
       title: 'Hayley Witherell',
       description: previewDescription,
-      image: 'https://hayw.dev/images/preview.png',
+      image: 'https://hayw.dev/images/preview-card-20260630.png',
       url: 'https://hayw.dev',
     }
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { sectionNavItems } from '../data/sectionNav.js'
 import { getActiveSectionHref } from '../utils/activeSection.js'
-import { scrollToSection, setSectionNavHeight } from '../utils/scrollToSection.js'
+import { scrollToSection, setSectionNavHeight, measureSectionNavHeight } from '../utils/scrollToSection.js'
 
 export default function SectionNav({ onContactNavigate }) {
   const [visible, setVisible] = useState(false)
@@ -33,7 +33,7 @@ export default function SectionNav({ onContactNavigate }) {
     }
 
     const updateNavHeight = () => {
-      setSectionNavHeight(nav.getBoundingClientRect().height)
+      setSectionNavHeight(measureSectionNavHeight(nav))
     }
 
     const onResize = () => {

@@ -2,6 +2,28 @@ import { sectionScrollTargets } from '../data/sectionNav.js'
 
 let cachedNavHeight = 0
 
+export function measureSectionNavHeight(nav = document.querySelector('#section-nav')) {
+  if (!nav) return 0
+
+  const liveHeight = nav.getBoundingClientRect().height
+  if (liveHeight > 0) return Math.ceil(liveHeight)
+
+  const wasHidden = nav.hidden
+  const previousVisibility = nav.style.visibility
+  const previousPointerEvents = nav.style.pointerEvents
+
+  nav.hidden = false
+  nav.style.visibility = 'hidden'
+  nav.style.pointerEvents = 'none'
+  const measured = Math.ceil(nav.getBoundingClientRect().height)
+
+  nav.style.visibility = previousVisibility
+  nav.style.pointerEvents = previousPointerEvents
+  if (wasHidden) nav.hidden = true
+
+  return measured
+}
+
 export function setSectionNavHeight(height) {
   if (height > 0) {
     cachedNavHeight = height
@@ -16,8 +38,8 @@ export function getScrollTarget(href) {
 
 export function getNavInset() {
   const nav = document.querySelector('#section-nav')
-  const liveHeight = nav?.getBoundingClientRect().height
-  if (liveHeight > 0) return liveHeight
+  const measured = measureSectionNavHeight(nav)
+  if (measured > 0) return measured
 
   if (cachedNavHeight > 0) return cachedNavHeight
 

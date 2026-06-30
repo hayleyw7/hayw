@@ -152,7 +152,7 @@ describe('desktop layout', () => {
       cy.get('#profile h2 .mobile-line-break').should('have.css', 'display', 'block')
       cy.get('#impact h2 .mobile-line-break').should('have.css', 'display', 'block')
       cy.get('.skill-col').should(($skills) => {
-        expect(Number.parseFloat(getComputedStyle($skills[0]).paddingTop)).to.be.lessThan(5)
+        expect(Number.parseFloat(getComputedStyle($skills[0]).paddingTop)).to.be.lessThan(8)
       })
       cy.get('#contact .footer-text span').should('be.visible')
     })

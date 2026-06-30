@@ -16,6 +16,34 @@ describe('scroll behavior', () => {
     cy.location('hash').should('eq', '')
   })
 
+  it('aligns About beneath the navbar after Embark', () => {
+    cy.viewport(390, 844)
+    cy.visit('/')
+    cy.get('#section-nav').should('have.attr', 'hidden')
+    cy.get('.embark-btn').click()
+    cy.get('#section-nav', { timeout: 10000 }).should('be.visible')
+    cy.get('#about').should(($about) => {
+      const nav = $about[0].ownerDocument.querySelector('#section-nav')
+      const difference = $about[0].getBoundingClientRect().top
+        - nav.getBoundingClientRect().bottom
+      expect(Math.abs(difference)).to.be.lessThan(2)
+    })
+  })
+
+  it('aligns About beneath the navbar after Embark on desktop', () => {
+    cy.viewport(1280, 800)
+    cy.visit('/')
+    cy.get('#section-nav').should('have.attr', 'hidden')
+    cy.get('.embark-btn').click()
+    cy.get('#section-nav', { timeout: 10000 }).should('be.visible')
+    cy.get('#about').should(($about) => {
+      const nav = $about[0].ownerDocument.querySelector('#section-nav')
+      const difference = $about[0].getBoundingClientRect().top
+        - nav.getBoundingClientRect().bottom
+      expect(Math.abs(difference)).to.be.lessThan(2)
+    })
+  })
+
   it('can scroll through each major section and reach the footer', () => {
     ;['#about', '#impact', '#recommendations', '#portfolio', '#recognition', '#contact'].forEach((selector) => {
       cy.get(selector).scrollIntoView().should('be.visible')

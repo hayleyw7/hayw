@@ -14,6 +14,18 @@
 
 /* Large */
 
+@media screen and (min-width: calc(v.$breakpoint-tablet + 1px)) {
+	.avatar-container.image.fit {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.avatar-container.image.fit img {
+		width: auto;
+	}
+}
+
 @media screen and (max-width: v.$breakpoint-desktop) {
 	body, input, select, textarea {
 		font-size: 13pt;
@@ -71,22 +83,64 @@
 		order: initial;
 	}
 
+	#profile .avatar-container.image.fit {
+		justify-content: flex-end;
+	}
+
+	#impact ul.major-icons {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+		row-gap: 0;
+	}
+
+	#impact ul.major-icons li {
+		padding: 0.75em;
+	}
+
+	#impact ul.major-icons li .icon {
+		height: 4.5em;
+		line-height: 4.5em;
+		width: 4.5em;
+	}
+
 	#profile h2 .mobile-line-break {
 		display: block;
 	}
 }
 
 @media screen and (max-width: v.$breakpoint-tablet) {
+	.avatar-container.image.fit {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.avatar-container.image.fit img {
+		width: auto;
+	}
+
 	.avatar {
-		margin-left: 1.5rem;
-		margin-right: 1.5rem;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.skill-col {
-		padding-block: 0.2rem;
+		padding-block: 0.4rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.2rem 0.35rem;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+		box-sizing: border-box;
 	}
 
 	.skill {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.25rem 0.35rem;
+		text-align: center;
+		line-height: 1.2;
+		overflow-wrap: anywhere;
 		margin-top: 0;
 	}
 
@@ -94,20 +148,33 @@
 
 	.major-icons-container {
 		margin-bottom: 2em;
+		width: 100%;
+		justify-content: stretch;
+		align-items: stretch;
 	}
 
 	ul.major-icons {
-		grid-template-columns: repeat(6, minmax(0, 1fr));
+		grid-template-columns: repeat(3, auto);
+		justify-content: center;
+		row-gap: 3rem;
+		column-gap: 3.35rem;
+		height: auto;
+		align-content: start;
+		width: 100%;
 	}
 
 	ul.major-icons li {
-		padding: 0.75em;
+		padding: 0.25rem 0;
 	}
 
 	ul.major-icons li .icon {
-		height: 4.5em;
-		line-height: 4.5em;
-		width: 4.5em;
+		height: 5.25rem;
+		line-height: 5.25rem;
+		width: 5.25rem;
+	}
+
+	ul.major-icons li .icon:before {
+		font-size: 50px;
 	}
 
 	/* Header */
@@ -169,20 +236,25 @@
 
 	ul.major-icons {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
+		row-gap: 1.35rem;
+		column-gap: 0.2rem;
+		height: auto;
+		align-content: start;
+		width: 100%;
 	}
 
 	ul.major-icons li {
-		padding: 0.5em;
+		padding: 0.5rem 0.15rem;
 	}
 
 	ul.major-icons li .icon {
-		height: 4em;
-		line-height: 4em;
-		width: 4em;
+		height: 3.75rem;
+		line-height: 3.75rem;
+		width: 3.75rem;
 	}
 
 	ul.major-icons li .icon:before {
-		font-size: 42px;
+		font-size: 38px;
 	}
 
 	/* Icon */
@@ -221,6 +293,35 @@
 /* XSmall */
 
 @media screen and (max-width: v.$breakpoint-mobile) {
+	.skill-col {
+		gap: 0.15rem 0.15rem;
+		padding-block: 0.35rem;
+		font-size: 0.95em;
+	}
+
+	.skill {
+		padding: 0.2rem 0.3rem;
+	}
+
+	ul.major-icons {
+		row-gap: 1.5rem;
+		column-gap: 0.15rem;
+	}
+
+	ul.major-icons li {
+		padding: 0.55rem 0.1rem;
+	}
+
+	ul.major-icons li .icon {
+		height: 4rem;
+		line-height: 4rem;
+		width: 4rem;
+	}
+
+	ul.major-icons li .icon:before {
+		font-size: 40px;
+	}
+
 	#portfolio p,
 	#recommendations p,
 	#recognition p {
