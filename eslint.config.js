@@ -25,4 +25,16 @@ export default [
       ...reactRefresh.configs.vite.rules,
     },
   },
+  {
+    files: ['cypress/**/*.js'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.mocha,
+        Cypress: 'readonly',
+        cy: 'readonly',
+        expect: 'readonly',
+      },
+    },
+  },
 ]

@@ -21,7 +21,14 @@ npm run dev
 ```bash
 npm run lint
 npm run build
+npm run test:e2e
 ```
+
+The Cypress suite is split into focused specs under `cypress/e2e`. It covers content
+contracts, metadata, loading and failure states, external-link security, WCAG A/AA
+checks, keyboard and scroll interaction, hover states, responsive layouts, colors,
+reduced motion, and runtime error handling. Use `npm run cypress:open` for interactive
+debugging while the Vite development server is running.
 
 Pushes to `main` trigger the GitHub Pages deployment workflow in `.github/workflows/deploy.yml`.
 

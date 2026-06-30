@@ -3676,7 +3676,7 @@ body.is-preload #header:after {
 	/* Basic */
 
 	html, body {
-		min-width: 320px;
+		min-width: 0;
 	}
 
 	/* Main */
