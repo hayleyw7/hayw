@@ -33,14 +33,14 @@ describe('mobile and narrow layout', () => {
       })
 
       it('left-aligns recognition titles with their descriptions', () => {
-        cy.get('#recognition .recognition-group article').each(($article) => {
+        cy.get('#recognition .content-group article').each(($article) => {
           cy.wrap($article).find('h4').should('have.css', 'text-align', 'left')
           cy.wrap($article).find('p').should('have.css', 'text-align', 'left')
         })
       })
 
       it('left-aligns recommendation quotes on mobile', () => {
-        cy.get('#recommendations .recognition-group article').each(($article) => {
+        cy.get('#recommendations .content-group article').each(($article) => {
           cy.wrap($article).find('.recommendation-quote').should('have.css', 'text-align', 'left')
         })
       })
@@ -52,9 +52,9 @@ describe('mobile and narrow layout', () => {
       })
 
       it('uses compact spacing between recognition groups', () => {
-        cy.get('#recognition .recognition-group:first-of-type')
+        cy.get('#recognition .content-group:first-of-type')
           .should('have.css', 'margin-top', '0px')
-        cy.get('#recognition .recognition-group:not(:first-of-type)')
+        cy.get('#recognition .content-group:not(:first-of-type)')
           .should('have.length', 2)
           .each(($group) => {
             cy.wrap($group).should('have.css', 'margin-top', '12px')

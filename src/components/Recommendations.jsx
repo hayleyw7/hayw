@@ -9,7 +9,7 @@ export default function Recommendations() {
           <h2>Recommendations</h2>
         </header>
         {recommendationGroups.map((group) => (
-          <section className="recognition-group" key={group.title}>
+          <section className="content-group" key={group.title}>
             <h3 className="media-title">{group.title}</h3>
             <div className={`row gtr-150${group.items.length === 1 ? ' aln-center' : ''}`}>
               {group.items.map((item) => (

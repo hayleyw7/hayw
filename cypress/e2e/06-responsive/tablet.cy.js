@@ -19,7 +19,7 @@ describe('tablet layout', () => {
   })
 
   it('keeps recognition actions and copy visible', () => {
-    cy.get('#recognition .recognition-group article').each(($article) => {
+    cy.get('#recognition .content-group article').each(($article) => {
       cy.wrap($article).should('be.visible').find('.button').should('be.visible')
     })
   })

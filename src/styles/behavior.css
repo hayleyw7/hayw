@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.recognition-group + .recognition-group {
+.content-group + .content-group {
   margin-top: 1.75rem;
 }
 

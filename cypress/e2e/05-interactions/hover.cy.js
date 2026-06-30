@@ -39,22 +39,22 @@ describe('hover states', () => {
 
   it('defines a high-contrast hover response for recognition actions', () => {
     cy.window().then((window) => {
-      const rule = findRule(window, '.recognition-group .button:hover')
+      const rule = findRule(window, '.content-group .button:hover')
       expect(rule, 'recognition button hover rule').to.exist
       expect(rule.style.backgroundColor).to.equal('rgb(95, 113, 132)')
       expect(rule.style.color).to.equal('white')
     })
-    cy.get('#recognition .recognition-group .button').first().trigger('mouseover').should('be.visible')
+    cy.get('#recognition .content-group .button').first().trigger('mouseover').should('be.visible')
   })
 
   it('defines a high-contrast hover response for project actions', () => {
     cy.window().then((window) => {
-      const rule = findRule(window, '.recognition-group .button:hover')
+      const rule = findRule(window, '.content-group .button:hover')
       expect(rule, 'project button hover rule').to.exist
       expect(rule.style.backgroundColor).to.equal('rgb(95, 113, 132)')
       expect(rule.style.color).to.equal('white')
     })
-    cy.get('#projects .recognition-group .button').first().trigger('mouseover').should('be.visible')
+    cy.get('#projects .content-group .button').first().trigger('mouseover').should('be.visible')
   })
 
   it('defines a visible footer-link hover color', () => {

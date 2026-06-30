@@ -6,10 +6,10 @@ describe('recommendations content', () => {
   beforeEach(() => cy.visitHome())
 
   it('renders the recommendation groups and quotes without omissions or duplicates', () => {
-    cy.get('#recommendations .recognition-group').should('have.length', Object.keys(recommendations).length)
+    cy.get('#recommendations .content-group').should('have.length', Object.keys(recommendations).length)
 
     Object.entries(recommendations).forEach(([group, titles]) => {
-      cy.contains('#recommendations .recognition-group', group).within(() => {
+      cy.contains('#recommendations .content-group', group).within(() => {
         cy.get('article').should('have.length', titles.length)
         cy.get('.recommendation-quote').then(($quotes) => {
           titles.forEach((title, index) => {

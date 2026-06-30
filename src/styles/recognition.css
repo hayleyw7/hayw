@@ -1,22 +1,22 @@
-.recognition-group .row.aln-center > article {
+.content-group .row.aln-center > article {
   max-width: 28rem;
 }
 
-#recognition .recognition-group .button {
+#recognition .content-group .button {
   color: #5f7184 !important;
 }
 
-.recognition-group .button:hover {
+.content-group .button:hover {
   background-color: #5f7184;
   color: white !important;
 }
 
 @media screen and (max-width: 480px) {
-  .recognition-group:not(:first-of-type) {
+  .content-group:not(:first-of-type) {
     margin-top: 0.75em;
   }
 
-  .recognition-group article h4 {
+  .content-group article h4 {
     text-align: left;
   }
 }

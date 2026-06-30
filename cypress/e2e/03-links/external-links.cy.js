@@ -4,13 +4,13 @@ describe('external links', () => {
   beforeEach(() => cy.visitHome())
 
   it('uses secure absolute destinations for every recognition action', () => {
-    cy.get('#recognition .recognition-group a').should('have.length', 8).each(($link) => {
+    cy.get('#recognition .content-group a').should('have.length', 8).each(($link) => {
       cy.wrap($link).assertExternalLinkIsSafe()
     })
   })
 
   it('uses secure absolute destinations for every project action', () => {
-    cy.get('#projects .recognition-group a').should('have.length', 7).each(($link) => {
+    cy.get('#projects .content-group a').should('have.length', 7).each(($link) => {
       cy.wrap($link).assertExternalLinkIsSafe()
     })
   })
