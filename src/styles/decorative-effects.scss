@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 /* Avatar */
 
 .avatar {
@@ -36,7 +38,7 @@ button.button.primary.expand-btn.medium {
 }
 
 p.tagline {
-	background: white;
+	background: v.$color-white;
 	opacity: 0.8;
 	padding-top: 1.25rem;
 	padding-bottom: 1.25rem;
@@ -67,7 +69,7 @@ p.tagline {
 /* Raindrop s*/
 .icon.solid.major.fa-tint {
   font-size: 0.4em;
-  color: white;
+  color: v.$color-white;
   position: absolute;
   top: calc(50% + 10px);
   opacity: 0;
@@ -131,8 +133,8 @@ h1 {
 .embark-btn {
   position: relative;
   z-index: 10;
-  color: #FFFFFF !important;
-  transition: background 0.8s ease, opacity 0.8s ease, color 0.8s ease !important;
+  color: v.$color-white !important;
+  transition: background v.$duration-slow ease, opacity v.$duration-slow ease, color v.$duration-slow ease !important;
   will-change: background, opacity, color;
 }
 
@@ -143,13 +145,13 @@ h1 {
 }
 
 .embark-btn:hover {
-  background: white !important;
+  background: v.$color-white !important;
   opacity: 0.8 !important;
-  color: #6d7f92 !important;
+  color: v.$color-blue-gray !important;
 }
 
 .embark-btn:hover strong {
-  color: #6d7f92 !important;
+  color: v.$color-blue-gray !important;
 }
 
 .header, .header * {
@@ -160,7 +162,7 @@ h1 {
 
 .embark-btn, .embark-btn::after {
   opacity: 0.8 !important;
-  transition: opacity 0.8s ease, background 0.8s ease, color 0.8s ease !important;
+  transition: opacity v.$duration-slow ease, background v.$duration-slow ease, color v.$duration-slow ease !important;
 }
 
 .tagline, h1 {
@@ -183,36 +185,36 @@ body.is-preload .embark-btn::after {
 #recommendations h2,
 #recognition h2,
 .tagline {
-	color: #6d7f92;
+	color: v.$color-blue-gray;
 }
 
 #impact h2,
 #projects h2 {
-	color: #9db1c0;
+	color: v.$color-nav-border;
 }
 
 #recommendations h3,
 #recognition h3 {
-	color: #333c44;
+	color: v.$color-slate;
 }
 
 #impact h3,
 #projects h3 {
-	color: #c5d3de;
+	color: v.$color-nav-text;
 }
 
 #projects h4 {
-	color: #ffffff;
+	color: v.$color-white;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: v.$breakpoint-tablet) {
 	img.avatar {
 		max-height: 20rem !important;
 		max-width: 20rem !important;
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: v.$breakpoint-mobile) {
 	img.avatar {
 		max-height: 15rem !important;
 		max-width: 15rem !important;
@@ -230,7 +232,7 @@ body.is-preload .embark-btn::after {
 	}
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: v.$breakpoint-tablet) {
 	.footer-text {
 		margin-top: -25px;
 	}

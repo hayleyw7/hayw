@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 /* Container */
 
 .container {
@@ -52,7 +54,7 @@ img.avatar {
 	}
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: v.$breakpoint-tablet) {
 	.container {
 		max-width: 100% !important;
 		width: 100% !important;
@@ -90,7 +92,7 @@ img.avatar {
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: v.$breakpoint-mobile) {
 	.container {
 		max-width: calc(100% - 3em);
 	}
@@ -347,7 +349,7 @@ margin-left: -3em;
 	padding-top: 4em;
 }
 
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: v.$breakpoint-wide) {
 	.row {
 		display: flex;
 		flex-wrap: wrap;
@@ -590,7 +592,7 @@ margin-left: -3em;
 	}
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: v.$breakpoint-desktop) {
 	.row {
 		display: flex;
 		flex-wrap: wrap;
@@ -833,7 +835,7 @@ margin-left: -3em;
 	}
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: v.$breakpoint-tablet) {
 	.row {
 		display: flex;
 		flex-wrap: wrap;
@@ -1076,7 +1078,7 @@ margin-left: -3em;
 	}
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: v.$breakpoint-small) {
 	#projects h3,
 	#recommendations h3,
 	#recognition h3 {
@@ -1343,7 +1345,7 @@ margin-left: -3em;
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: v.$breakpoint-mobile) {
 	#projects h3,
 	#recommendations h3,
 	#recognition h3 {
@@ -1592,7 +1594,7 @@ margin-left: -3em;
 	}
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: v.$breakpoint-minimum) {
 	.row {
 		display: flex;
 		flex-wrap: wrap;

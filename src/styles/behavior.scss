@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 html {
   scroll-behavior: smooth;
   --section-nav-height: 3.25rem;
@@ -7,7 +9,7 @@ html {
   margin-top: 1.75rem;
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: v.$breakpoint-small) {
   .tagline-detail {
     display: none;
   }

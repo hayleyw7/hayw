@@ -14,7 +14,7 @@ button,
 	-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: background-color v.$duration-fast ease-in-out, color v.$duration-fast ease-in-out;
 	background-color: transparent;
 	border-radius: 4px;
 	border: 0;
@@ -41,7 +41,7 @@ input[type="button"]:hover,
 button:hover,
 .button:hover {
 	background-color: v.$color-blue-gray;
-	transition: background 0.6s ease, color 0.6s ease;
+	transition: background v.$duration-medium ease, color v.$duration-medium ease;
 	will-change: color;
 	color: v.$color-white !important;
 }
@@ -99,7 +99,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-	background-color: #828A93;
+	background-color: v.$color-button-primary;
 	box-shadow: none !important;
 	color: v.$color-white !important;
 }
@@ -109,7 +109,7 @@ button.primary,
 	input[type="button"].primary:hover,
 	button.primary:hover,
 	.button.primary:hover {
-		background-color: #8E969E;
+		background-color: v.$color-button-primary-hover;
 	}
 
 	input[type="submit"].primary:active,
@@ -117,7 +117,7 @@ button.primary,
 	input[type="button"].primary:active,
 	button.primary:active,
 	.button.primary:active {
-		background-color: #8E969E;
+		background-color: v.$color-button-primary-hover;
 	}
 
 input[type="submit"].disabled, input[type="submit"]:disabled,

@@ -8,12 +8,34 @@ $color-surface: #f5f7f8;
 $color-brand-blue: #4686a0;
 $color-nav-text: #c5d3de;
 $color-nav-border: #9db1c0;
+$color-text: #000;
+$color-muted: #999;
+$color-button-primary: #828a93;
+$color-button-primary-hover: #8e969e;
 $color-neutral-border: rgba(144, 144, 144, 0.5);
+$color-neutral-border-subtle: rgba(144, 144, 144, 0.075);
+$color-white-75: rgba($color-white, 0.75);
+$color-white-50: rgba($color-white, 0.5);
+$color-white-25: rgba($color-white, 0.25);
+$color-white-12: rgba($color-white, 0.125);
 
+$breakpoint-wide: 1680px;
+$breakpoint-desktop: 1140px;
+$breakpoint-tablet: 980px;
+$breakpoint-small: 736px;
 $breakpoint-mobile: 480px;
+$breakpoint-minimum: 320px;
 
+$duration-fast: 0.2s;
+$duration-medium: 0.6s;
+$duration-slow: 0.8s;
 $duration-nav-enter: 220ms;
 $duration-contact-step: 240ms;
+
+$font-body: "Source Sans Pro", Helvetica, sans-serif;
+$font-monospace: "Courier New", monospace;
+$font-icon-solid: "Font Awesome 5 Free";
+$font-icon-brands: "Font Awesome 5 Brands";
 
 $brand-gradient: linear-gradient(
   45deg,

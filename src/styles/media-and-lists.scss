@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 /* Image */
 
 .image {
@@ -154,7 +156,7 @@ ul.actions.fit.stacked {
 	width: 100%;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: v.$breakpoint-mobile) {
 	ul.actions:not(.fixed) {
 		-moz-flex-direction: column;
 		-webkit-flex-direction: column;
@@ -358,4 +360,3 @@ table.alt thead {
 table.alt tfoot {
 	border-top: 0;
 }
-

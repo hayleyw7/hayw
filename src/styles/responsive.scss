@@ -1,6 +1,8 @@
+@use "variables" as v;
+
 /* XLarge */
 
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: v.$breakpoint-wide) {
 		body, input, select, textarea {
 			font-size: 14pt;
 		}
@@ -12,7 +14,7 @@
 
 /* Large */
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: v.$breakpoint-desktop) {
 	body, input, select, textarea {
 		font-size: 13pt;
 	}
@@ -64,7 +66,7 @@
 
 /* Medium */
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: v.$breakpoint-tablet) {
 	.avatar {
 		margin-left: 1.5rem;
 		margin-right: 1.5rem;
@@ -143,7 +145,7 @@
 
 /* Small */
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: v.$breakpoint-small) {
 	body, input, select, textarea {
 		font-size: 12pt;
 	}
@@ -222,7 +224,7 @@
 
 /* XSmall */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: v.$breakpoint-mobile) {
 	#projects p,
 	#recommendations p,
 	#recognition p {
@@ -288,7 +290,7 @@
 
 /* XXSmall */
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: v.$breakpoint-minimum) {
 
 	/* Basic */
 

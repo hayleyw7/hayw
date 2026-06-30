@@ -12,11 +12,11 @@
 
 .main.style2 {
 	background-color: v.$color-slate;
-	color: rgba(v.$color-white, 0.75);
+	color: v.$color-white-75;
 }
 
 .main.style2 a {
-	border-bottom-color: rgba(255, 255, 255, 0.5);
+	border-bottom-color: v.$color-white-50;
 }
 
 .main.style2 a:hover {
@@ -57,7 +57,7 @@
 .main.style2 input[type="button"]:active,
 .main.style2 button:active,
 .main.style2 .button:active {
-	background-color: rgba(255, 255, 255, 0.25);
+	background-color: v.$color-white-25;
 }
 
 .main.style2 input[type="submit"].primary,
@@ -75,7 +75,7 @@
 .main.style2 input[type="button"].primary:hover,
 .main.style2 button.primary:hover,
 .main.style2 .button.primary:hover {
-	background-color: rgba(255, 255, 255, 0.125) !important;
+	background-color: v.$color-white-12 !important;
 	color: #ffffff !important;
 }
 
@@ -84,11 +84,11 @@
 .main.style2 input[type="button"].primary:active,
 .main.style2 button.primary:active,
 .main.style2 .button.primary:active {
-	background-color: rgba(255, 255, 255, 0.25) !important;
+	background-color: v.$color-white-25 !important;
 }
 
 .main.style2 ul.major-icons li .icon {
-	border-color: #f5f7f8;
+	border-color: v.$color-surface;
 }
 
 .main.style2 .icon.major {
@@ -132,7 +132,7 @@
 #header {
 	padding: 9em 0 9em 0 !important;
 	background-color: #bfbcdc;
-	color: rgba(v.$color-white, 0.75);
+	color: v.$color-white-75;
 	background-attachment: fixed, fixed;
 	background-image: url("/assets/css/images/overlay1.svg"), v.$brand-gradient;
 
@@ -144,7 +144,7 @@
 }
 
 #header a {
-	border-bottom-color: rgba(255, 255, 255, 0.5);
+	border-bottom-color: v.$color-white-50;
 }
 
 #header a:hover {
@@ -177,7 +177,7 @@
 #header input[type="button"]:hover,
 #header button:hover,
 #header .button:hover {
-	background-color: rgba(255, 255, 255, 0.125);
+	background-color: v.$color-white-12;
 }
 
 #header input[type="submit"]:active,
@@ -185,7 +185,7 @@
 #header input[type="button"]:active,
 #header button:active,
 #header .button:active {
-	background-color: rgba(255, 255, 255, 0.25);
+	background-color: v.$color-white-25;
 }
 
 #header input[type="submit"].primary,
@@ -203,7 +203,7 @@
 #header input[type="button"].primary:hover,
 #header button.primary:hover,
 #header .button.primary:hover {
-	background-color: rgba(255, 255, 255, 0.125) !important;
+	background-color: v.$color-white-12 !important;
 	color: #ffffff !important;
 }
 
@@ -212,7 +212,7 @@
 #header input[type="button"].primary:active,
 #header button.primary:active,
 #header .button.primary:active {
-	background-color: rgba(255, 255, 255, 0.25) !important;
+	background-color: v.$color-white-25 !important;
 }
 
 #header ul.major-icons li .icon {
@@ -330,7 +330,7 @@ body.is-preload #header:after {
 #footer {
 	padding: 6em 0 6em 0 ;
 	background-color: v.$color-brand-blue;
-	color: rgba(v.$color-white, 0.75);
+	color: v.$color-white-75;
 	background-attachment: fixed, fixed;
 	background-image: url("/assets/css/images/overlay2.svg"), v.$brand-gradient;
 
@@ -340,7 +340,7 @@ body.is-preload #header:after {
 }
 
 #footer a {
-	border-bottom-color: rgba(255, 255, 255, 0.5);
+	border-bottom-color: v.$color-white-50;
 }
 
 #footer a {
@@ -377,7 +377,7 @@ body.is-preload #header:after {
 #footer input[type="button"]:hover,
 #footer button:hover,
 #footer .button:hover {
-	background-color: rgba(255, 255, 255, 0.125);
+	background-color: v.$color-white-12;
 }
 
 #footer input[type="submit"]:active,
@@ -385,7 +385,7 @@ body.is-preload #header:after {
 #footer input[type="button"]:active,
 #footer button:active,
 #footer .button:active {
-	background-color: rgba(255, 255, 255, 0.25);
+	background-color: v.$color-white-25;
 }
 
 #footer input[type="submit"].primary,
@@ -403,7 +403,7 @@ body.is-preload #header:after {
 #footer input[type="button"].primary:hover,
 #footer button.primary:hover,
 #footer .button.primary:hover {
-	background-color: rgba(255, 255, 255, 0.125) !important;
+	background-color: v.$color-white-12 !important;
 	color: #ffffff !important;
 }
 
@@ -412,7 +412,7 @@ body.is-preload #header:after {
 #footer input[type="button"].primary:active,
 #footer button.primary:active,
 #footer .button.primary:active {
-	background-color: rgba(255, 255, 255, 0.25) !important;
+	background-color: v.$color-white-25 !important;
 }
 
 .footer-text {
