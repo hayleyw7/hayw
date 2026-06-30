@@ -1,16 +1,18 @@
+@use "variables" as v;
+
 .section-nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(51, 60, 68, 0.96);
-  border-bottom: 1px solid rgba(157, 177, 192, 0.2);
+  background: rgba(v.$color-slate, 0.96);
+  border-bottom: 1px solid rgba(v.$color-nav-border, 0.2);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
 
 .section-nav:not([hidden]) {
-  animation: section-nav-enter 220ms ease-out both;
+  animation: section-nav-enter v.$duration-nav-enter ease-out both;
 }
 
 @keyframes section-nav-enter {
@@ -41,7 +43,7 @@
 
 .section-nav a {
   border-bottom: 0;
-  color: #c5d3de;
+  color: v.$color-nav-text;
   font-size: 0.82em;
   letter-spacing: 0.08em;
   text-decoration: none;
@@ -51,10 +53,10 @@
 
 .section-nav a:hover,
 .section-nav a:focus-visible {
-  color: #ffffff;
+  color: v.$color-white;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: v.$breakpoint-mobile) {
   .section-nav ul {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -28,6 +28,7 @@ describe('keyboard accessibility', () => {
       'Recommendations',
       'Portfolio',
       'Recognition',
+      'Contact',
       'View recommendations on LinkedIn',
       ...projectTitles,
       ...recognitionTitles,

@@ -9,7 +9,7 @@ Single-page React portfolio deployed to [hayw.dev](https://hayw.dev) via GitHub 
 ## Tech stack
 
 - React + Vite
-- Plain CSS (imported from `src/styles/index.css`)
+- Sass/SCSS (composed through `src/styles/index.scss`)
 - Cypress for end-to-end tests
 - GitHub Actions for deploy
 
@@ -31,7 +31,7 @@ src/
   App.jsx              Section order and preload handling
   components/          One component per page section (incl. SectionNav)
   data/                Content datasets (one file per domain)
-  styles/              Layered CSS; entry point is index.css
+  styles/              Layered SCSS modules; entry point is index.scss
 public/
   images/              Portrait, favicon, social preview
   assets/              Overlays and Font Awesome webfonts (woff2 only)

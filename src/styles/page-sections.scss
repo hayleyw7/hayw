@@ -1,16 +1,18 @@
 /* Main */
 
+@use "variables" as v;
+
 .main {
 	padding: 8em 0 8em 0 ;
 }
 
 .main.style1 {
-	background: #fff;
+	background: v.$color-white;
 }
 
 .main.style2 {
-	background-color: #333c44;
-	color: rgba(255, 255, 255, 0.75);
+	background-color: v.$color-slate;
+	color: rgba(v.$color-white, 0.75);
 }
 
 .main.style2 a {
@@ -47,7 +49,7 @@
 .main.style2 input[type="button"]:hover,
 .main.style2 button:hover,
 .main.style2 .button:hover {
-	background-color: #6d7f92
+	background-color: v.$color-blue-gray;
 }
 
 .main.style2 input[type="submit"]:active,
@@ -129,31 +131,10 @@
 
 #header {
 	padding: 9em 0 9em 0 !important;
-	background-color: #BFBCDC;
-	color: rgba(255, 255, 255, 0.75);
+	background-color: #bfbcdc;
+	color: rgba(v.$color-white, 0.75);
 	background-attachment: fixed, fixed;
-	background-image: url("/assets/css/images/overlay1.svg"),
-	linear-gradient(45deg,
-		#DFE5E6 5%, 
-		#C1DEE2 7%, 
-		#B7D8DE 12%, 
-		#B1D0DA 16%, 
-		#ABBBD7 20%, 
-		#A8B5D5 25%, 
-		#A4AFD3 30%, 
-		#B5BADC 35%, 
-		#BBB5E1 45%, 
-		#BFBCDC 50%, 
-		#C4B6D5 55%, 
-		#C9B0C6 60%, 
-		#CE9DB8 68%, 
-		#DA679E 75%, 
-		#E06286 82%, 
-		#F85F69 88%, 
-		#FA7E70 93%, 
-		#FC9875 97%, 
-		#F7D796 100%
-	);
+	background-image: url("/assets/css/images/overlay1.svg"), v.$brand-gradient;
 
 	background-position: center center, center center;
 	background-size: cover, cover;
@@ -348,31 +329,10 @@ body.is-preload #header:after {
 
 #footer {
 	padding: 6em 0 6em 0 ;
-	background-color: #4686a0;
-	color: rgba(255, 255, 255, 0.75);
+	background-color: v.$color-brand-blue;
+	color: rgba(v.$color-white, 0.75);
 	background-attachment: fixed, fixed;
-	background-image: url("/assets/css/images/overlay2.svg"),
-	linear-gradient(45deg,
-		#DFE5E6 5%, 
-		#C1DEE2 7%, 
-		#B7D8DE 12%, 
-		#B1D0DA 16%, 
-		#ABBBD7 20%, 
-		#A8B5D5 25%, 
-		#A4AFD3 30%, 
-		#B5BADC 35%, 
-		#BBB5E1 45%, 
-		#BFBCDC 50%, 
-		#C4B6D5 55%, 
-		#C9B0C6 60%, 
-		#CE9DB8 68%, 
-		#DA679E 75%, 
-		#E06286 82%, 
-		#F85F69 88%, 
-		#FA7E70 93%, 
-		#FC9875 97%, 
-		#F7D796 100%
-	);
+	background-image: url("/assets/css/images/overlay2.svg"), v.$brand-gradient;
 
 	background-position: center center, center center;
 	background-size: cover, cover;
@@ -473,20 +433,20 @@ body.is-preload #header:after {
 }
 
 #footer .icons.contact-arrival li {
-	animation: contact-icon-wiggle 240ms ease-in-out both;
+	animation: contact-icon-wiggle v.$duration-contact-step ease-in-out both;
 	transform-origin: center bottom;
 }
 
 #footer .icons.contact-arrival li:nth-child(2) {
-	animation-delay: 240ms;
+	animation-delay: v.$duration-contact-step;
 }
 
 #footer .icons.contact-arrival li:nth-child(3) {
-	animation-delay: 480ms;
+	animation-delay: v.$duration-contact-step * 2;
 }
 
 #footer .icons.contact-arrival li:nth-child(4) {
-	animation-delay: 720ms;
+	animation-delay: v.$duration-contact-step * 3;
 }
 
 @keyframes contact-icon-wiggle {

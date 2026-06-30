@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 .content-group .row.aln-center > article {
   max-width: 28rem;
 }
@@ -5,22 +7,22 @@
 #recognition .content-group .button,
 #recommendations .content-group .button,
 #recommendations .recommendations-source .button {
-  color: #5f7184 !important;
+  color: v.$color-button !important;
 }
 
 .content-group .button:hover {
-  background-color: #5f7184;
-  color: white !important;
+  background-color: v.$color-button;
+  color: v.$color-white !important;
 }
 
 #recognition .content-group .button:hover,
 #recommendations .content-group .button:hover,
 #recommendations .recommendations-source .button:hover {
-  background-color: #5f7184;
-  color: white !important;
+  background-color: v.$color-button;
+  color: v.$color-white !important;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: v.$breakpoint-mobile) {
   .content-group:not(:first-of-type) {
     margin-top: 0.75em;
   }

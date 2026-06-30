@@ -1,5 +1,7 @@
 /* Photon | html5up.net | @ajlkn | CCA 3.0 */
 
+@use "variables" as v;
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -78,7 +80,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background: v.$color-white;
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -112,11 +114,11 @@ a {
 
 a:hover {
 	border-bottom-color: transparent !important;
-	color: #6bd4c8;
+	color: v.$color-teal;
 }
 
 strong, b {
-	color: #2B2B2B;
+	color: v.$color-ink;
 	font-weight: 400;
 }
 
@@ -135,7 +137,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: #2B2B2B;
+	color: v.$color-ink;
 	line-height: 1em;
 }
 

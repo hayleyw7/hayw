@@ -12,6 +12,7 @@ export const sectionNav = [
   { label: 'Recommendations', href: '#recommendations' },
   { label: 'Portfolio', href: '#projects' },
   { label: 'Recognition', href: '#recognition' },
+  { label: 'Contact', href: '#footer' },
 ]
 
 export const sectionFragmentHashes = sectionNav.map((item) => item.href)

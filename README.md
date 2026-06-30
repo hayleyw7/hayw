@@ -28,7 +28,7 @@ The page is a single scrolling portfolio with alternating light and dark section
 src/
   components/     React section components
   data/           Content datasets (skills, impact, recommendations, projects, etc.)
-  styles/         CSS layers imported via index.css (incl. content-groups.css)
+  styles/         SCSS modules composed through index.scss
 public/
   images/         Portrait, favicon, social preview
   assets/         Static overlays and Font Awesome webfonts
