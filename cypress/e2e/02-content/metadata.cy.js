@@ -8,6 +8,7 @@ describe('document metadata', () => {
       .should('have.attr', 'content')
       .and('include', 'full-stack software engineer')
     cy.get('meta[name="viewport"]').should('have.attr', 'content', 'width=device-width, initial-scale=1.0')
+    cy.get('meta[name="referrer"]').should('have.attr', 'content', 'strict-origin-when-cross-origin')
     cy.get('link[rel="icon"]').should('have.attr', 'href', '/images/favicon.ico')
   })
 

@@ -13,6 +13,7 @@
     "test:e2e": "start-server-and-test dev http://127.0.0.1:5173 cypress:run"
   },
   "dependencies": {
+    "@fontsource/source-sans-pro": "^5.2.5",
     "@vitejs/plugin-react": "latest",
     "react": "latest",
     "react-dom": "latest",

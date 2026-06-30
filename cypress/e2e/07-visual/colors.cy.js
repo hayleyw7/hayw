@@ -35,18 +35,17 @@ describe('color and typography contracts', () => {
     cy.get('#header h1').should('have.css', 'color', 'rgb(255, 255, 255)')
   })
 
-  it('still renders with the fallback font stack if the web font stylesheet fails', () => {
-    cy.intercept('GET', 'https://fonts.googleapis.com/**', {
-      statusCode: 503,
-      body: '',
-    })
-
-    cy.visitHome()
-
+  it('self-hosts the body font without requesting Google Fonts', () => {
     cy.get('body')
       .should('be.visible')
       .and('have.css', 'font-family')
       .and('match', /Source Sans Pro/)
       .and('match', /sans-serif/)
+
+    cy.window().then((win) => {
+      const requests = win.performance.getEntriesByType('resource').map((entry) => entry.name)
+      expect(requests.some((name) => name.includes('fonts.googleapis.com'))).to.equal(false)
+      expect(requests.some((name) => name.includes('fonts.gstatic.com'))).to.equal(false)
+    })
   })
 })
