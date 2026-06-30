@@ -1,4 +1,12 @@
 describe('mobile and narrow layout', () => {
+  const revealSectionNav = () => {
+    cy.get('#header').then(($header) => {
+      const heroHeight = Math.ceil($header.outerHeight())
+      cy.window().then((win) => win.scrollTo(0, heroHeight + 1))
+    })
+    cy.get('#section-nav').should('be.visible')
+  }
+
   const viewports = [
     ['common phone', 375, 667],
     ['minimum supported', 320, 568],
@@ -21,6 +29,25 @@ describe('mobile and narrow layout', () => {
           const bounds = $button[0].getBoundingClientRect()
           expect(bounds.left).to.be.at.least(0)
           expect(bounds.right).to.be.at.most(width)
+        })
+      })
+
+      it('keeps every section navigation link inside the viewport', () => {
+        revealSectionNav()
+        cy.get('#section-nav a').each(($link) => {
+          const bounds = $link[0].getBoundingClientRect()
+          expect(bounds.left).to.be.at.least(0)
+          expect(bounds.right).to.be.at.most(width)
+        })
+      })
+
+      it('lays out section navigation in two rows of three', () => {
+        revealSectionNav()
+        cy.get('#section-nav li').then(($items) => {
+          const rows = [...$items].map((item) => item.getBoundingClientRect().top)
+          expect(new Set(rows.slice(0, 3)).size).to.eq(1)
+          expect(new Set(rows.slice(3)).size).to.eq(1)
+          expect(rows[3]).to.be.greaterThan(rows[0])
         })
       })
 

@@ -12,7 +12,7 @@ export default function SectionNav({ onContactNavigate }) {
 
     const updateVisibility = () => {
       const { bottom } = header.getBoundingClientRect()
-      setVisible(bottom < window.innerHeight)
+      setVisible(bottom <= 0)
     }
 
     const updateNavHeight = () => {

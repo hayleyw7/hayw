@@ -29,21 +29,29 @@ describe('scroll behavior', () => {
     cy.get('#recognition').should('be.visible')
   })
 
-  it('reveals section navigation on mobile after one screen scroll', () => {
+  it('reveals section navigation on mobile only after passing the hero', () => {
     cy.viewport(390, 844)
     cy.visit('/')
     cy.get('#section-nav').should('have.attr', 'hidden')
     cy.window().then((win) => {
-      win.scrollTo(0, win.innerHeight)
+      win.scrollTo(0, win.innerHeight / 2)
+    })
+    cy.get('#section-nav').should('have.attr', 'hidden')
+    cy.get('#header').then(($header) => {
+      cy.window().then((win) => win.scrollTo(0, $header.outerHeight()))
     })
     cy.get('#section-nav').should('not.have.attr', 'hidden')
     cy.get('#section-nav').should('be.visible')
   })
 
-  it('reveals section navigation after scrolling past the hero', () => {
+  it('reveals section navigation on desktop only after passing the hero', () => {
     cy.get('#section-nav').should('have.attr', 'hidden')
     cy.window().then((win) => {
-      win.scrollTo(0, win.innerHeight)
+      win.scrollTo(0, win.innerHeight / 2)
+    })
+    cy.get('#section-nav').should('have.attr', 'hidden')
+    cy.get('#header').then(($header) => {
+      cy.window().then((win) => win.scrollTo(0, $header.outerHeight()))
     })
     cy.get('#section-nav').should('not.have.attr', 'hidden')
     cy.get('#section-nav').should('be.visible')
