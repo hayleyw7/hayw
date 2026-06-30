@@ -2,6 +2,15 @@ describe('keyboard accessibility', () => {
   beforeEach(() => cy.visitHome())
 
   it('reaches interactive elements in visual document order', () => {
+    const projectTitles = [
+      'Critterwave',
+      'Affirming Access',
+      'Decisionator',
+      'Limerickster',
+      'Rancid Tomatillos',
+      'Type My Pet',
+      'Vibin Airline',
+    ]
     const recognitionTitles = [
       'Volunteer of the Month',
       'Arrows Making an Impact',
@@ -14,6 +23,7 @@ describe('keyboard accessibility', () => {
     ]
     const expectedOrder = [
       'Embark',
+      ...projectTitles,
       ...recognitionTitles,
       'Twitter profile',
       'GitHub profile',

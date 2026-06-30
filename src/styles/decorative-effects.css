@@ -180,28 +180,29 @@ body.is-preload .embark-btn::after {
 }
 
 #profile h2,
-#projects h2,
+#recommendations h2,
+#recognition h2,
 .tagline {
 	color: #6d7f92;
 }
 
 #impact h2,
-#recognition h2 {
+#projects h2 {
 	color: #9db1c0;
 }
 
-#impact h3,
+#recommendations h3,
 #recognition h3 {
+	color: #333c44;
+}
+
+#impact h3,
+#projects h3 {
 	color: #c5d3de;
 }
 
-#impact h4,
-#recognition h4 {
+#projects h4 {
 	color: #ffffff;
-}
-
-#projects h3 {
-	color: #333c44;
 }
 
 @media screen and (max-width: 980px) {

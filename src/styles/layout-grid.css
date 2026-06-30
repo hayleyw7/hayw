@@ -1078,6 +1078,7 @@ margin-left: -3em;
 
 @media screen and (max-width: 736px) {
 	#projects h3,
+	#recommendations h3,
 	#recognition h3 {
 		font-size: 130% ;
 	}
@@ -1344,6 +1345,7 @@ margin-left: -3em;
 
 @media screen and (max-width: 480px) {
 	#projects h3,
+	#recommendations h3,
 	#recognition h3 {
 		font-size: 120% !important;
 	}

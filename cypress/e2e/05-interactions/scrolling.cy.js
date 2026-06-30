@@ -16,7 +16,7 @@ describe('scroll behavior', () => {
   })
 
   it('can scroll through each major section and reach the footer', () => {
-    ;['#intro', '#impact', '#projects', '#recognition', '#footer'].forEach((selector) => {
+    ;['#intro', '#impact', '#recommendations', '#projects', '#recognition', '#footer'].forEach((selector) => {
       cy.get(selector).scrollIntoView().should('be.visible')
     })
     cy.window().its('scrollY').should('be.greaterThan', 0)

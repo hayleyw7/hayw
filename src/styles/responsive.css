@@ -123,6 +123,7 @@
 	}
 
 	#projects p,
+	#recommendations p,
 	#recognition p {
 		margin-bottom: 0.75rem;
 	}
@@ -131,12 +132,12 @@
 		margin-top: 1.5em;
 	}
 
-	#projects {
-		padding-bottom: 7.5em;
-	}
-
 	#skills {
 		padding-bottom: 1.75em;
+	}
+
+	#projects {
+		padding-bottom: 7.5em;
 	}
 }
 
@@ -223,11 +224,13 @@
 
 @media screen and (max-width: 480px) {
 	#projects p,
+	#recommendations p,
 	#recognition p {
 		text-align: left;
 	}
 
 	#projects h3,
+	#recommendations h3,
 	#recognition h3 {
 		font-size: 140%;
 	}

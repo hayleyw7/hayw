@@ -1,6 +1,7 @@
 export const sections = [
   { id: 'intro', heading: 'Building Reliable, Usable Systems' },
   { id: 'impact', heading: 'Professional & Community Impact' },
+  { id: 'recommendations', heading: 'Recommendations' },
   { id: 'projects', heading: 'Side Quests' },
   { id: 'recognition', heading: 'Public Recognition' },
 ]
@@ -12,6 +13,21 @@ export const impactHeadings = [
   'Leading Operations at Scale',
   'Mentorship Through Advocacy',
 ]
+
+export const recommendations = {
+  Autotroph: [
+    'Engineering Manager',
+    'Director of Design',
+    'Director of Marketing',
+    'Senior Customer Success Manager',
+    'Co-Founder & Managing Director',
+    'Software Developer',
+  ],
+  'ID Business Solutions': [
+    'DevOps Engineer',
+    'Senior Software Engineer',
+  ],
+}
 
 export const recognition = {
   'Awards and Honors': ['Volunteer of the Month', 'Arrows Making an Impact'],
@@ -25,8 +41,15 @@ export const recognition = {
 }
 
 export const projects = {
-  Games: ['Critterwave'],
-  Apps: ['Affirming Access', 'Decisionator', 'Limerickster', 'Rancid Tomatillos', 'Type My Pet', 'Vibin Airline'],
+  'Video Games': ['Critterwave'],
+  'Web Applications': [
+    'Affirming Access',
+    'Decisionator',
+    'Limerickster',
+    'Rancid Tomatillos',
+    'Type My Pet',
+    'Vibin Airline',
+  ],
 }
 
 export const socialLinks = {

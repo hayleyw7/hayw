@@ -3,9 +3,9 @@ import RecognitionCard from './RecognitionCard.jsx'
 
 export default function Portfolio() {
   return (
-    <section id="projects" className="main style1 special">
+    <section id="projects" className="main style2 special">
       <div className="container">
-        <header className="major"><h2>Side Quests</h2></header>
+        <header className="major"><h2>Project Portfolio</h2></header>
         {projectGroups.map((group) => (
           <section className="recognition-group" key={group.title}>
             <h3 className="media-title">{group.title}</h3>
