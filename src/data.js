@@ -54,7 +54,7 @@ export const recognitionGroups = [
     ],
   },
   {
-    title: 'Published Interviews',
+    title: 'Media Coverage',
     items: [
       {
         title: 'Neurodiverse Hackers',

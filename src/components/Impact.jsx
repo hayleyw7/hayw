@@ -17,7 +17,12 @@ export default function Impact() {
             </ul>
           </div>
           <div className="col-6 col-12-medium">
-            <header className="major"><h2>Professional &amp; Community Impact</h2></header>
+            <header className="major">
+              <h2>
+                Professional &amp;
+                <span className="mobile-line-break"> Community Impact</span>
+              </h2>
+            </header>
             {impactAreas.map(({ title, description }) => (
               <div key={title}>
                 <h3>{title}</h3>

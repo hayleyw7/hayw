@@ -32,6 +32,29 @@ describe('mobile and narrow layout', () => {
         })
       })
 
+      it('left-aligns recognition titles with their descriptions', () => {
+        cy.get('.recognition-group article').each(($article) => {
+          cy.wrap($article).find('h4').should('have.css', 'text-align', 'left')
+          cy.wrap($article).find('p').should('have.css', 'text-align', 'left')
+        })
+      })
+
+      it('breaks the intro heading after reliable on mobile', () => {
+        cy.get('#one .main-content h2 .mobile-line-break')
+          .should('have.css', 'display', 'block')
+          .and('contain.text', 'Usable Systems')
+      })
+
+      it('uses compact spacing between recognition groups', () => {
+        cy.get('.recognition-group:first-of-type')
+          .should('have.css', 'margin-top', '0px')
+        cy.get('.recognition-group:not(:first-of-type)')
+          .should('have.length', 2)
+          .each(($group) => {
+            cy.wrap($group).should('have.css', 'margin-top', '16px')
+          })
+      })
+
       it('has no horizontal page overflow', () => cy.assertNoHorizontalOverflow())
     })
   })

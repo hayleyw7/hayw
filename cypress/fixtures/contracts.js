@@ -15,7 +15,7 @@ export const impactHeadings = [
 export const recognition = {
   'Awards and Honors': ['Volunteer of the Month', 'Arrows Making an Impact'],
   'Panel Participation': ['Code The Dream', 'Turing Showcase'],
-  'Published Interviews': [
+  'Media Coverage': [
     'Neurodiverse Hackers',
     'GEN & Biotech News',
     'Seed to Sound',

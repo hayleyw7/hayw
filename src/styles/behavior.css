@@ -1,0 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.recognition-group + .recognition-group {
+  margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 736px) {
+  .tagline-detail {
+    display: none;
+  }
+}

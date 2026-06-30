@@ -1,0 +1,18 @@
+.recognition-group .button {
+  color: #5f7184 !important;
+}
+
+.recognition-group .button:hover {
+  background-color: #5f7184;
+  color: white !important;
+}
+
+@media screen and (max-width: 480px) {
+  .recognition-group:not(:first-of-type) {
+    margin-top: 1em;
+  }
+
+  .recognition-group article h4 {
+    text-align: left;
+  }
+}
