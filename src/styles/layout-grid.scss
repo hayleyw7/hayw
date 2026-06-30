@@ -1079,18 +1079,18 @@ margin-left: -3em;
 }
 
 @media screen and (max-width: v.$breakpoint-small) {
-	#projects h3,
+	#portfolio h3,
 	#recommendations h3,
 	#recognition h3 {
 		font-size: 130% ;
 	}
 
-	#projects h4,
+	#portfolio h4,
 	#recognition h4 {
 		font-size: 120% ;
 	}
 
-	#projects p,
+	#portfolio p,
 	#recognition p {
 		font-size: 110% ;
 	}
@@ -1346,7 +1346,7 @@ margin-left: -3em;
 }
 
 @media screen and (max-width: v.$breakpoint-mobile) {
-	#projects h3,
+	#portfolio h3,
 	#recommendations h3,
 	#recognition h3 {
 		font-size: 120% !important;

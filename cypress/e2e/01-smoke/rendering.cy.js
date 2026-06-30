@@ -13,7 +13,7 @@ describe('initial rendering', () => {
     })
     cy.get('header#header').should('be.visible')
     cy.get('main').should('be.visible')
-    cy.get('footer#footer').should('be.visible')
+    cy.get('footer#contact').should('be.visible')
   })
 
   it('renders the main sections in page order', () => {
@@ -21,10 +21,10 @@ describe('initial rendering', () => {
 
     cy.get('main > section').should(($sections) => {
       expect([...$sections].map((section) => section.id)).to.deep.equal([
-        'intro',
+        'about',
         'impact',
         'recommendations',
-        'projects',
+        'portfolio',
         'recognition',
       ])
     })

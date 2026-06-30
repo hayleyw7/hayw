@@ -21,7 +21,7 @@ export default function Footer({ contactNavigation }) {
   }, [contactNavigation])
 
   return (
-    <footer id="footer">
+    <footer id="contact" aria-label="Contact">
       <p className="footer-text">
         <span>Open to new software engineering roles. </span>
         Reach out to connect.

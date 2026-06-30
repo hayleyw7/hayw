@@ -15,10 +15,10 @@ A responsive React portfolio built with Vite and deployed to GitHub Pages at [ha
 The page is a single scrolling portfolio with alternating light and dark sections:
 
 1. **Hero** — gradient header with Embark CTA; sticky section nav appears after scrolling
-2. **About** (`#intro`) — bio, portrait, and tech stack
+2. **About** (`#about`) — bio, portrait, and tech stack
 3. **Professional & Community Impact** (`#impact`)
 4. **Recommendations** (`#recommendations`) — quotes grouped by company
-5. **Project Portfolio** (`#projects`) — games and web apps
+5. **Project Portfolio** (`#portfolio`) — games and web apps
 6. **Public Recognition** (`#recognition`) — awards, panels, and media
 7. **Footer** — contact and social links
 

@@ -15,7 +15,7 @@ export const projectGroups = [
     items: [
       {
         title: 'Affirming Access',
-        description: 'Gotta go? Find Trans-safe restrooms near you ASAP!',
+        description: 'Gotta go? Find safe restrooms near you ASAP!',
         url: 'https://affirming-access.surge.sh/',
         label: 'Search',
       },

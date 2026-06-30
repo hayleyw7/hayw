@@ -69,7 +69,12 @@
   }
 
   .section-nav a {
+    align-items: center;
+    display: flex;
     font-size: 0.66em;
+    justify-content: center;
     letter-spacing: 0.04em;
+    min-height: 2.75rem;
+    padding: 0.35em 0.25em;
   }
 }

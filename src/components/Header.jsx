@@ -3,7 +3,7 @@ import { scrollToSection } from '../utils/scrollToSection.js'
 export default function Header() {
   const scrollToIntroduction = (event) => {
     event.preventDefault()
-    scrollToSection('#intro', { updateHistory: false })
+    scrollToSection('#about', { updateHistory: false, focusTarget: true })
   }
 
   return (
@@ -26,7 +26,7 @@ export default function Header() {
       </p>
       <ul className="actions special embark-container">
         <li>
-          <a href="#intro" className="button embark-btn" onClick={scrollToIntroduction}>
+          <a href="#about" className="button embark-btn" onClick={scrollToIntroduction}>
             <strong>Embark</strong>
           </a>
         </li>

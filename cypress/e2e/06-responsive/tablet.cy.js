@@ -45,8 +45,8 @@ describe('tablet layout', () => {
 
   it('keeps tablet hash navigation aligned below the navbar', () => {
     revealSectionNav()
-    cy.get('#section-nav a[href="#projects"]').click({ scrollBehavior: false })
-    cy.get('#projects').should(($projects) => {
+    cy.get('#section-nav a[href="#portfolio"]').click({ scrollBehavior: false })
+    cy.get('#portfolio').should(($projects) => {
       const nav = $projects[0].ownerDocument.querySelector('#section-nav')
       const difference = $projects[0].getBoundingClientRect().top
         - nav.getBoundingClientRect().bottom
@@ -87,9 +87,9 @@ describe('tablet layout', () => {
     })
 
     revealSectionNav()
-    cy.get('#section-nav a[href="#footer"]').click({ scrollBehavior: false })
-    cy.get('#footer').should('be.visible')
-    cy.get('#footer .icons').should('have.class', 'contact-arrival')
+    cy.get('#section-nav a[href="#contact"]').click({ scrollBehavior: false })
+    cy.get('#contact').should('be.visible')
+    cy.get('#contact .icons').should('have.class', 'contact-arrival')
     cy.assertNoHorizontalOverflow()
 
     cy.then(() => Cypress.automation('remote:debugger:protocol', {

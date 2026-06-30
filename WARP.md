@@ -43,12 +43,12 @@ cypress/
 ### Section order (`App.jsx`)
 
 1. `#header` — Hero / Embark
-2. `#intro` — About + skills (`#profile`, `#skills`)
+2. `#about` — About + skills (`#profile`, `#skills`)
 3. `#impact` — Professional & Community Impact (dark)
 4. `#recommendations` — Quotes by company + LinkedIn button (light)
-5. `#projects` — Project Portfolio (dark)
+5. `#portfolio` — Project Portfolio (dark)
 6. `#recognition` — Public Recognition (light)
-7. `#footer` — Contact + social links
+7. `#contact` — Contact + social links
 
 Alternating backgrounds: light → dark → light → dark → light.
 

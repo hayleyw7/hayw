@@ -1,18 +1,18 @@
 export const sections = [
-  { id: 'intro', heading: 'Building Reliable, Usable Systems' },
+  { id: 'about', heading: 'Building Reliable, Usable Systems' },
   { id: 'impact', heading: 'Professional & Community Impact' },
   { id: 'recommendations', heading: 'Recommendations' },
-  { id: 'projects', heading: 'Project Portfolio' },
+  { id: 'portfolio', heading: 'Project Portfolio' },
   { id: 'recognition', heading: 'Public Recognition' },
 ]
 
 export const sectionNav = [
-  { label: 'About', href: '#intro' },
+  { label: 'About', href: '#about' },
   { label: 'Impact', href: '#impact' },
   { label: 'Recommendations', href: '#recommendations' },
-  { label: 'Portfolio', href: '#projects' },
+  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Recognition', href: '#recognition' },
-  { label: 'Contact', href: '#footer' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export const sectionFragmentHashes = sectionNav.map((item) => item.href)

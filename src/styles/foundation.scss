@@ -130,7 +130,7 @@ p {
 	margin: 0 0 1.8em 0;
 }
 
-#projects p,
+#portfolio p,
 #recognition p,
 #recommendations p {
 	margin: 0 0 1em 0 !important;
@@ -253,4 +253,16 @@ pre code {
 
 .align-right {
 	text-align: right;
+}
+
+.sr-only {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }

@@ -97,14 +97,14 @@
 
 #header,
 #impact,
-#projects,
+#portfolio,
 #recommendations,
 #recognition {
 	min-height: 100vh;
 	align-content: center;
 }
 
-#intro {
+#about {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -117,16 +117,17 @@
 	padding-bottom: 2.5em;
 }
 
-#projects {
+#portfolio {
 	padding-bottom: 9.5em;
 }
 
-#intro,
+#about,
 #profile,
 #impact,
 #recommendations,
-#projects,
-#recognition {
+#portfolio,
+#recognition,
+#contact {
   scroll-margin-top: var(--section-nav-height, 3.25rem);
 }
 
@@ -334,7 +335,7 @@ body.is-preload #header:after {
 
 /* Footer */
 
-#footer {
+#contact {
 	padding: 6em 0 6em 0 ;
 	background-color: v.$color-brand-blue;
 	color: v.$color-white-75;
@@ -346,79 +347,79 @@ body.is-preload #header:after {
 	text-align: center;
 }
 
-#footer a {
+#contact a {
 	border-bottom-color: v.$color-white-50;
 }
 
-#footer a {
+#contact a {
 	transition: color 0.6s;
 }
 
-#footer a:hover {
+#contact a:hover {
 	color: #ffffff;
 }
 
-#footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6, #footer strong, #footer b {
+#contact h1, #contact h2, #contact h3, #contact h4, #contact h5, #contact h6, #contact strong, #contact b {
 	color: #ffffff;
 }
 
-#footer header p {
+#contact header p {
 	color: #ffffff;
 }
 
-#footer header.major:after {
+#contact header.major:after {
 	background: #ffffff;
 }
 
-#footer input[type="submit"],
-#footer input[type="reset"],
-#footer input[type="button"],
-#footer button,
-#footer .button {
+#contact input[type="submit"],
+#contact input[type="reset"],
+#contact input[type="button"],
+#contact button,
+#contact .button {
 	box-shadow: inset 0 0 0 1px #ffffff;
 	color: #ffffff !important;
 }
 
-#footer input[type="submit"]:hover,
-#footer input[type="reset"]:hover,
-#footer input[type="button"]:hover,
-#footer button:hover,
-#footer .button:hover {
+#contact input[type="submit"]:hover,
+#contact input[type="reset"]:hover,
+#contact input[type="button"]:hover,
+#contact button:hover,
+#contact .button:hover {
 	background-color: v.$color-white-12;
 }
 
-#footer input[type="submit"]:active,
-#footer input[type="reset"]:active,
-#footer input[type="button"]:active,
-#footer button:active,
-#footer .button:active {
+#contact input[type="submit"]:active,
+#contact input[type="reset"]:active,
+#contact input[type="button"]:active,
+#contact button:active,
+#contact .button:active {
 	background-color: v.$color-white-25;
 }
 
-#footer input[type="submit"].primary,
-#footer input[type="reset"].primary,
-#footer input[type="button"].primary,
-#footer button.primary,
-#footer .button.primary {
+#contact input[type="submit"].primary,
+#contact input[type="reset"].primary,
+#contact input[type="button"].primary,
+#contact button.primary,
+#contact .button.primary {
 	background-color: #ffffff;
 	box-shadow: inset 0 0 0 1px #ffffff !important;
 	color: #4686a0 !important;
 }
 
-#footer input[type="submit"].primary:hover,
-#footer input[type="reset"].primary:hover,
-#footer input[type="button"].primary:hover,
-#footer button.primary:hover,
-#footer .button.primary:hover {
+#contact input[type="submit"].primary:hover,
+#contact input[type="reset"].primary:hover,
+#contact input[type="button"].primary:hover,
+#contact button.primary:hover,
+#contact .button.primary:hover {
 	background-color: v.$color-white-12 !important;
 	color: #ffffff !important;
 }
 
-#footer input[type="submit"].primary:active,
-#footer input[type="reset"].primary:active,
-#footer input[type="button"].primary:active,
-#footer button.primary:active,
-#footer .button.primary:active {
+#contact input[type="submit"].primary:active,
+#contact input[type="reset"].primary:active,
+#contact input[type="button"].primary:active,
+#contact button.primary:active,
+#contact .button.primary:active {
 	background-color: v.$color-white-25 !important;
 }
 
@@ -427,32 +428,32 @@ body.is-preload #header:after {
 	margin-bottom: 20px;
 }
 
-#footer ul.major-icons li .icon {
+#contact ul.major-icons li .icon {
 	border-color: #ffffff;
 }
 
-#footer .icon.major {
+#contact .icon.major {
 	color: #ffffff;
 }
 
-#footer .icons {
+#contact .icons {
 	margin: 0;
 }
 
-#footer .icons.contact-arrival li {
+#contact .icons.contact-arrival li {
 	animation: contact-icon-wiggle v.$duration-contact-step ease-in-out both;
 	transform-origin: center bottom;
 }
 
-#footer .icons.contact-arrival li:nth-child(2) {
+#contact .icons.contact-arrival li:nth-child(2) {
 	animation-delay: v.$duration-contact-step;
 }
 
-#footer .icons.contact-arrival li:nth-child(3) {
+#contact .icons.contact-arrival li:nth-child(3) {
 	animation-delay: v.$duration-contact-step * 2;
 }
 
-#footer .icons.contact-arrival li:nth-child(4) {
+#contact .icons.contact-arrival li:nth-child(4) {
 	animation-delay: v.$duration-contact-step * 3;
 }
 
@@ -462,14 +463,14 @@ body.is-preload #header:after {
 	65% { transform: rotate(-3deg); }
 }
 
-#footer .copyright {
+#contact .copyright {
 	font-size: 0.8em;
 	list-style: none;
 	margin: 2em 0 0 0;
 	padding: 0;
 }
 
-#footer .copyright li {
+#contact .copyright li {
 	border-left: solid 1px;
 	display: inline-block;
 	line-height: 1em;
@@ -477,7 +478,7 @@ body.is-preload #header:after {
 	padding: 0 0 0 1em;
 }
 
-#footer .copyright li:first-child {
+#contact .copyright li:first-child {
 	border-left: 0;
 	margin-left: 0;
 	padding: 0;

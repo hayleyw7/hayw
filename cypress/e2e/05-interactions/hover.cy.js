@@ -54,7 +54,7 @@ describe('hover states', () => {
       expect(rule.style.backgroundColor).to.equal('rgb(95, 113, 132)')
       expect(rule.style.color).to.equal('white')
     })
-    cy.get('#projects .content-group .button').first().trigger('mouseover').should('be.visible')
+    cy.get('#portfolio .content-group .button').first().trigger('mouseover').should('be.visible')
   })
 
   it('defines a high-contrast hover response for recommendation actions', () => {
@@ -69,10 +69,10 @@ describe('hover states', () => {
 
   it('defines a visible footer-link hover color', () => {
     cy.window().then((window) => {
-      const rule = findRule(window, '#footer a:hover')
+      const rule = findRule(window, '#contact a:hover')
       expect(rule, 'footer hover rule').to.exist
       expect(rule.style.color).to.equal('rgb(255, 255, 255)')
     })
-    cy.get('#footer a').first().trigger('mouseover').should('be.visible')
+    cy.get('#contact a').first().trigger('mouseover').should('be.visible')
   })
 })

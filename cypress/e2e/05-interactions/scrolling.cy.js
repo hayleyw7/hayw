@@ -17,7 +17,7 @@ describe('scroll behavior', () => {
   })
 
   it('can scroll through each major section and reach the footer', () => {
-    ;['#intro', '#impact', '#recommendations', '#projects', '#recognition', '#footer'].forEach((selector) => {
+    ;['#about', '#impact', '#recommendations', '#portfolio', '#recognition', '#contact'].forEach((selector) => {
       cy.get(selector).scrollIntoView().should('be.visible')
     })
     cy.window().its('scrollY').should('be.greaterThan', 0)
@@ -51,9 +51,9 @@ describe('scroll behavior', () => {
       cy.window().then((win) => win.scrollTo(0, $header.outerHeight()))
     })
     cy.get('#section-nav').should('be.visible')
-    cy.get('#section-nav a[href="#intro"]').click({ scrollBehavior: false })
+    cy.get('#section-nav a[href="#about"]').click({ scrollBehavior: false })
     cy.get('#section-nav').should('be.visible')
-    cy.get('#intro').should(($intro) => {
+    cy.get('#about').should(($intro) => {
       const nav = $intro[0].ownerDocument.querySelector('#section-nav')
       const difference = $intro[0].getBoundingClientRect().top
         - nav.getBoundingClientRect().bottom
@@ -125,17 +125,17 @@ describe('scroll behavior', () => {
     cy.window().then((win) => {
       win.scrollTo(0, win.innerHeight)
     })
-    cy.get('#section-nav a[href="#footer"]').click({ scrollBehavior: false })
-    cy.location('hash').should('eq', '#footer')
-    cy.get('#footer .icons').should('have.class', 'contact-arrival')
+    cy.get('#section-nav a[href="#contact"]').click({ scrollBehavior: false })
+    cy.location('hash').should('eq', '#contact')
+    cy.get('#contact .icons').should('have.class', 'contact-arrival')
   })
 
   it('aligns each section color boundary with the navbar bottom', () => {
     const destinations = [
-      ['#intro', '#intro'],
+      ['#about', '#about'],
       ['#impact', '#impact'],
       ['#recommendations', '#recommendations'],
-      ['#projects', '#projects'],
+      ['#portfolio', '#portfolio'],
       ['#recognition', '#recognition'],
     ]
 
@@ -172,8 +172,8 @@ describe('scroll behavior', () => {
         expect(mobileNavHeight).to.not.equal(desktopNavHeight)
       })
 
-      cy.get('#section-nav a[href="#projects"]').click({ scrollBehavior: false })
-      cy.get('#projects').should(($projects) => {
+      cy.get('#section-nav a[href="#portfolio"]').click({ scrollBehavior: false })
+      cy.get('#portfolio').should(($projects) => {
         const nav = $projects[0].ownerDocument.querySelector('#section-nav')
         const difference = $projects[0].getBoundingClientRect().top
           - nav.getBoundingClientRect().bottom
@@ -190,8 +190,8 @@ describe('scroll behavior', () => {
 
     cy.viewport(390, 844)
     cy.get('#section-nav').should('be.visible')
-    cy.get('#section-nav a[href="#intro"]').click({ scrollBehavior: false })
-    cy.get('#intro').should(($intro) => {
+    cy.get('#section-nav a[href="#about"]').click({ scrollBehavior: false })
+    cy.get('#about').should(($intro) => {
       const nav = $intro[0].ownerDocument.querySelector('#section-nav')
       const difference = $intro[0].getBoundingClientRect().top
         - nav.getBoundingClientRect().bottom
@@ -200,9 +200,9 @@ describe('scroll behavior', () => {
   })
 
   it('loads the footer directly with the footer still visible', () => {
-    cy.visit('/#footer')
-    cy.location('hash').should('eq', '#footer')
-    cy.get('#footer').should('be.visible')
+    cy.visit('/#contact')
+    cy.location('hash').should('eq', '#contact')
+    cy.get('#contact').should('be.visible')
     cy.get('#section-nav').should('be.visible')
   })
 
@@ -210,17 +210,17 @@ describe('scroll behavior', () => {
     cy.get('#header').then(($header) => {
       cy.window().then((win) => win.scrollTo(0, $header.outerHeight()))
     })
-    cy.get('#section-nav a[href="#projects"]').click({ scrollBehavior: false })
-    cy.location('hash').should('eq', '#projects')
+    cy.get('#section-nav a[href="#portfolio"]').click({ scrollBehavior: false })
+    cy.location('hash').should('eq', '#portfolio')
 
-    cy.get('#section-nav a[href="#footer"]').click({ scrollBehavior: false })
-    cy.location('hash').should('eq', '#footer')
-    cy.get('#footer .icons').should('have.class', 'contact-arrival')
+    cy.get('#section-nav a[href="#contact"]').click({ scrollBehavior: false })
+    cy.location('hash').should('eq', '#contact')
+    cy.get('#contact .icons').should('have.class', 'contact-arrival')
 
     cy.viewport(390, 844)
     cy.go('back')
-    cy.location('hash').should('eq', '#projects')
-    cy.get('#projects').should(($projects) => {
+    cy.location('hash').should('eq', '#portfolio')
+    cy.get('#portfolio').should(($projects) => {
       const nav = $projects[0].ownerDocument.querySelector('#section-nav')
       const difference = $projects[0].getBoundingClientRect().top
         - nav.getBoundingClientRect().bottom

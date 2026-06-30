@@ -64,7 +64,7 @@ describe('mobile and narrow layout', () => {
       it('subtracts the navbar height from the About minimum height', () => {
         revealSectionNav()
         cy.get('#section-nav').then(($nav) => {
-          cy.get('#intro').should(($intro) => {
+          cy.get('#about').should(($intro) => {
             const expected = height - $nav[0].getBoundingClientRect().height
             const actual = Number.parseFloat(getComputedStyle($intro[0]).minHeight)
             expect(actual).to.be.closeTo(expected, 1)
@@ -73,12 +73,12 @@ describe('mobile and narrow layout', () => {
       })
 
       it('centers the profile and technical skills as one About composition', () => {
-        cy.get('#intro')
+        cy.get('#about')
           .should('have.css', 'display', 'flex')
           .and('have.css', 'flex-direction', 'column')
           .and('have.css', 'justify-content', 'center')
-        cy.get('#intro > #profile').should('exist')
-        cy.get('#intro > #skills').should('exist')
+        cy.get('#about > #profile').should('exist')
+        cy.get('#about > #skills').should('exist')
       })
 
       it('keeps portrait dimensions responsive', () => {
@@ -119,7 +119,7 @@ describe('mobile and narrow layout', () => {
       })
 
       it('uses standard mobile bottom spacing for Portfolio', () => {
-        cy.get('#projects').should('have.css', 'padding-bottom', '48px')
+        cy.get('#portfolio').should('have.css', 'padding-bottom', '48px')
       })
 
       it('has no horizontal page overflow', () => cy.assertNoHorizontalOverflow())

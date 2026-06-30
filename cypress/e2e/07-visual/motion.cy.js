@@ -30,9 +30,9 @@ describe('motion preferences', () => {
     cy.window().then((win) => {
       win.scrollTo(0, win.innerHeight)
     })
-    cy.get('#section-nav a[href="#footer"]').click({ scrollBehavior: false })
-    cy.get('#footer .icons').should('have.class', 'contact-arrival')
-    cy.get('#footer .icons li').first().should(($icon) => {
+    cy.get('#section-nav a[href="#contact"]').click({ scrollBehavior: false })
+    cy.get('#contact .icons').should('have.class', 'contact-arrival')
+    cy.get('#contact .icons li').first().should(($icon) => {
       const { animationDuration } = getComputedStyle($icon[0])
       expect(Number.parseFloat(animationDuration)).to.be.at.most(0.00001)
     })

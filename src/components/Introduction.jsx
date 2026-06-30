@@ -2,7 +2,7 @@ import Skills from './Skills.jsx'
 
 export default function Introduction() {
   return (
-    <section id="intro">
+    <section id="about">
       <section id="profile" className="main style1 main-top">
         <div className="container">
           <div className="row gtr-150 main-content-container-parent">

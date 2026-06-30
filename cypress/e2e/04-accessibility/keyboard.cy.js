@@ -29,12 +29,12 @@ describe('keyboard accessibility', () => {
       'Portfolio',
       'Recognition',
       'Contact',
-      'View recommendations on LinkedIn',
+      'View recommendations on LinkedIn (opens in new tab)',
       ...projectTitles,
       ...recognitionTitles,
-      'Twitter profile',
-      'GitHub profile',
-      'LinkedIn profile',
+      'Twitter profile (opens in new tab)',
+      'GitHub profile (opens in new tab)',
+      'LinkedIn profile (opens in new tab)',
       'Send email',
     ]
 

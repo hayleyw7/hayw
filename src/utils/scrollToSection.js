@@ -9,12 +9,12 @@ export function setSectionNavHeight(height) {
   }
 }
 
-function getScrollTarget(href) {
+export function getScrollTarget(href) {
   const selector = sectionScrollTargets[href]
   return selector ? document.querySelector(selector) : null
 }
 
-function getNavInset() {
+export function getNavInset() {
   const nav = document.querySelector('#section-nav')
   const liveHeight = nav?.getBoundingClientRect().height
   if (liveHeight > 0) return liveHeight
@@ -32,15 +32,63 @@ function getSectionTop(element) {
   return element.getBoundingClientRect().top + window.scrollY
 }
 
+function waitForScrollEnd(callback) {
+  if ('onscrollend' in window) {
+    window.addEventListener('scrollend', callback, { once: true })
+    return
+  }
+
+  let lastScrollY = window.scrollY
+  let stableFrames = 0
+
+  const check = () => {
+    if (window.scrollY === lastScrollY) {
+      stableFrames += 1
+      if (stableFrames >= 3) {
+        callback()
+        return
+      }
+    } else {
+      stableFrames = 0
+      lastScrollY = window.scrollY
+    }
+
+    requestAnimationFrame(check)
+  }
+
+  requestAnimationFrame(check)
+}
+
+export function focusSectionTarget(target) {
+  const heading = target.querySelector('h2, h3, h1')
+  const focusEl = heading ?? target
+
+  focusEl.setAttribute('tabindex', '-1')
+  focusEl.focus({ preventScroll: true })
+  focusEl.addEventListener('blur', () => focusEl.removeAttribute('tabindex'), { once: true })
+}
+
 export function scrollToSection(
   href,
-  { behavior = 'smooth', updateHistory = true } = {},
+  { behavior = 'smooth', updateHistory = true, focusTarget = false } = {},
 ) {
   const target = getScrollTarget(href)
   if (!target) return
 
   const top = Math.ceil(getSectionTop(target) - getNavInset())
+  const complete = () => {
+    if (focusTarget) focusSectionTarget(target)
+  }
+
   window.scrollTo({ top: Math.max(0, top), behavior })
+
+  if (focusTarget) {
+    if (behavior === 'auto') {
+      requestAnimationFrame(complete)
+    } else {
+      waitForScrollEnd(complete)
+    }
+  }
 
   if (updateHistory) {
     window.history.pushState(null, '', href)

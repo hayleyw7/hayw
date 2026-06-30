@@ -26,6 +26,6 @@ describe('sad paths and runtime resilience', () => {
     cy.wait('@missingPortrait')
     cy.contains('h2', 'Building Reliable, Usable Systems').should('be.visible')
     cy.get('.embark-btn').should('be.visible')
-    cy.get('#footer a').should('have.length', 4)
+    cy.get('#contact a').should('have.length', 4)
   })
 })

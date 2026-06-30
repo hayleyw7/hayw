@@ -58,7 +58,7 @@
 
 	/* Footer */
 
-	#footer {
+	#contact {
 		padding: 4em 0 4em 0 ;
 		background-attachment: scroll;
 	}
@@ -107,7 +107,7 @@
 
 	/* Footer */
 
-	#footer {
+	#contact {
 		padding: 5em 3em 5em 3em ;
 	}
 
@@ -124,7 +124,7 @@
 		text-align: left;
 	}
 
-	#projects p,
+	#portfolio p,
 	#recommendations p,
 	#recognition p {
 		margin-bottom: 0.75rem;
@@ -138,7 +138,7 @@
 		padding-bottom: 1.75em;
 	}
 
-	#projects {
+	#portfolio {
 		padding-bottom: 7.5em;
 	}
 }
@@ -217,7 +217,7 @@
 
 	/* Footer */
 
-	#footer {
+	#contact {
 		padding: 3em 1.5em 3em 1.5em ;
 	}
 }
@@ -225,17 +225,17 @@
 /* XSmall */
 
 @media screen and (max-width: v.$breakpoint-mobile) {
-	#projects {
+	#portfolio {
 		padding-bottom: 3em;
 	}
 
-	#projects p,
+	#portfolio p,
 	#recommendations p,
 	#recognition p {
 		text-align: left;
 	}
 
-	#projects h3,
+	#portfolio h3,
 	#recommendations h3,
 	#recognition h3 {
 		font-size: 140%;
@@ -272,22 +272,22 @@
 
 	/* Footer */
 
-	#footer {
+	#contact {
 		padding: 2em 1.5em 2em 1.5em ;
 	}
 
-	#footer .copyright {
+	#contact .copyright {
 		margin: 1.5em 0 0 0;
 	}
 
-	#footer .copyright li {
+	#contact .copyright li {
 		border: 0;
 		display: block;
 		margin: 1em 0 0 0;
 		padding: 0;
 	}
 
-	#footer .copyright li:first-child {
+	#contact .copyright li:first-child {
 		margin-top: 0;
 	}
 }
@@ -316,7 +316,7 @@
 
 	/* Footer */
 
-	#footer {
+	#contact {
 		padding: 2em 1em 2em 1em ;
 	}
 }

@@ -10,14 +10,15 @@ describe('external links', () => {
   })
 
   it('uses secure absolute destinations for every project action', () => {
-    cy.get('#projects .content-group a').should('have.length', 7).each(($link) => {
+    cy.get('#portfolio .content-group a').should('have.length', 7).each(($link) => {
       cy.wrap($link).assertExternalLinkIsSafe()
     })
   })
 
   it('uses the expected destination for every social action', () => {
     Object.entries(socialLinks).forEach(([label, href]) => {
-      cy.get(`#footer a[aria-label="${label}"]`)
+      const ariaLabel = href.startsWith('mailto:') ? label : `${label} (opens in new tab)`
+      cy.get(`#contact a[aria-label="${ariaLabel}"]`)
         .should('have.attr', 'href', href)
         .assertExternalLinkIsSafe()
     })

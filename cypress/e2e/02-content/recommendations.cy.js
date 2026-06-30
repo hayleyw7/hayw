@@ -32,7 +32,7 @@ describe('recommendations content', () => {
     cy.get('#recommendations .recommendations-source .button')
       .should('have.length', 1)
       .and('have.attr', 'href', recommendationsUrl)
-      .and('have.attr', 'aria-label', 'View recommendations on LinkedIn')
+      .and('have.attr', 'aria-label', 'View recommendations on LinkedIn (opens in new tab)')
       .and('contain.text', 'View on LinkedIn')
       .assertExternalLinkIsSafe()
   })
