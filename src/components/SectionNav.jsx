@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { sectionNavItems } from '../data/sectionNav.js'
 import { scrollToSection, setSectionNavHeight } from '../utils/scrollToSection.js'
 
-export default function SectionNav() {
+export default function SectionNav({ onContactNavigate }) {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -38,6 +38,7 @@ export default function SectionNav() {
   const handleSectionClick = (event, href) => {
     event.preventDefault()
     scrollToSection(href)
+    if (href === '#footer') onContactNavigate()
   }
 
   return (

@@ -60,4 +60,13 @@ describe('scroll behavior', () => {
     cy.get('@scrollTo').its('firstCall.args.0.behavior').should('eq', 'smooth')
     cy.location('hash').should('eq', '#impact')
   })
+
+  it('navigates to contact and cues the footer icons on arrival', () => {
+    cy.window().then((win) => {
+      win.scrollTo(0, win.innerHeight)
+    })
+    cy.get('#section-nav a[href="#footer"]').click({ scrollBehavior: false })
+    cy.location('hash').should('eq', '#footer')
+    cy.get('#footer .icons').should('have.class', 'contact-arrival')
+  })
 })

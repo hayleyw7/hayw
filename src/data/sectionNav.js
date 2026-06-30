@@ -4,6 +4,7 @@ export const sectionNavItems = [
   { label: 'Recommendations', href: '#recommendations', target: '#recommendations' },
   { label: 'Portfolio', href: '#projects', target: '#projects' },
   { label: 'Recognition', href: '#recognition', target: '#recognition' },
+  { label: 'Contact', href: '#footer', target: '#footer' },
 ]
 
 export const sectionScrollTargets = Object.fromEntries(
