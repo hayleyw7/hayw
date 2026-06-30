@@ -35,12 +35,6 @@
 		width: 8em;
 	}
 
-	/* Main */
-
-	.main {
-		padding: 5em 0 5em 0 ;
-	}
-
 	.main.style2 {
 		background-attachment: scroll;
 	}
@@ -56,11 +50,8 @@
 		display: inline;
 	}
 
-	/* Footer */
-
-	#contact {
-		padding: 4em 0 4em 0 ;
-		background-attachment: scroll;
+	html {
+		--section-padding-y: 5em;
 	}
 }
 
@@ -73,10 +64,6 @@
 	}
 
 	/* List */
-
-	.bg-section {
-		padding-bottom: 2rem !important;
-	}
 
 	.major-icons-container {
 		margin-bottom: 2em;
@@ -92,23 +79,10 @@
 		width: 7em;
 	}
 
-	/* Main */
-
-	.main {
-		padding: 6em 3em 6em 3em ;
-
-	}
-
 	/* Header */
 
 	#header {
 		padding: 8em 3em 8em 3em ;
-	}
-
-	/* Footer */
-
-	#contact {
-		padding: 5em 3em 5em 3em ;
 	}
 
 	/* One Two Three */
@@ -130,16 +104,10 @@
 		margin-bottom: 0.75rem;
 	}
 
-	#impact {
-		margin-top: 1.5em;
-	}
-
-	#skills {
-		padding-bottom: 1.75em;
-	}
-
-	#portfolio {
-		padding-bottom: 7.5em;
+	html {
+		--section-padding-y: 6em;
+		--section-padding-x: 3em;
+		--section-internal-gap: 1.75em;
 	}
 }
 
@@ -199,12 +167,6 @@
 		line-height: 3em;
 	}
 
-	/* Main */
-
-	.main {
-		padding: 4em 1.5em 4em 1.5em ;
-	}
-
 	/* Header */
 
 	#header {
@@ -215,20 +177,15 @@
 		margin: 2em 0 0 0;
 	}
 
-	/* Footer */
-
-	#contact {
-		padding: 3em 1.5em 3em 1.5em ;
+	html {
+		--section-padding-y: 4em;
+		--section-padding-x: 1.5em;
 	}
 }
 
 /* XSmall */
 
 @media screen and (max-width: v.$breakpoint-mobile) {
-	#portfolio {
-		padding-bottom: 3em;
-	}
-
 	#portfolio p,
 	#recommendations p,
 	#recognition p {
@@ -254,12 +211,6 @@
 		padding: 0;
 	}
 
-	/* Main */
-
-	.main {
-		padding: 3em 1.5em 3em 1.5em ;
-	}
-
 	/* Header */
 
 	#header {
@@ -270,10 +221,9 @@
 		display: none;
 	}
 
-	/* Footer */
-
-	#contact {
-		padding: 2em 1.5em 2em 1.5em ;
+	html {
+		--section-padding-y: 3em;
+		--section-padding-x: 1.5em;
 	}
 
 	#contact .copyright {
@@ -302,21 +252,13 @@
 		min-width: 0;
 	}
 
-	/* Main */
-
-	.main {
-		padding: 3em 1em 3em 1em ;
-	}
-
 	/* Header */
 
 	#header {
 		padding: 3em 1em 3em 1em ;
 	}
 
-	/* Footer */
-
-	#contact {
-		padding: 2em 1em 2em 1em ;
+	html {
+		--section-padding-x: 1em;
 	}
 }

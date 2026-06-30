@@ -3,7 +3,16 @@
 @use "variables" as v;
 
 .main {
-	padding: 8em 0 8em 0 ;
+	padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+#profile.main {
+	padding-bottom: var(--section-internal-gap);
+}
+
+#skills.main {
+	min-height: auto;
+	padding-top: 0;
 }
 
 .main.style1 {
@@ -113,12 +122,6 @@
 
 #skills {
 	min-height: auto;
-	padding-top: 1.5em;
-	padding-bottom: 2.5em;
-}
-
-#portfolio {
-	padding-bottom: 9.5em;
 }
 
 #about,
@@ -129,10 +132,6 @@
 #recognition,
 #contact {
   scroll-margin-top: var(--section-nav-height, 3.25rem);
-}
-
-#impact {
-	margin-top: 2.5em;
 }
 
 /* Header */
@@ -336,7 +335,7 @@ body.is-preload #header:after {
 /* Footer */
 
 #contact {
-	padding: 6em 0 6em 0 ;
+	padding: calc(var(--section-padding-y) * 0.75) var(--section-padding-x);
 	background-color: v.$color-brand-blue;
 	color: v.$color-white-75;
 	background-attachment: fixed, fixed;

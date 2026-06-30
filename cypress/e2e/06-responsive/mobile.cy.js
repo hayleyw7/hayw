@@ -118,8 +118,16 @@ describe('mobile and narrow layout', () => {
           })
       })
 
-      it('uses standard mobile bottom spacing for Portfolio', () => {
-        cy.get('#portfolio').should('have.css', 'padding-bottom', '48px')
+      it('uses matching vertical padding across main sections', () => {
+        const sectionSelectors = ['#impact', '#recommendations', '#portfolio', '#recognition']
+        cy.get('#impact').invoke('css', 'padding-top').then((paddingTop) => {
+          cy.get('#impact').invoke('css', 'padding-bottom').then((paddingBottom) => {
+            sectionSelectors.forEach((selector) => {
+              cy.get(selector).should('have.css', 'padding-top', paddingTop)
+              cy.get(selector).should('have.css', 'padding-bottom', paddingBottom)
+            })
+          })
+        })
       })
 
       it('has no horizontal page overflow', () => cy.assertNoHorizontalOverflow())

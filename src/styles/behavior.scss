@@ -3,6 +3,9 @@
 html {
   scroll-behavior: smooth;
   --section-nav-height: 3.25rem;
+  --section-padding-y: 8em;
+  --section-padding-x: 0;
+  --section-internal-gap: 2em;
 }
 
 .content-group + .content-group {
