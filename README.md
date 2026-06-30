@@ -6,7 +6,7 @@ A responsive React portfolio built with Vite and deployed to GitHub Pages at [ha
 
 - React
 - Vite
-- JavaScript and CSS
+- JavaScript and Sass/SCSS
 - Cypress (end-to-end tests)
 - GitHub Actions and GitHub Pages
 
