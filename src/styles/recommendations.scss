@@ -1,0 +1,23 @@
+#recommendations .content-group article {
+  text-align: left;
+}
+
+#recommendations .recommendation-quote {
+  margin-bottom: 0;
+}
+
+#recommendations .recommendations-source {
+  margin: 0.35em 0 0.5em 0;
+}
+
+#recommendations .content-group:first-of-type .media-title {
+  margin-top: 0.25em;
+}
+
+#recommendations .content-group .row.gtr-uniform {
+  margin-top: -1.5em;
+}
+
+#recommendations .content-group .row.gtr-uniform > * {
+  padding-top: 1.5em;
+}

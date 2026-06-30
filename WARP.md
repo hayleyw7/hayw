@@ -1,146 +1,100 @@
 # WARP.md
 
-This file provides guidance to WARP (warp.dev) when working with code in this repository.
+Guidance for WARP (warp.dev) when working in this repository.
 
-## Project Overview
+## Project overview
 
-This is a static personal resume/portfolio website built using the Photon template from HTML5 UP. The site is a single-page application showcasing professional experience, skills, and public recognition.
+Single-page React portfolio deployed to [hayw.dev](https://hayw.dev) via GitHub Pages. Visual design is based on the Photon template (HTML5 UP, CCA 3.0).
 
-### Tech Stack
-- **Frontend**: HTML5, CSS3/Sass, JavaScript (jQuery)
-- **Template**: Photon by HTML5 UP (CCA 3.0 license)
-- **Libraries**: jQuery, jQuery.scrolly, Font Awesome, Responsive Tools
-- **Hosting**: Static site (likely GitHub Pages based on CNAME file)
+## Tech stack
 
-## Development Commands
+- React + Vite
+- Sass/SCSS (composed through `src/styles/index.scss`)
+- Cypress for end-to-end tests
+- GitHub Actions for deploy
 
-### Viewing the Site
+## Commands
+
 ```bash
-# Open in default browser (macOS)
-open index.html
-
-# Or use a simple HTTP server
-python3 -m http.server 8000
-# Then visit http://localhost:8000
+npm install
+npm run dev          # http://localhost:5173
+npm run lint
+npm run build
+npm run test:e2e     # 21 specs, 80 tests
+npm run cypress:open # interactive debugging
 ```
 
-### Testing Changes
-No build process is required. Simply refresh the browser after making changes to HTML, CSS, or JS files.
+## Architecture
 
-## Code Architecture
-
-### File Structure
 ```
-├── index.html           # Main HTML file (entire site in one file)
-├── assets/
-│   ├── css/            # Compiled CSS
-│   │   ├── main.css
-│   │   ├── noscript.css
-│   │   └── fontawesome-all.min.css
-│   ├── sass/           # Sass source files (if modifying styles)
-│   ├── js/             # JavaScript files
-│   │   ├── main.js     # Custom responsive behavior
-│   │   └── *.min.js    # Third-party libraries
-│   └── webfonts/       # Font Awesome fonts
-├── images/             # Profile images and social previews
-└── CNAME               # Custom domain configuration
+src/
+  App.jsx              Section order and preload handling
+  components/          One component per page section (incl. SectionNav)
+  data/                Content datasets (one file per domain)
+  styles/              Layered SCSS modules; entry point is index.scss
+public/
+  images/              Portrait, favicon, social preview
+  assets/              Overlays and Font Awesome webfonts (woff2 only)
+cypress/
+  e2e/                 Specs grouped by concern (smoke, content, a11y, etc.)
+  fixtures/contracts.js Shared content expectations for tests
 ```
 
-### Key Components
+### Section order (`App.jsx`)
 
-#### index.html
-The entire site is contained in a single HTML file with these main sections:
-- **Header** (`#header`): Hero section with name, title, and animated cloud/rain icons
-- **Section One** (`#one`): Introduction and avatar
-- **Section Two-B** (`#two-b`): Skills list (JavaScript, React, HTML/Sass, Ruby on Rails)
-- **Section Two** (`#two`): Professional background and community impact
-- **Section Three** (`#three`): Public recognition (awards, panels, interviews)
-- **Footer** (`#footer`): Social media links (Twitter, GitHub, LinkedIn, Email)
+1. `#header` — Hero / Embark
+2. `#about` — About + skills (`#profile`, `#skills`)
+3. `#impact` — Professional & Community Impact (dark)
+4. `#recommendations` — Quotes by company + LinkedIn button (light)
+5. `#portfolio` — Project Portfolio (dark)
+6. `#recognition` — Public Recognition (light)
+7. `#contact` — Contact + social links
 
-#### assets/js/main.js
-Handles responsive behavior and dynamic content:
-- **Breakpoint definitions**: xlarge, large, medium, small, xsmall, xxsmall
-- **Dynamic mobile styling**: Changes tagline text based on viewport size
-- **Heading transformation**: On xsmall screens, merges h4 headings into paragraph text for better mobile readability
-- **Smooth scrolling**: Uses scrolly plugin for navigation
-- **Preload animation**: Removes 'is-preload' class after page load
+Alternating backgrounds: light → dark → light → dark → light.
 
-### Responsive Design Philosophy
-The site adapts content dynamically based on screen size:
-- **xsmall (≤480px)**: Simplified tagline ("Full-Stack Software Engineer" only), h4 headings merged into paragraphs
-- **small (481-736px)**: Simplified tagline only
-- **medium+ (≥737px)**: Full tagline with all three roles separated by pipes
+### Content
 
-## Styling Guidelines
+- Edit copy in `src/data/*.js`, not inline in components.
+- Keep `cypress/fixtures/contracts.js` in sync when public content changes.
+- Shared card/grid patterns use the `.content-group` class; button styles live in `content-groups.css`.
 
-### CSS Organization
-- Main styles are in `assets/css/main.css` (compiled from Sass)
-- `noscript.css` provides fallback styling when JavaScript is disabled
-- Custom styles follow the HTML5 UP Photon template conventions
-- Font Awesome is used for all icons
+### Key components
 
-### Sass Source
-If modifying styles, work with files in `assets/sass/` and recompile to `assets/css/main.css` (Sass compilation setup not included in repo).
+- `ExternalLink.jsx` — external anchors with `target="_blank"` and `rel="noopener noreferrer"`
+- `RecognitionCard.jsx` — reused for project portfolio cards (title, description, button)
+- `RecommendationCard.jsx` — quote + attribution only
 
-## Content Management
+## Testing expectations
 
-### Updating Text Content
-All text lives in `index.html`. Key areas to update:
-- **Name/Title**: Line 42-49 (header section)
-- **Professional description**: Lines 66-67
-- **Skills**: Lines 85-89
-- **Background**: Lines 117-119
-- **Recognition items**: Lines 136-241
+When changing UI or content:
 
-### Adding New Recognition Items
-Follow the existing pattern in section `#three`:
-- Use Bootstrap-style grid classes (`col-4`, `col-6`, `col-12-medium`)
-- Include h4 title, paragraph description, and button link
-- Maintain semantic structure for accessibility
+1. Run `npm run test:e2e` — all 78 tests should pass.
+2. Update `contracts.js` if headings, links, or section content change.
+3. Update `metadata.cy.js` if `index.html` meta tags change.
+4. Update `keyboard.cy.js` if link order changes.
+5. Update `security.cy.js` `_blank` link count if external links are added/removed.
 
-### Image Management
-- Profile images: `images/me*.png`
-- Favicon: `images/favicon.ico`
-- Social preview: `images/preview4.png` (used in OpenGraph/Twitter meta tags)
+## Accessibility
 
-## Testing Checklist
+- axe WCAG A/AA checks in `04-accessibility/axe.cy.js`
+- Keyboard tab order enforced in `keyboard.cy.js`
+- Section landmarks and semantics in `semantics.cy.js`
+- Light-section buttons need ID-scoped hover rules (`#recognition`, `#recommendations`) to beat default color specificity
 
-When making changes, test:
-1. Desktop view (1920px+)
-2. Tablet view (737-980px)
-3. Mobile view (320-736px)
-4. Mobile xsmall view (≤480px) - verify h4 heading transformation
-5. Smooth scroll functionality on "Embark" button
-6. All external links open in new tabs
-7. Social media links in footer work correctly
-8. Meta tags (OpenGraph, Twitter cards) for social sharing
+## Common tasks
 
-## Accessibility Considerations
+| Task | Where |
+|------|-------|
+| Change section copy | `src/data/` |
+| Reorder sections | `App.jsx` |
+| Section nav labels | `src/data/sectionNav.js` + `cypress/fixtures/contracts.js` |
+| Section-specific styles | `page-sections.css`, `recommendations.css`, `content-groups.css` |
+| Shared grid/card buttons | `content-groups.css` |
+| Meta / OG tags | `index.html` + `metadata.cy.js` |
+| Social links | `src/data/socialLinks.js` |
 
-- All icon links include `aria-label` attributes
-- Images use descriptive `alt` text
-- Semantic HTML structure maintained
-- Focus on mobile responsiveness for better UX
-- No JavaScript fallback styles via `noscript.css`
+## Do not assume
 
-## Deployment
-
-This is a static site hosted via the custom domain specified in `CNAME` file. To deploy:
-1. Make changes locally
-2. Test in browser
-3. Commit and push to repository
-4. Changes automatically deploy (if using GitHub Pages or similar)
-
-## Common Modifications
-
-### Updating Social Links
-Edit footer section (lines 246-251) to update or add social media profiles.
-
-### Changing Skills List
-Modify the unordered list at lines 85-89 in the `#two-b` section.
-
-### Adjusting Breakpoints
-Edit `assets/js/main.js` lines 8-15 to change responsive breakpoint definitions.
-
-### Modifying Mobile Tagline Logic
-Update the dynamic tagline logic in `assets/js/main.js` lines 28-67.
+- This is **not** a jQuery or single-file HTML site anymore.
+- There is no Sass build step; edit CSS files under `src/styles/` directly.
+- Do not change `public/images/preview.png` unless explicitly asked.

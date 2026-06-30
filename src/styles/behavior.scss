@@ -1,0 +1,24 @@
+@use "variables" as v;
+
+html {
+  scroll-behavior: smooth;
+  --section-nav-height: 3.25rem;
+  --section-padding-y: 4em;
+  --section-padding-x: 0;
+  --section-internal-gap: 1.25em;
+}
+
+.content-group + .content-group {
+  margin-top: 1.75rem;
+}
+
+#profile h2 .mobile-line-break,
+#impact h2 .mobile-line-break {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: v.$breakpoint-small) {
+  .tagline-detail {
+    display: none;
+  }
+}

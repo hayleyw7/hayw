@@ -1,0 +1,58 @@
+@use "variables" as v;
+
+.content-group .row.aln-center > article {
+  max-width: 28rem;
+}
+
+#portfolio .content-group article,
+#recognition .content-group article {
+  text-align: left;
+}
+
+#portfolio .content-group > .media-title,
+#recognition .content-group > .media-title,
+#recommendations .content-group > .media-title {
+  text-align: left;
+}
+
+#portfolio .content-group article .actions.special,
+#recognition .content-group article .actions.special {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+#recognition .content-group .button,
+#recommendations .content-group .button,
+#recommendations .recommendations-source .button {
+  color: v.$color-button;
+}
+
+.content-group .button:hover {
+  background-color: v.$color-button;
+  color: v.$color-white;
+}
+
+#recognition .content-group .button:hover,
+#recommendations .content-group .button:hover,
+#recommendations .recommendations-source .button:hover {
+  background-color: v.$color-button;
+  color: v.$color-white;
+}
+
+@media screen and (min-width: 851px) and (max-width: v.$breakpoint-tablet) {
+  #portfolio .content-group article,
+  #recommendations .content-group article,
+  #recognition .content-group article {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: v.$breakpoint-mobile) {
+  .content-group:not(:first-of-type) {
+    margin-top: 0.75em;
+  }
+
+  .content-group article h4 {
+    text-align: left;
+  }
+}

@@ -1,0 +1,245 @@
+@use "variables" as v;
+
+/* Avatar */
+
+img.avatar {
+	aspect-ratio: 1;
+	border-radius: 50%;
+	max-height: 30rem;
+	max-width: 30rem;
+	object-fit: cover;
+}
+
+button.button.primary.expand-btn.medium {
+	margin-bottom: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.skill-col {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+.skill {
+	flex: 1;
+}
+
+.techspace {
+	padding-top: 0;
+}
+
+p.tagline {
+	background: v.$color-white;
+	opacity: 0.8;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	font-weight: 400;
+}
+
+/* Cloud */
+
+.cloud-container {
+  position: relative;
+  display: inline-block;
+}
+
+.icon.solid.major.fa-cloud {
+  opacity: 0.8;
+  font-size: 1.6em;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out 1.5s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Raindrop s*/
+.icon.solid.major.fa-tint {
+  font-size: 0.4em;
+  color: v.$color-white;
+  position: absolute;
+  top: calc(50% + 10px);
+  opacity: 0;
+  pointer-events: none;
+	z-index: 1;
+}
+
+.drop1 { left: calc(50% - 30px); }
+.drop2 { left: calc(50% + 13px); }
+.drop3 { left: calc(50% - 9px); }
+
+.cloud-container:hover .drop1 {
+  animation: drop 5s ease infinite;
+  animation-delay: 0s;
+}
+
+.cloud-container:hover .drop2 {
+  animation: drop 5s ease infinite;
+  animation-delay: 0.5s;
+}
+
+.cloud-container:hover .drop3 {
+  animation: drop 5s ease infinite;
+  animation-delay: 1s;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+    transform: translateY(100vh);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+h1 {
+	font-size: 3em;
+	line-height: 1.35em;
+	font-weight: 800;
+}
+
+.media-title {
+	font-weight: 400;
+}
+
+/* Headers animations */
+
+#header .embark-container {
+  margin-top: 2.5rem;
+}
+
+#header .embark-btn {
+  position: relative;
+  z-index: 10;
+  color: v.$color-white;
+  transition: background v.$duration-slow ease, opacity v.$duration-slow ease, color v.$duration-slow ease;
+  will-change: background, opacity, color;
+}
+
+#header .embark-btn strong {
+  color: inherit;
+  transition: inherit;
+  will-change: color;
+}
+
+#header .embark-btn:hover {
+  background: v.$color-white;
+  background-color: v.$color-white;
+  opacity: 0.8;
+  color: v.$color-blue-gray;
+}
+
+#header .embark-btn:hover strong {
+  color: v.$color-blue-gray;
+}
+
+.header, .header * {
+  opacity: 0.8;
+  visibility: visible;
+  transition: opacity 2s ease;
+}
+
+#header .embark-btn,
+#header .embark-btn::after {
+  opacity: 0.8;
+  transition: opacity v.$duration-slow ease, background v.$duration-slow ease, color v.$duration-slow ease;
+}
+
+.tagline, h1 {
+  opacity: 0.8;
+  visibility: visible;
+  transition: opacity 2s ease;
+}
+
+body.is-preload .header,
+body.is-preload .tagline,
+body.is-preload h1,
+body.is-preload #header .embark-btn,
+body.is-preload #header .embark-btn::after {
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
+}
+
+#profile h2,
+#recommendations h2,
+#recognition h2,
+.tagline {
+	color: v.$color-blue-gray;
+}
+
+#impact h2,
+#portfolio h2 {
+	color: v.$color-nav-border;
+}
+
+#recommendations h3,
+#recognition h3 {
+	color: v.$color-slate;
+}
+
+#impact h3,
+#portfolio h3 {
+	color: v.$color-nav-text;
+}
+
+#portfolio h4 {
+	color: v.$color-white;
+}
+
+@media screen and (max-width: v.$breakpoint-tablet) {
+	img.avatar {
+		max-height: 20rem;
+		max-width: 20rem;
+	}
+}
+
+@media screen and (max-width: v.$breakpoint-mobile) {
+	img.avatar {
+		max-height: 15rem;
+		max-width: 15rem;
+	}
+
+	#header {
+		min-height: 100vh;
+	}
+
+	#header h1 {
+		font-size: 4rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-bottom: 1rem;
+	}
+}
+
+@media screen and (max-width: v.$breakpoint-tablet) {
+	.footer-text {
+		margin-top: -25px;
+	}
+}
+
+@media screen and (max-width: v.$breakpoint-mobile) {
+	.footer-text span {
+		display: none;
+	}
+}

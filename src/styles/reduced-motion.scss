@@ -1,0 +1,27 @@
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+  }
+
+  #header .header,
+  #header .header *,
+  #header .tagline,
+  #header h1,
+  #header .embark-btn,
+  #header .embark-btn::after,
+  #header .embark-btn strong,
+  #contact .icons.contact-arrival li {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+}

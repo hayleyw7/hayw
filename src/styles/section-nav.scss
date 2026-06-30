@@ -1,0 +1,80 @@
+@use "variables" as v;
+
+.section-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(v.$color-slate, 0.96);
+  border-bottom: 1px solid rgba(v.$color-nav-border, 0.2);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+.section-nav:not([hidden]) {
+  animation: section-nav-enter v.$duration-nav-enter ease-out both;
+}
+
+@keyframes section-nav-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-nav[hidden] {
+  display: none;
+}
+
+.section-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35em 1.25em;
+  list-style: none;
+  margin: 0;
+  padding: 0.7em 1em;
+}
+
+.section-nav a {
+  border-bottom: 0;
+  color: v.$color-nav-text;
+  font-size: 0.82em;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  color: v.$color-white;
+}
+
+@media screen and (max-width: v.$breakpoint-small) {
+  .section-nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4em 0.3em;
+    padding: 0.65em 0.85em;
+  }
+
+  .section-nav li {
+    text-align: center;
+  }
+
+  .section-nav a {
+    align-items: center;
+    display: flex;
+    font-size: 0.66em;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    min-height: 2.75rem;
+    padding: 0.35em 0.25em;
+  }
+}

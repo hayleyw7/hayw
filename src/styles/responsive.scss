@@ -1,0 +1,299 @@
+@use "variables" as v;
+
+/* XLarge */
+
+@media screen and (max-width: v.$breakpoint-wide) {
+		body, input, select, textarea {
+			font-size: 14pt;
+		}
+
+	#header {
+		padding: 6em 0 6em 0 ;
+	}
+}
+
+/* Large */
+
+@media screen and (max-width: v.$breakpoint-desktop) {
+	body, input, select, textarea {
+		font-size: 13pt;
+	}
+
+	#impact h2 .mobile-line-break {
+		display: block;
+	}
+
+	h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
+		display: none;
+	}
+
+/* List */
+
+	ul.major-icons li {
+		padding: 2em;
+	}
+
+	ul.major-icons li .icon {
+		height: 8em;
+		line-height: 8em;
+		width: 8em;
+	}
+
+	.main.style2 {
+		background-attachment: scroll;
+	}
+
+	/* Header */
+
+	#header {
+		padding: 5em 0 5em 0 ;
+		background-attachment: scroll;
+	}
+
+	#header br {
+		display: inline;
+	}
+
+	html {
+		--section-padding-y: 3.5em;
+	}
+}
+
+/* Medium */
+
+@media screen and (min-width: 851px) and (max-width: v.$breakpoint-tablet) {
+	#profile .main-content-container,
+	#profile .imp-medium {
+		width: 50%;
+	}
+
+	#profile .imp-medium {
+		order: initial;
+	}
+
+	#profile h2 .mobile-line-break {
+		display: block;
+	}
+}
+
+@media screen and (max-width: v.$breakpoint-tablet) {
+	.avatar {
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+	}
+
+	.skill-col {
+		padding-block: 0.2rem;
+	}
+
+	.skill {
+		margin-top: 0;
+	}
+
+	/* List */
+
+	.major-icons-container {
+		margin-bottom: 2em;
+	}
+
+	ul.major-icons {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+
+	ul.major-icons li {
+		padding: 0.75em;
+	}
+
+	ul.major-icons li .icon {
+		height: 4.5em;
+		line-height: 4.5em;
+		width: 4.5em;
+	}
+
+	/* Header */
+
+	#header {
+		padding: 8em 3em 8em 3em ;
+	}
+
+	/* One Two Three */
+
+	#profile,
+	#impact {
+		text-align: center;
+	}
+
+	#profile p,
+	#impact h3,
+	#impact p {
+		text-align: left;
+	}
+
+	#portfolio p,
+	#recommendations p,
+	#recognition p {
+		margin-bottom: 0.75rem;
+	}
+
+	html {
+		--section-padding-y: 3em;
+		--section-padding-x: 3em;
+		--section-internal-gap: 1.25em;
+	}
+}
+
+/* Small */
+
+@media screen and (max-width: v.$breakpoint-small) {
+	body, input, select, textarea {
+		font-size: 12pt;
+	}
+
+	h1 {
+		font-size: 1.75em;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	h3 {
+		font-size: 1.1em;
+	}
+
+	h4 {
+		font-size: 1em;
+	}
+
+	/* List */
+
+	ul.major-icons {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	ul.major-icons li {
+		padding: 0.5em;
+	}
+
+	ul.major-icons li .icon {
+		height: 4em;
+		line-height: 4em;
+		width: 4em;
+	}
+
+	ul.major-icons li .icon:before {
+		font-size: 42px;
+	}
+
+	/* Icon */
+
+	.icon.major {
+		margin: 0 0 1em 0;
+	}
+
+	/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		height: 3em;
+		line-height: 3em;
+	}
+
+	/* Header */
+
+	#header {
+		padding: 4em 3em 4em 3em ;
+	}
+
+	#header .actions {
+		margin: 2em 0 0 0;
+	}
+
+	html {
+		--section-padding-y: 2.5em;
+		--section-padding-x: 1.5em;
+	}
+}
+
+/* XSmall */
+
+@media screen and (max-width: v.$breakpoint-mobile) {
+	#portfolio p,
+	#recommendations p,
+	#recognition p {
+		text-align: left;
+	}
+
+	#portfolio h3,
+	#recommendations h3,
+	#recognition h3 {
+		font-size: 140%;
+	}
+
+	.mobile-line-break {
+		display: block;
+	}
+
+	/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	.button {
+		padding: 0;
+	}
+
+	/* Header */
+
+	#header {
+		padding: 4em 2em 4em 2em ;
+	}
+
+	#header br {
+		display: none;
+	}
+
+	html {
+		--section-padding-y: 2em;
+		--section-padding-x: 1.5em;
+	}
+
+	#contact .copyright {
+		margin: 1.5em 0 0 0;
+	}
+
+	#contact .copyright li {
+		border: 0;
+		display: block;
+		margin: 1em 0 0 0;
+		padding: 0;
+	}
+
+	#contact .copyright li:first-child {
+		margin-top: 0;
+	}
+}
+
+/* XXSmall */
+
+@media screen and (max-width: v.$breakpoint-minimum) {
+
+	/* Basic */
+
+	html, body {
+		min-width: 0;
+	}
+
+	/* Header */
+
+	#header {
+		padding: 3em 1em 3em 1em ;
+	}
+
+	html {
+		--section-padding-x: 1em;
+	}
+}
