@@ -1,4 +1,4 @@
-import { projectGroups } from '../data.js'
+import { projectGroups } from '../data/projects.js'
 import RecognitionCard from './RecognitionCard.jsx'
 
 export default function Portfolio() {

@@ -39,6 +39,12 @@ describe('mobile and narrow layout', () => {
         })
       })
 
+      it('left-aligns recommendation quotes on mobile', () => {
+        cy.get('#recommendations .recognition-group article').each(($article) => {
+          cy.wrap($article).find('.recommendation-quote').should('have.css', 'text-align', 'left')
+        })
+      })
+
       it('breaks the intro heading after reliable on mobile', () => {
         cy.get('#profile .main-content h2 .mobile-line-break')
           .should('have.css', 'display', 'block')

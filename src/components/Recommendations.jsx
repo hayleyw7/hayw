@@ -1,4 +1,4 @@
-import { recommendationGroups } from '../data.js'
+import { recommendationGroups } from '../data/recommendations.js'
 import RecommendationCard from './RecommendationCard.jsx'
 
 export default function Recommendations() {

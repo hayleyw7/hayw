@@ -1,5 +1,7 @@
 import { recommendations } from '../../fixtures/contracts.js'
 
+const recommendationCount = Object.values(recommendations).flat().length
+
 describe('recommendations content', () => {
   beforeEach(() => cy.visitHome())
 
@@ -19,7 +21,7 @@ describe('recommendations content', () => {
   })
 
   it('wraps each quote in quotation marks without blockquote styling', () => {
-    cy.get('#recommendations .recommendation-quote').should('have.length', 8).each(($quote) => {
+    cy.get('#recommendations .recommendation-quote').should('have.length', recommendationCount).each(($quote) => {
       cy.wrap($quote).invoke('text').should('match', /^".+" — .+$/)
       cy.wrap($quote).should('have.prop', 'tagName', 'P')
     })

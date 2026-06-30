@@ -15,6 +15,20 @@ describe('initial rendering', () => {
     cy.get('footer#footer').should('be.visible')
   })
 
+  it('renders the main sections in page order', () => {
+    cy.visitHome()
+
+    cy.get('main > section').should(($sections) => {
+      expect([...$sections].map((section) => section.id)).to.deep.equal([
+        'intro',
+        'impact',
+        'recommendations',
+        'projects',
+        'recognition',
+      ])
+    })
+  })
+
   it('does not render an error page, empty root, or accidental placeholder copy', () => {
     cy.visitHome()
 

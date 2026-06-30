@@ -1,4 +1,4 @@
-import { impactAreas } from '../data.js'
+import { impactAreas } from '../data/impact.js'
 
 const iconClasses = ['fa-code', 'fa-bolt', 'fa-camera-retro', 'fa-cog', 'fa-desktop', 'fa-calendar']
 

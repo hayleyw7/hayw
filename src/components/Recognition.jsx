@@ -1,4 +1,4 @@
-import { recognitionGroups } from '../data.js'
+import { recognitionGroups } from '../data/recognition.js'
 import RecognitionCard from './RecognitionCard.jsx'
 
 export default function Recognition() {

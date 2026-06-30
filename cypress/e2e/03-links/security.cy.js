@@ -2,9 +2,10 @@ describe('browser-facing security contracts', () => {
   beforeEach(() => cy.visitHome())
 
   it('isolates every new browsing context from window.opener', () => {
-    cy.get('a[target="_blank"]').should('have.length', 12).each(($link) => {
+    cy.get('a[target="_blank"]').each(($link) => {
       cy.wrap($link).should('have.attr', 'rel').and('match', /\bnoopener\b/).and('match', /\bnoreferrer\b/)
     })
+    cy.get('a[target="_blank"]').should('have.length', 19)
   })
 
   it('does not inject inline event handlers or executable URLs', () => {

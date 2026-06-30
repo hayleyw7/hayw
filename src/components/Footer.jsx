@@ -1,4 +1,4 @@
-import { socialLinks } from '../data.js'
+import { socialLinks } from '../data/socialLinks.js'
 import ExternalLink from './ExternalLink.jsx'
 
 export default function Footer() {

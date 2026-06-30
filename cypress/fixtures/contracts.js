@@ -2,7 +2,7 @@ export const sections = [
   { id: 'intro', heading: 'Building Reliable, Usable Systems' },
   { id: 'impact', heading: 'Professional & Community Impact' },
   { id: 'recommendations', heading: 'Recommendations' },
-  { id: 'projects', heading: 'Side Quests' },
+  { id: 'projects', heading: 'Project Portfolio' },
   { id: 'recognition', heading: 'Public Recognition' },
 ]
 
