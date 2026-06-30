@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  --section-nav-height: 3.25rem;
 }
 
 .content-group + .content-group {

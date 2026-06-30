@@ -20,7 +20,7 @@ npm install
 npm run dev          # http://localhost:5173
 npm run lint
 npm run build
-npm run test:e2e     # 21 specs, 78 tests
+npm run test:e2e     # 21 specs, 80 tests
 npm run cypress:open # interactive debugging
 ```
 
@@ -29,7 +29,7 @@ npm run cypress:open # interactive debugging
 ```
 src/
   App.jsx              Section order and preload handling
-  components/          One component per page section
+  components/          One component per page section (incl. SectionNav)
   data/                Content datasets (one file per domain)
   styles/              Layered CSS; entry point is index.css
 public/
@@ -87,6 +87,7 @@ When changing UI or content:
 |------|-------|
 | Change section copy | `src/data/` |
 | Reorder sections | `App.jsx` |
+| Section nav labels | `src/data/sectionNav.js` + `cypress/fixtures/contracts.js` |
 | Section-specific styles | `page-sections.css`, `recommendations.css`, `content-groups.css` |
 | Shared grid/card buttons | `content-groups.css` |
 | Meta / OG tags | `index.html` + `metadata.cy.js` |

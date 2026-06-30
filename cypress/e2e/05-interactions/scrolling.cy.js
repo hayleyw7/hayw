@@ -7,11 +7,12 @@ describe('scroll behavior', () => {
   })
 
   it('Embark prevents the default jump and requests a smooth scroll', () => {
-    cy.get('#intro').then(($target) => {
-      cy.stub($target[0], 'scrollIntoView').as('scrollIntoView')
+    cy.window().then((win) => {
+      cy.stub(win, 'scrollTo').as('scrollTo')
     })
     cy.get('.embark-btn').click()
-    cy.get('@scrollIntoView').should('have.been.calledOnceWith', { behavior: 'smooth' })
+    cy.get('@scrollTo').should('have.been.calledOnce')
+    cy.get('@scrollTo').its('firstCall.args.0.behavior').should('eq', 'smooth')
     cy.location('hash').should('eq', '')
   })
 
@@ -26,5 +27,37 @@ describe('scroll behavior', () => {
     cy.visit('/#recognition')
     cy.location('hash').should('eq', '#recognition')
     cy.get('#recognition').should('be.visible')
+  })
+
+  it('reveals section navigation on mobile after one screen scroll', () => {
+    cy.viewport(390, 844)
+    cy.visit('/')
+    cy.get('#section-nav').should('have.attr', 'hidden')
+    cy.window().then((win) => {
+      win.scrollTo(0, win.innerHeight)
+    })
+    cy.get('#section-nav').should('not.have.attr', 'hidden')
+    cy.get('#section-nav').should('be.visible')
+  })
+
+  it('reveals section navigation after scrolling past the hero', () => {
+    cy.get('#section-nav').should('have.attr', 'hidden')
+    cy.window().then((win) => {
+      win.scrollTo(0, win.innerHeight)
+    })
+    cy.get('#section-nav').should('not.have.attr', 'hidden')
+    cy.get('#section-nav').should('be.visible')
+  })
+
+  it('jumps to a section with smooth scrolling and updates the fragment', () => {
+    cy.window().then((win) => {
+      win.scrollTo(0, win.innerHeight)
+      cy.stub(win, 'scrollTo').as('scrollTo')
+    })
+    cy.get('#section-nav').should('not.have.attr', 'hidden')
+    cy.get('#section-nav a[href="#impact"]').click({ scrollBehavior: false })
+    cy.get('@scrollTo').should('have.been.calledOnce')
+    cy.get('@scrollTo').its('firstCall.args.0.behavior').should('eq', 'smooth')
+    cy.location('hash').should('eq', '#impact')
   })
 })

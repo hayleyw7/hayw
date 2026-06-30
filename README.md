@@ -14,7 +14,7 @@ A responsive React portfolio built with Vite and deployed to GitHub Pages at [ha
 
 The page is a single scrolling portfolio with alternating light and dark sections:
 
-1. **Hero** — gradient header with Embark CTA
+1. **Hero** — gradient header with Embark CTA; sticky section nav appears after scrolling
 2. **About** (`#intro`) — bio, portrait, and tech stack
 3. **Professional & Community Impact** (`#impact`)
 4. **Recommendations** (`#recommendations`) — quotes grouped by company
@@ -56,7 +56,7 @@ npm run build
 npm run test:e2e
 ```
 
-The Cypress suite has **21 spec files** and **78 tests** covering:
+The Cypress suite has **21 spec files** and **80 tests** covering:
 
 | Area | What it checks |
 |------|----------------|

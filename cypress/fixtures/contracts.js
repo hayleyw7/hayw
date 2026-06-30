@@ -6,6 +6,16 @@ export const sections = [
   { id: 'recognition', heading: 'Public Recognition' },
 ]
 
+export const sectionNav = [
+  { label: 'About', href: '#intro' },
+  { label: 'Impact', href: '#impact' },
+  { label: 'Recommendations', href: '#recommendations' },
+  { label: 'Portfolio', href: '#projects' },
+  { label: 'Recognition', href: '#recognition' },
+]
+
+export const sectionFragmentHashes = sectionNav.map((item) => item.href)
+
 export const skills = ['JavaScript', 'Ruby on Rails', 'React', 'HTML/CSS']
 
 export const impactHeadings = [

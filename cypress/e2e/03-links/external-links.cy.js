@@ -1,4 +1,4 @@
-import { socialLinks } from '../../fixtures/contracts.js'
+import { socialLinks, sectionFragmentHashes } from '../../fixtures/contracts.js'
 
 describe('external links', () => {
   beforeEach(() => cy.visitHome())
@@ -29,7 +29,7 @@ describe('external links', () => {
       expect(href, $link.text()).to.be.a('string').and.not.be.empty
       expect(href).not.to.match(/^javascript:/i)
       expect(href).not.to.match(/^http:\/\//i)
-      if (href.startsWith('#')) expect(href).to.equal('#intro')
+      if (href.startsWith('#')) expect(sectionFragmentHashes, href).to.include(href)
     })
   })
 })

@@ -23,6 +23,11 @@ describe('keyboard accessibility', () => {
     ]
     const expectedOrder = [
       'Embark',
+      'About',
+      'Impact',
+      'Recommendations',
+      'Portfolio',
+      'Recognition',
       'View recommendations on LinkedIn',
       ...projectTitles,
       ...recognitionTitles,

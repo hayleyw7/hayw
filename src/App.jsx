@@ -6,6 +6,7 @@ import Introduction from './components/Introduction.jsx'
 import Portfolio from './components/Portfolio.jsx'
 import Recognition from './components/Recognition.jsx'
 import Recommendations from './components/Recommendations.jsx'
+import SectionNav from './components/SectionNav.jsx'
 
 export default function App() {
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <>
       <Header />
+      <SectionNav />
       <main>
         <Introduction />
         <Impact />

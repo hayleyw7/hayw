@@ -6,6 +6,7 @@ describe('initial rendering', () => {
     cy.get('#root').children().then(($children) => {
       expect([...$children].map((element) => element.tagName)).to.deep.equal([
         'HEADER',
+        'NAV',
         'MAIN',
         'FOOTER',
       ])
@@ -32,7 +33,7 @@ describe('initial rendering', () => {
   it('does not render an error page, empty root, or accidental placeholder copy', () => {
     cy.visitHome()
 
-    cy.get('#root').children().should('have.length', 3)
+    cy.get('#root').children().should('have.length', 4)
     cy.get('body').should('not.contain.text', 'undefined')
     cy.get('body').should('not.contain.text', '[object Object]')
     cy.get('body').should('not.contain.text', 'Lorem ipsum')

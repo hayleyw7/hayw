@@ -113,6 +113,14 @@
 	padding-bottom: 9.5em;
 }
 
+#profile,
+#impact,
+#recommendations,
+#projects,
+#recognition {
+  scroll-margin-top: var(--section-nav-height, 3.25rem);
+}
+
 #impact {
 	margin-top: 2.5em;
 }

@@ -1,7 +1,9 @@
+import { scrollToSection } from '../utils/scrollToSection.js'
+
 export default function Header() {
   const scrollToIntroduction = (event) => {
     event.preventDefault()
-    document.querySelector('#intro')?.scrollIntoView({ behavior: 'smooth' })
+    scrollToSection('#intro', { updateHistory: false })
   }
 
   return (
