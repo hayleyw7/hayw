@@ -44,19 +44,19 @@ export const recognitionGroups = [
       },
       {
         title: 'GEN & Biotech News',
-        description: 'Publication featuring analytical chemistry insights',
+        description: 'Publication featuring my analytical chemistry insights',
         url: 'https://www.genengnews.com/insights/medical-cannabi-poses-unique-testing-challenges/',
         label: 'Article',
       },
       {
         title: 'Seed to Sound',
-        description: 'Podcast about founding and leading a tech community',
+        description: 'Podcast on building a professional community',
         url: 'https://www.listennotes.com/podcasts/seed-to-sound/episode-2-colorado-badged-R6JEiGH-2SQ/',
         label: 'Episode',
       },
       {
         title: 'The Rooster',
-        description: 'Article on co-founding a tech community',
+        description: 'Article on an industry network I co-founded',
         url: 'https://therooster.com/articles/despite-the-rules-one-cannabis-industry-group-still-thrives-on-facebook/',
         label: 'Article',
       },
